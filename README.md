@@ -32,7 +32,7 @@ Only the text between the `PRICES:START` and `PRICES:END` markers is regenerated
 ## Dashboard
 
 <!-- PRICES:START -->
-**Last check:** 2026-11-15 &nbsp;·&nbsp; **Prices logged:** 25 &nbsp;·&nbsp; **Items tracked with prices:** 12 across 2 categories
+**Last check:** 2026-11-15 &nbsp;·&nbsp; **Prices logged:** 26 &nbsp;·&nbsp; **Items tracked with prices:** 13 across 3 categories
 
 > No DEAL flags on the latest check.
 
@@ -40,6 +40,7 @@ Only the text between the `PRICES:START` and `PRICES:END` markers is regenerated
 |---|--:|---|
 | SSDs | 12 | Silicon Power UD90 — $475.00 (Newegg) |
 | NVIDIA GPUs | 1 | RTX 5090 (ASUS TUF Gaming OC) — $7,450.00 (Amazon) |
+| AMD GPUs | 1 | RX 9070 XT (GIGABYTE Gaming OC) — $1,034.99 (Amazon) |
 
 ### SSDs
 
@@ -245,6 +246,65 @@ Low $7,450.00 · High $7,450.00 · 3 entries
 | 2026-11-15 | [$7,450.00](https://videocardprices.com/card/nvidia-rtx-5090/) | reported (videocardprices.com) |
 | 2026-11-14 | [$7,450.00](https://videocardprices.com/card/nvidia-rtx-5090/) | reported (videocardprices.com) |
 | 2026-11-14 | [$7,450.00](https://videocardprices.com/card/nvidia-rtx-5090/) | reported (videocardprices.com) |
+
+</details>
+
+### AMD GPUs
+
+> **Cheapest new AMD GPU on 2026-11-15:** RX 9070 XT (GIGABYTE Gaming OC) (16GB GDDR6) at **$1,034.99** (Amazon) — [source](https://videocardprices.com/card/amd-rx-9070-xt/)
+
+#### Cheapest by model
+
+| Model | Cheapest new | Cheapest used / refurbished |
+|---|---|---|
+| RX 9070 XT | [$1,034.99](https://videocardprices.com/card/amd-rx-9070-xt/) Amazon, 2026-11-15 | — |
+| RX 9070 | — | — |
+| RX 7900 XTX | — | — |
+| RX 7900 XT | — | — |
+
+<sub>Uses the most recent logged price for each item, store and condition.</sub>
+
+#### Latest new price by model (cheapest store)
+
+```mermaid
+xychart-beta
+    title "Most recent logged new price (USD)"
+    x-axis ["RX 9070 XT"]
+    y-axis "USD" 1020 --> 1050
+    bar [1034.99]
+```
+
+<details>
+<summary><b>New price over time, by model</b></summary>
+
+#### RX 9070 XT: cheapest new price over time
+
+```mermaid
+xychart-beta
+    title "Lowest new RX 9070 XT price per day (USD)"
+    x-axis ["11-15"]
+    y-axis "USD" 1020 --> 1050
+    line [1034.99]
+    bar [1034.99]
+```
+
+</details>
+
+#### Latest prices
+
+| Model | Item | Spec | Store | Condition | Price | Change | As of | Basis | Link |
+|---|---|---|---|---|--:|--:|---|---|---|
+| RX 9070 XT | RX 9070 XT (GIGABYTE Gaming OC) | 16GB GDDR6 | Amazon | new | **$1,034.99** | new | 2026-11-15 | reported (videocardprices.com) | [link](https://videocardprices.com/card/amd-rx-9070-xt/) |
+
+<details>
+<summary><b>AMD GPUs: price history</b></summary>
+
+##### RX 9070 XT (GIGABYTE Gaming OC) — Amazon (new)
+Low $1,034.99 · High $1,034.99 · 1 entry
+
+| Date | Price | Basis |
+|---|--:|---|
+| 2026-11-15 | [$1,034.99](https://videocardprices.com/card/amd-rx-9070-xt/) | reported (videocardprices.com) |
 
 </details>
 
