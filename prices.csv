@@ -24,3 +24,4 @@ date,category,item,spec,store,condition,price_usd,basis,source_date,url
 2026-11-15,ssd,Samsung 990 Pro,4TB TLC,Amazon,new,799.99,reported (cheapestssd.com),2026-11-14,https://cheapestssd.com/4tb-nvme-ssd/
 2026-11-15,ssd,Crucial T500,4TB TLC,Amazon,new,869.00,reported (cheapestssd.com),2026-11-14,https://cheapestssd.com/4tb-nvme-ssd/
 2026-11-15,nvidia_gpu,RTX 5090 (ASUS TUF Gaming OC),32GB GDDR7,Amazon,new,7450.00,reported (videocardprices.com),2026-11-13,https://videocardprices.com/card/nvidia-rtx-5090/
+2026-11-15,amd_gpu,RX 9070 XT (GIGABYTE Gaming OC),16GB GDDR6,Amazon,new,1034.99,reported (videocardprices.com),2026-11-14,https://videocardprices.com/card/amd-rx-9070-xt/
