@@ -11,3 +11,16 @@ date,category,item,spec,store,condition,price_usd,basis,source_date,url
 2026-11-14,ssd,Samsung 990 EVO Plus,4TB TLC,B&H Photo,new,649.99,reported (9to5Toys),2026-11-14,https://9to5toys.com/2026/11/14/this-weeks-pc-deals-and-news/
 2026-11-14,nvidia_gpu,RTX 3090 (NVIDIA Founders Edition),24GB GDDR6X,Amazon (third-party seller),used,1799.22,reported (camelcamelcamel),2026-11-12,https://camelcamelcamel.com/product/B08HR6ZBYJ
 2026-11-14,nvidia_gpu,RTX 5090 (ASUS TUF Gaming OC),32GB GDDR7,Amazon,new,7450.00,reported (videocardprices.com),2026-11-13,https://videocardprices.com/card/nvidia-rtx-5090/
+2026-11-15,ssd,Silicon Power UD90,4TB TLC (some batches reported QLC),Newegg,new,475.00,reported (PC Gamer),2026-11-13,https://www.pcgamer.com/black-friday-ssd-deals/
+2026-11-15,ssd,WD Blue SN5000,4TB QLC,Newegg,new,491.00,reported (PC Gamer),2026-11-13,https://www.pcgamer.com/black-friday-ssd-deals/
+2026-11-15,ssd,TeamGroup MP44Q,4TB QLC,Amazon,new,499.99,reported (PC Gamer),2026-11-13,https://www.pcgamer.com/black-friday-ssd-deals/
+2026-11-15,ssd,TeamGroup MP44,4TB TLC,Newegg,new,516.99,reported (PC Gamer),2026-11-13,https://www.pcgamer.com/black-friday-ssd-deals/
+2026-11-15,ssd,Silicon Power UD90,4TB TLC (some batches reported QLC),Amazon,new,529.97,reported (cheapestssd.com),2026-11-14,https://cheapestssd.com/4tb-nvme-ssd/
+2026-11-15,ssd,WD Blue SN5100,4TB QLC,Amazon,new,529.99,reported (cheapestssd.com),2026-11-14,https://cheapestssd.com/4tb-nvme-ssd/
+2026-11-15,ssd,WD Black SN7100,4TB TLC,Amazon,new,629.99,reported (cheapestssd.com),2026-11-14,https://cheapestssd.com/4tb-nvme-ssd/
+2026-11-15,ssd,Samsung 990 EVO Plus,4TB TLC,B&H Photo,new,649.99,reported (9to5Toys),2026-11-14,https://9to5toys.com/2026/11/14/this-weeks-pc-deals-and-news/
+2026-11-15,ssd,Samsung 990 EVO Plus,4TB TLC,Amazon,new,679.99,reported (cheapestssd.com),2026-11-14,https://cheapestssd.com/4tb-nvme-ssd/
+2026-11-15,ssd,WD Black SN850X,4TB TLC,Amazon,new,784.99,reported (cheapestssd.com),2026-11-14,https://cheapestssd.com/4tb-nvme-ssd/
+2026-11-15,ssd,Samsung 990 Pro,4TB TLC,Amazon,new,799.99,reported (cheapestssd.com),2026-11-14,https://cheapestssd.com/4tb-nvme-ssd/
+2026-11-15,ssd,Crucial T500,4TB TLC,Amazon,new,869.00,reported (cheapestssd.com),2026-11-14,https://cheapestssd.com/4tb-nvme-ssd/
+2026-11-15,nvidia_gpu,RTX 5090 (ASUS TUF Gaming OC),32GB GDDR7,Amazon,new,7450.00,reported (videocardprices.com),2026-11-13,https://videocardprices.com/card/nvidia-rtx-5090/

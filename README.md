@@ -32,28 +32,27 @@ Only the text between the `PRICES:START` and `PRICES:END` markers is regenerated
 ## Dashboard
 
 <!-- PRICES:START -->
-**Last check:** 2026-11-14 &nbsp;·&nbsp; **Prices logged:** 12 &nbsp;·&nbsp; **Items tracked with prices:** 7 across 2 categories
+**Last check:** 2026-11-15 &nbsp;·&nbsp; **Prices logged:** 25 &nbsp;·&nbsp; **Items tracked with prices:** 12 across 2 categories
 
 > No DEAL flags on the latest check.
 
 | Category | Latest-check rows | Cheapest new on latest check |
 |---|--:|---|
-| SSDs | 9 | Silicon Power UD90 — $474.97 (Amazon) |
-| NVIDIA GPUs | 3 | RTX 5090 (ASUS TUF Gaming OC) — $7,450.00 (Amazon) |
+| SSDs | 12 | Silicon Power UD90 — $475.00 (Newegg) |
+| NVIDIA GPUs | 1 | RTX 5090 (ASUS TUF Gaming OC) — $7,450.00 (Amazon) |
 
 ### SSDs
 
-> **Cheapest new 4TB TLC SSD on 2026-11-14:** Silicon Power UD90 (4TB TLC (some batches reported QLC)) at **$474.97** (Amazon) — [source](https://www.pcgamer.com/black-friday-ssd-deals/)
+> **Cheapest new 4TB TLC SSD on 2026-11-15:** Silicon Power UD90 (4TB TLC (some batches reported QLC)) at **$475.00** (Newegg) — [source](https://www.pcgamer.com/black-friday-ssd-deals/)
 
 #### Cheapest new 4TB SSD price over time
 
 ```mermaid
 xychart-beta
     title "Lowest new 4TB SSD price per day (USD)"
-    x-axis ["11-14"]
+    x-axis ["11-14", "11-15"]
     y-axis "USD" 460 --> 490
-    line [474.97]
-    bar [474.97]
+    line [474.97, 475.00]
 ```
 
 #### Latest price by item (new, cheapest store)
@@ -61,81 +60,135 @@ xychart-beta
 ```mermaid
 xychart-beta
     title "Most recent logged price (USD)"
-    x-axis ["Silicon Power UD90", "WD Blue SN5000", "TeamGroup MP44Q", "TeamGroup MP44", "Samsung 990 EVO Plus"]
-    y-axis "USD" 440 --> 680
-    bar [474.97, 491.00, 499.99, 516.99, 649.99]
+    x-axis ["Silicon Power UD90", "WD Blue SN5000", "TeamGroup MP44Q", "TeamGroup MP44", "WD Blue SN5100", "WD Black SN7100", "Samsung 990 EVO Plus", "WD Black SN850X", "Samsung 990 Pro", "Crucial T500"]
+    y-axis "USD" 410 --> 930
+    bar [475.00, 491.00, 499.99, 516.99, 529.99, 629.99, 649.99, 784.99, 799.99, 869.00]
 ```
 
 #### Latest prices
 
 | Item | Spec | Store | Condition | Price | Change | As of | Basis | Link |
 |---|---|---|---|--:|--:|---|---|---|
-| Silicon Power UD90 | 4TB TLC (some batches reported QLC) | Amazon | new | **$474.97** | — | 2026-11-14 | reported (PC Gamer) | [link](https://www.pcgamer.com/black-friday-ssd-deals/) |
-| Silicon Power UD90 | 4TB TLC (some batches reported QLC) | Newegg | new | **$475.00** | new | 2026-11-14 | reported (PC Gamer) | [link](https://www.pcgamer.com/black-friday-ssd-deals/) |
-| WD Blue SN5000 | 4TB QLC | Newegg | new | **$491.00** | new | 2026-11-14 | reported (PC Gamer) | [link](https://www.pcgamer.com/black-friday-ssd-deals/) |
-| TeamGroup MP44Q | 4TB QLC | Amazon | new | **$499.99** | — | 2026-11-14 | reported (PC Gamer) | [link](https://www.pcgamer.com/black-friday-ssd-deals/) |
-| TeamGroup MP44 | 4TB TLC | Newegg | new | **$516.99** | new | 2026-11-14 | reported (PC Gamer) | [link](https://www.pcgamer.com/black-friday-ssd-deals/) |
-| Samsung 990 EVO Plus | 4TB TLC | B&H Photo | new | **$649.99** | — | 2026-11-14 | reported (9to5Toys) | [link](https://9to5toys.com/2026/11/14/this-weeks-pc-deals-and-news/) |
+| Silicon Power UD90 | 4TB TLC (some batches reported QLC) | Newegg | new | **$475.00** | — | 2026-11-15 | reported (PC Gamer) | [link](https://www.pcgamer.com/black-friday-ssd-deals/) |
+| WD Blue SN5000 | 4TB QLC | Newegg | new | **$491.00** | — | 2026-11-15 | reported (PC Gamer) | [link](https://www.pcgamer.com/black-friday-ssd-deals/) |
+| TeamGroup MP44Q | 4TB QLC | Amazon | new | **$499.99** | — | 2026-11-15 | reported (PC Gamer) | [link](https://www.pcgamer.com/black-friday-ssd-deals/) |
+| TeamGroup MP44 | 4TB TLC | Newegg | new | **$516.99** | — | 2026-11-15 | reported (PC Gamer) | [link](https://www.pcgamer.com/black-friday-ssd-deals/) |
+| Silicon Power UD90 | 4TB TLC (some batches reported QLC) | Amazon | new | **$529.97** | 🔺 $55.00 | 2026-11-15 | reported (cheapestssd.com) | [link](https://cheapestssd.com/4tb-nvme-ssd/) |
+| WD Blue SN5100 | 4TB QLC | Amazon | new | **$529.99** | new | 2026-11-15 | reported (cheapestssd.com) | [link](https://cheapestssd.com/4tb-nvme-ssd/) |
+| WD Black SN7100 | 4TB TLC | Amazon | new | **$629.99** | new | 2026-11-15 | reported (cheapestssd.com) | [link](https://cheapestssd.com/4tb-nvme-ssd/) |
+| Samsung 990 EVO Plus | 4TB TLC | B&H Photo | new | **$649.99** | — | 2026-11-15 | reported (9to5Toys) | [link](https://9to5toys.com/2026/11/14/this-weeks-pc-deals-and-news/) |
+| Samsung 990 EVO Plus | 4TB TLC | Amazon | new | **$679.99** | new | 2026-11-15 | reported (cheapestssd.com) | [link](https://cheapestssd.com/4tb-nvme-ssd/) |
+| WD Black SN850X | 4TB TLC | Amazon | new | **$784.99** | new | 2026-11-15 | reported (cheapestssd.com) | [link](https://cheapestssd.com/4tb-nvme-ssd/) |
+| Samsung 990 Pro | 4TB TLC | Amazon | new | **$799.99** | new | 2026-11-15 | reported (cheapestssd.com) | [link](https://cheapestssd.com/4tb-nvme-ssd/) |
+| Crucial T500 | 4TB TLC | Amazon | new | **$869.00** | new | 2026-11-15 | reported (cheapestssd.com) | [link](https://cheapestssd.com/4tb-nvme-ssd/) |
 
 <details>
 <summary><b>SSDs: price history</b></summary>
 
-##### Samsung 990 EVO Plus — B&H Photo (new)
-Low $649.99 · High $649.99 · 2 entries
+##### Crucial T500 — Amazon (new)
+Low $869.00 · High $869.00 · 1 entry
 
 | Date | Price | Basis |
 |---|--:|---|
+| 2026-11-15 | [$869.00](https://cheapestssd.com/4tb-nvme-ssd/) | reported (cheapestssd.com) |
+
+##### Samsung 990 EVO Plus — Amazon (new)
+Low $679.99 · High $679.99 · 1 entry
+
+| Date | Price | Basis |
+|---|--:|---|
+| 2026-11-15 | [$679.99](https://cheapestssd.com/4tb-nvme-ssd/) | reported (cheapestssd.com) |
+
+##### Samsung 990 EVO Plus — B&H Photo (new)
+Low $649.99 · High $649.99 · 3 entries
+
+| Date | Price | Basis |
+|---|--:|---|
+| 2026-11-15 | [$649.99](https://9to5toys.com/2026/11/14/this-weeks-pc-deals-and-news/) | reported (9to5Toys) |
 | 2026-11-14 | [$649.99](https://9to5toys.com/2026/11/14/this-weeks-pc-deals-and-news/) | reported (9to5Toys) |
 | 2026-11-14 | [$649.99](https://9to5toys.com/2026/11/14/this-weeks-pc-deals-and-news/) | reported (9to5Toys) |
+
+##### Samsung 990 Pro — Amazon (new)
+Low $799.99 · High $799.99 · 1 entry
+
+| Date | Price | Basis |
+|---|--:|---|
+| 2026-11-15 | [$799.99](https://cheapestssd.com/4tb-nvme-ssd/) | reported (cheapestssd.com) |
 
 ##### Silicon Power UD90 — Amazon (new)
-Low $474.97 · High $474.97 · 2 entries
+Low $474.97 · High $529.97 · 3 entries
 
 | Date | Price | Basis |
 |---|--:|---|
+| 2026-11-15 | [$529.97](https://cheapestssd.com/4tb-nvme-ssd/) | reported (cheapestssd.com) |
 | 2026-11-14 | [$474.97](https://www.pcgamer.com/black-friday-ssd-deals/) | reported (PC Gamer) |
 | 2026-11-14 | [$474.97](https://www.pcgamer.com/best-ssd-deals-today/) | reported (PC Gamer) |
 
 ##### Silicon Power UD90 — Newegg (new)
-Low $475.00 · High $475.00 · 1 entry
+Low $475.00 · High $475.00 · 2 entries
 
 | Date | Price | Basis |
 |---|--:|---|
+| 2026-11-15 | [$475.00](https://www.pcgamer.com/black-friday-ssd-deals/) | reported (PC Gamer) |
 | 2026-11-14 | [$475.00](https://www.pcgamer.com/black-friday-ssd-deals/) | reported (PC Gamer) |
 
 ##### TeamGroup MP44 — Newegg (new)
-Low $516.99 · High $516.99 · 1 entry
+Low $516.99 · High $516.99 · 2 entries
 
 | Date | Price | Basis |
 |---|--:|---|
+| 2026-11-15 | [$516.99](https://www.pcgamer.com/black-friday-ssd-deals/) | reported (PC Gamer) |
 | 2026-11-14 | [$516.99](https://www.pcgamer.com/black-friday-ssd-deals/) | reported (PC Gamer) |
 
 ##### TeamGroup MP44Q — Amazon (new)
-Low $499.99 · High $499.99 · 2 entries
+Low $499.99 · High $499.99 · 3 entries
 
 | Date | Price | Basis |
 |---|--:|---|
+| 2026-11-15 | [$499.99](https://www.pcgamer.com/black-friday-ssd-deals/) | reported (PC Gamer) |
 | 2026-11-14 | [$499.99](https://www.pcgamer.com/black-friday-ssd-deals/) | reported (PC Gamer) |
 | 2026-11-14 | [$499.99](https://www.pcgamer.com/best-ssd-deals-today/) | reported (PC Gamer) |
 
-##### WD Blue SN5000 — Newegg (new)
-Low $491.00 · High $491.00 · 1 entry
+##### WD Black SN7100 — Amazon (new)
+Low $629.99 · High $629.99 · 1 entry
 
 | Date | Price | Basis |
 |---|--:|---|
+| 2026-11-15 | [$629.99](https://cheapestssd.com/4tb-nvme-ssd/) | reported (cheapestssd.com) |
+
+##### WD Black SN850X — Amazon (new)
+Low $784.99 · High $784.99 · 1 entry
+
+| Date | Price | Basis |
+|---|--:|---|
+| 2026-11-15 | [$784.99](https://cheapestssd.com/4tb-nvme-ssd/) | reported (cheapestssd.com) |
+
+##### WD Blue SN5000 — Newegg (new)
+Low $491.00 · High $491.00 · 2 entries
+
+| Date | Price | Basis |
+|---|--:|---|
+| 2026-11-15 | [$491.00](https://www.pcgamer.com/black-friday-ssd-deals/) | reported (PC Gamer) |
 | 2026-11-14 | [$491.00](https://www.pcgamer.com/black-friday-ssd-deals/) | reported (PC Gamer) |
+
+##### WD Blue SN5100 — Amazon (new)
+Low $529.99 · High $529.99 · 1 entry
+
+| Date | Price | Basis |
+|---|--:|---|
+| 2026-11-15 | [$529.99](https://cheapestssd.com/4tb-nvme-ssd/) | reported (cheapestssd.com) |
 
 </details>
 
 ### NVIDIA GPUs
 
-> **Cheapest new NVIDIA GPU on 2026-11-14:** RTX 5090 (ASUS TUF Gaming OC) (32GB GDDR7) at **$7,450.00** (Amazon) — [source](https://videocardprices.com/card/nvidia-rtx-5090/)
+> **Cheapest new NVIDIA GPU on 2026-11-15:** RTX 5090 (ASUS TUF Gaming OC) (32GB GDDR7) at **$7,450.00** (Amazon) — [source](https://videocardprices.com/card/nvidia-rtx-5090/)
 
 #### Cheapest by model
 
 | Model | Cheapest new | Cheapest used / refurbished |
 |---|---|---|
-| RTX 5090 | [$7,450.00](https://videocardprices.com/card/nvidia-rtx-5090/) Amazon, 2026-11-14 | — |
+| RTX 5090 | [$7,450.00](https://videocardprices.com/card/nvidia-rtx-5090/) Amazon, 2026-11-15 | — |
 | RTX 4090 | — | — |
 | RTX 3090 Ti | — | — |
 | RTX 3090 | — | [$1,799.22](https://camelcamelcamel.com/product/B08HR6ZBYJ) Amazon (third-party seller), 2026-11-14 |
@@ -160,10 +213,9 @@ xychart-beta
 ```mermaid
 xychart-beta
     title "Lowest new RTX 5090 price per day (USD)"
-    x-axis ["11-14"]
+    x-axis ["11-14", "11-15"]
     y-axis "USD" 7440 --> 7460
-    line [7450.00]
-    bar [7450.00]
+    line [7450.00, 7450.00]
 ```
 
 </details>
@@ -172,7 +224,7 @@ xychart-beta
 
 | Model | Item | Spec | Store | Condition | Price | Change | As of | Basis | Link |
 |---|---|---|---|---|--:|--:|---|---|---|
-| RTX 5090 | RTX 5090 (ASUS TUF Gaming OC) | 32GB GDDR7 | Amazon | new | **$7,450.00** | — | 2026-11-14 | reported (videocardprices.com) | [link](https://videocardprices.com/card/nvidia-rtx-5090/) |
+| RTX 5090 | RTX 5090 (ASUS TUF Gaming OC) | 32GB GDDR7 | Amazon | new | **$7,450.00** | — | 2026-11-15 | reported (videocardprices.com) | [link](https://videocardprices.com/card/nvidia-rtx-5090/) |
 | RTX 3090 | RTX 3090 (NVIDIA Founders Edition) | 24GB GDDR6X | Amazon (third-party seller) | used | **$1,799.22** | new | 2026-11-14 | reported (camelcamelcamel) | [link](https://camelcamelcamel.com/product/B08HR6ZBYJ) |
 
 <details>
@@ -186,10 +238,11 @@ Low $1,799.22 · High $1,799.22 · 1 entry
 | 2026-11-14 | [$1,799.22](https://camelcamelcamel.com/product/B08HR6ZBYJ) | reported (camelcamelcamel) |
 
 ##### RTX 5090 (ASUS TUF Gaming OC) — Amazon (new)
-Low $7,450.00 · High $7,450.00 · 2 entries
+Low $7,450.00 · High $7,450.00 · 3 entries
 
 | Date | Price | Basis |
 |---|--:|---|
+| 2026-11-15 | [$7,450.00](https://videocardprices.com/card/nvidia-rtx-5090/) | reported (videocardprices.com) |
 | 2026-11-14 | [$7,450.00](https://videocardprices.com/card/nvidia-rtx-5090/) | reported (videocardprices.com) |
 | 2026-11-14 | [$7,450.00](https://videocardprices.com/card/nvidia-rtx-5090/) | reported (videocardprices.com) |
 

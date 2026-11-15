@@ -7,6 +7,70 @@ A cloud routine checks prices every day at 9:00 AM Eastern and adds a dated entr
 • Stores: Amazon, eBay, Newegg, Best Buy, Walmart, B&H Photo, Micro Center (US, USD). eBay used and refurbished listings appear in their own table.
 • DEAL flag: a new 4 TB TLC SSD from a reputable brand at $450 or less; or, in any category, an item at least 10% below its most recent earlier price in prices.csv (same item, store and condition), or strictly below every earlier price for that item once prices.csv has at least 7 days of history.
 Price log
+### 2026-11-15
+
+**Summary:** Cheapest qualifying 4TB SSDs with a current date are still the PC Gamer-reported (2026-11-13) Silicon Power UD90 at $475.00 at Newegg and WD Blue SN5000 (QLC) at $491.00 at Newegg. A new source, cheapestssd.com's Amazon snapshot (2026-11-14), shows the UD90 at $529.97 on Amazon, up 11.6% from the $474.97 reported earlier, and adds dated Amazon prices for the WD Black SN7100 ($629.99), Samsung 990 EVO Plus ($679.99), WD Black SN850X ($784.99), Samsung 990 Pro ($799.99) and Crucial T500 ($869.00). Cheapest NVIDIA with a current dated price: RTX 5090 ASUS TUF Gaming OC new at $7,450.00 on Amazon (unchanged). No current dated price was found for a 64GB DDR5 SO-DIMM, RTX 4090, RTX 3090/3090 Ti, any tracked AMD card or any eGPU option. No DEAL flags.
+
+**4TB SSDs**
+
+| Drive | Flash | Store | Price | Seen or reported (date) | vs last | Link |
+|---|---|---|---|---|---|---|
+| Silicon Power UD90 | TLC (some batches reported QLC; cheapestssd.com lists QLC) | Newegg | $475.00 | Reported, PC Gamer (2026-11-13) | unchanged | [PC Gamer](https://www.pcgamer.com/black-friday-ssd-deals/) |
+| WD Blue SN5000 | QLC | Newegg | $491.00 | Reported, PC Gamer (2026-11-13) | unchanged | [PC Gamer](https://www.pcgamer.com/black-friday-ssd-deals/) |
+| TeamGroup MP44Q | QLC | Amazon | $499.99 | Reported, PC Gamer (2026-11-13) | unchanged | [PC Gamer](https://www.pcgamer.com/black-friday-ssd-deals/) |
+| TeamGroup MP44 | TLC | Newegg | $516.99 | Reported, PC Gamer (2026-11-13) | unchanged | [PC Gamer](https://www.pcgamer.com/black-friday-ssd-deals/) |
+| Silicon Power UD90 | TLC (some batches reported QLC; cheapestssd.com lists QLC) | Amazon | $529.97 | Reported, cheapestssd.com (2026-11-14) | up 11.6% (was $474.97) | [cheapestssd.com](https://cheapestssd.com/4tb-nvme-ssd/) |
+| WD Blue SN5100 | QLC | Amazon | $529.99 | Reported, cheapestssd.com (2026-11-14) | new | [cheapestssd.com](https://cheapestssd.com/4tb-nvme-ssd/) |
+| WD Black SN7100 | TLC | Amazon | $629.99 | Reported, cheapestssd.com (2026-11-14) | new | [cheapestssd.com](https://cheapestssd.com/4tb-nvme-ssd/) |
+| Samsung 990 EVO Plus | TLC | B&H Photo | $649.99 (after auto-applied coupon) | Reported, 9to5Toys (2026-11-14) | unchanged | [9to5Toys](https://9to5toys.com/2026/11/14/this-weeks-pc-deals-and-news/) |
+| Samsung 990 EVO Plus | TLC | Amazon | $679.99 | Reported, cheapestssd.com (2026-11-14) | new | [cheapestssd.com](https://cheapestssd.com/4tb-nvme-ssd/) |
+| WD Black SN850X | TLC | Amazon | $784.99 | Reported, cheapestssd.com (2026-11-14) | new | [cheapestssd.com](https://cheapestssd.com/4tb-nvme-ssd/) |
+| Samsung 990 Pro | TLC | Amazon | $799.99 | Reported, cheapestssd.com (2026-11-14) | new | [cheapestssd.com](https://cheapestssd.com/4tb-nvme-ssd/) |
+| Crucial T500 | TLC | Amazon | $869.00 | Reported, cheapestssd.com (2026-11-14) | new | [cheapestssd.com](https://cheapestssd.com/4tb-nvme-ssd/) |
+
+No price dated within 2 days was found for: Lexar NM790, TeamGroup T-Force G50, Crucial P310, Kingston KC3000. cheapestssd.com notes some of its Amazon listings are sold by third-party sellers, without saying which.
+
+Micron 2500: no 4TB version found and no dated 2TB price found, so nothing logged.
+
+**64GB DDR5 SO-DIMM**
+
+| Module | Speed / CL | Store | Price | Seen or reported (date) | vs last | Link |
+|---|---|---|---|---|---|---|
+| None found | | | | | | |
+
+No dated single-module price was found. Search results were 2x32GB kits (which don't qualify) or undated/old tracker figures (rampricesusa.com: a 64GB SO-DIMM at $699.97 as of July 2026).
+
+**NVIDIA GPUs**
+
+| Model | Card | Condition | Store | Price | Seen or reported (date) | vs last | Link |
+|---|---|---|---|---|---|---|---|
+| RTX 5090 | ASUS TUF Gaming OC 32GB | New | Amazon | $7,450.00 | Reported, videocardprices.com (2026-11-13) | unchanged | [videocardprices.com](https://videocardprices.com/card/nvidia-rtx-5090/) |
+
+No listing-level price dated within 2 days was found for: RTX 5090 used; RTX 4090 new or used; RTX 3090 new or used (yesterday's $1,799.22 camelcamelcamel figure is dated 2026-11-12, now outside the window); RTX 3090 Ti new or used. Aggregates, not logged: gpupoet November 2026 pages put the RTX 5090 lowest-three eBay average at $6,150 (deals from $6,216) and the RTX 4090 at $3,133 (deals from $3,200), without a specific day.
+
+**AMD GPUs**
+
+| Model | Card | Condition | Store | Price | Seen or reported (date) | vs last | Link |
+|---|---|---|---|---|---|---|---|
+| None found | | | | | | | |
+
+No price dated within 2 days was found. gpupoet's November 2026 page puts the RX 9070 XT lowest-three eBay average at $953 (deals from $972), no specific day; not logged. Nothing current for the RX 9070, RX 7900 XTX or RX 7900 XT. No newer Radeon above the RX 9070 XT was found.
+
+**External GPU options**
+
+| Product | Type | Connection | PSU | Store | Price | Seen or reported (date) | vs last | Link |
+|---|---|---|---|---|---|---|---|---|
+| None found | | | | | | | | |
+
+No dated current prices were found. Razer Core X V2 (TB5 enclosure, no PSU) still shows its $349.99 list price in undated results.
+
+**Notes**
+- Direct page fetches of PC Gamer and Tom's Hardware returned truncated content, so this run relied on web search plus the cheapestssd.com Amazon snapshot. Store sites weren't opened directly, and no eBay listings could be verified.
+- The PC Gamer (2026-11-13) and 9to5Toys (2026-11-14) SSD rows and the videocardprices.com RTX 5090 row repeat earlier reports still inside the 2-day window. They will drop out tomorrow unless a newer source confirms them.
+- Excluded: PCIe 5.0 drives in the snapshot (Crucial T710 $744.99, WD Black SN8100 $859.99, Samsung 9100 Pro $999.67).
+- Undated SSD figures, not logged: TeamGroup T-Force G50 Evo 4TB $419.99 at Newegg with a promo code (Tom's Hardware) — would be a DEAL if still live, worth a manual check; G50 $389.99 at Newegg (Slickdeals, Aug 2026).
+- Amazon's Black Friday sale reportedly starts Nov 19; Black Friday is Nov 27.
+
 ### 2026-11-14
 
 **Summary:** Third run today (evening, Eastern). Cheapest qualifying 4TB SSD: Silicon Power UD90 at $474.97 on Amazon (reported by PC Gamer, 2026-11-13), unchanged; the same roundup adds the WD Blue SN5000 (QLC) at $491 and the TeamGroup MP44 (TLC) at $516.99 at Newegg. Cheapest NVIDIA cards with a current dated price: RTX 3090 Founders Edition used at $1,799.22 from a third-party seller on Amazon (camelcamelcamel, 2026-11-12), and RTX 5090 ASUS TUF Gaming OC new at $7,450.00 on Amazon (unchanged). No current dated price was found for a 64GB DDR5 SO-DIMM, RTX 4090, RTX 3090 Ti, any tracked AMD card or any eGPU option. No DEAL flags.
