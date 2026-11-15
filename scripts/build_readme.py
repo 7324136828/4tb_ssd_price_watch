@@ -39,6 +39,35 @@ def cat_names(cat):
     return CATEGORIES.get(cat, (cat, cat))
 
 
+# Tracked GPU models per category, in display order. Every model gets a row in
+# the model summary, even before a price has been logged for it.
+GPU_MODELS = {
+    "nvidia_gpu": ["RTX 5090", "RTX 4090", "RTX 3090 Ti", "RTX 3090"],
+    "amd_gpu": ["RX 9070 XT", "RX 9070", "RX 7900 XTX", "RX 7900 XT"],
+}
+GPU_MODEL_RE = re.compile(
+    r"\b(RTX|RX)\s*-?\s*(\d{4})(?:\s*-?\s*(Ti\s*Super|Ti|Super|XTX|XT|GRE|D))?\b",
+    re.IGNORECASE)
+SUFFIX_CASE = {"ti super": "Ti Super", "ti": "Ti", "super": "Super", "xtx": "XTX",
+               "xt": "XT", "gre": "GRE", "d": "D"}
+
+
+def gpu_model(r):
+    """Normalised GPU model from item (then spec), e.g. 'RTX 3090 Ti', 'RX 9070 XT'."""
+    for text in (r.get("item"), r.get("spec")):
+        m = GPU_MODEL_RE.search(text or "")
+        if m:
+            suffix = re.sub(r"\s+", " ", (m.group(3) or "")).lower()
+            model = f"{m.group(1).upper()} {m.group(2)}"
+            return f"{model} {SUFFIX_CASE[suffix]}" if suffix else model
+    return "Other"
+
+
+def model_order(cat, models):
+    tracked = GPU_MODELS.get(cat, [])
+    return tracked + sorted(m for m in set(models) if m not in tracked)
+
+
 def load_rows():
     if not CSV_PATH.exists():
         return []
@@ -165,11 +194,76 @@ def chart(out, heading, title, labels, values, kind):
     out.append("")
 
 
+def build_gpu_models(out, cat, cat_rows, cat_latest):
+    """Per-model summary for a GPU category: cheapest new and used, plus charts."""
+    by_model = defaultdict(list)
+    for t in cat_latest:
+        by_model[gpu_model(t["row"])].append(t)
+    models = model_order(cat, by_model)
+
+    def cell(ts):
+        if not ts:
+            return "—"
+        t = min(ts, key=lambda t: t["row"]["price"])
+        r = t["row"]
+        return (f"[{money(r['price'])}]({r['url']}){' 🔥' if t['deal'] else ''} "
+                f"{esc(r['store'])}, {r['date']}")
+
+    out.append("#### Cheapest by model")
+    out.append("")
+    out.append("| Model | Cheapest new | Cheapest used / refurbished |")
+    out.append("|---|---|---|")
+    for m in models:
+        ts = by_model.get(m, [])
+        new = [t for t in ts if t["row"]["condition"] == "new"]
+        used = [t for t in ts if t["row"]["condition"] != "new"]
+        out.append(f"| {esc(m)} | {cell(new)} | {cell(used)} |")
+    out.append("")
+    out.append("<sub>Uses the most recent logged price for each item, store and condition.</sub>")
+    out.append("")
+
+    # Bar chart: cheapest current new price per model.
+    best = []
+    for m in models:
+        new = [t["row"]["price"] for t in by_model.get(m, []) if t["row"]["condition"] == "new"]
+        if new:
+            best.append((m, min(new)))
+    if best:
+        chart(out, "Latest new price by model (cheapest store)",
+              "Most recent logged new price (USD)",
+              [m for m, _ in best], [p for _, p in best], "bar")
+
+    # Line chart per model: cheapest new price per day.
+    trends = []
+    for m in models:
+        by_day = defaultdict(list)
+        for r in cat_rows:
+            if r["condition"] == "new" and gpu_model(r) == m:
+                by_day[r["date"]].append(r["price"])
+        if by_day:
+            trends.append((m, by_day))
+    if trends:
+        out.append("<details>")
+        out.append("<summary><b>New price over time, by model</b></summary>")
+        out.append("")
+        for m, by_day in trends:
+            days = sorted(by_day)[-60:]
+            chart(out, f"{esc(m)}: cheapest new price over time",
+                  f"Lowest new {m} price per day (USD)",
+                  [d[5:] for d in days], [min(by_day[d]) for d in days], "line")
+        out.append("</details>")
+        out.append("")
+
+
 def build_category(out, cat, rows, history, latest, latest_date):
     name, noun = cat_names(cat)
     cat_rows = [r for r in rows if r["category"] == cat]
     cat_latest = [t for t in latest if t["row"]["category"] == cat]
     ssd = cat == "ssd"
+    gpu = cat in GPU_MODELS
+    if gpu:  # group the table by model, cheapest first within each model
+        order = {m: i for i, m in enumerate(model_order(cat, [gpu_model(t["row"]) for t in cat_latest]))}
+        cat_latest = sorted(cat_latest, key=lambda t: (order[gpu_model(t["row"])], t["row"]["price"]))
 
     out.append(f"### {name}")
     out.append("")
@@ -196,7 +290,9 @@ def build_category(out, cat, rows, history, latest, latest_date):
         if r["condition"] == "new" and (not ssd or is_4tb_ssd(r)):
             by_day[r["date"]].append(r["price"])
     days = sorted(by_day)[-60:]
-    if days:
+    if gpu:
+        build_gpu_models(out, cat, cat_rows, cat_latest)
+    elif days:
         label = "new 4TB SSD" if ssd else f"new {noun}"
         chart(out, f"Cheapest {label} price over time",
               f"Lowest {label} price per day (USD)",
@@ -210,7 +306,7 @@ def build_category(out, cat, rows, history, latest, latest_date):
             continue
         if cur["item"] not in best_per_item or cur["price"] < best_per_item[cur["item"]]["price"]:
             best_per_item[cur["item"]] = cur
-    if best_per_item:
+    if best_per_item and not gpu:
         items = sorted(best_per_item.values(), key=lambda r: r["price"])
         chart(out, "Latest price by item (new, cheapest store)",
               "Most recent logged price (USD)",
@@ -219,8 +315,9 @@ def build_category(out, cat, rows, history, latest, latest_date):
     # Table: latest price for every item/store/condition.
     out.append("#### Latest prices")
     out.append("")
-    out.append("| Item | Spec | Store | Condition | Price | Change | As of | Basis | Link |")
-    out.append("|---|---|---|---|--:|--:|---|---|---|")
+    model_col = "| Model " if gpu else ""
+    out.append(f"{model_col}| Item | Spec | Store | Condition | Price | Change | As of | Basis | Link |")
+    out.append(("|---" if gpu else "") + "|---|---|---|---|--:|--:|---|---|---|")
     for t in cat_latest:
         cur, change = t["row"], t["change"]
         if change is None:
@@ -230,8 +327,9 @@ def build_category(out, cat, rows, history, latest, latest_date):
         else:
             ch = f"{'🔻' if change < 0 else '🔺'} {money(abs(change))}"
         price = money(cur["price"]) + (" 🔥" if t["deal"] else "")
+        model_cell = f"| {esc(gpu_model(cur))} " if gpu else ""
         out.append(
-            f"| {esc(cur['item'])} | {esc(cur['spec'])} | {esc(cur['store'])} | "
+            f"{model_cell}| {esc(cur['item'])} | {esc(cur['spec'])} | {esc(cur['store'])} | "
             f"{esc(cur['condition'])} | **{price}** | {ch} | {cur['date']} | "
             f"{esc(cur['basis'])} | [link]({cur['url']}) |"
         )

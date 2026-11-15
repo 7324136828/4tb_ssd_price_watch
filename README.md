@@ -77,32 +77,48 @@ Low $499.99 · High $499.99 · 1 entry
 
 > **Cheapest new NVIDIA GPU on 2026-11-14:** RTX 5090 (ASUS TUF Gaming OC) (32GB GDDR7) at **$7,450.00** (Amazon) — [source](https://videocardprices.com/card/nvidia-rtx-5090/)
 
-#### Cheapest new NVIDIA GPU price over time
+#### Cheapest by model
+
+| Model | Cheapest new | Cheapest used / refurbished |
+|---|---|---|
+| RTX 5090 | [$7,450.00](https://videocardprices.com/card/nvidia-rtx-5090/) Amazon, 2026-11-14 | — |
+| RTX 4090 | — | — |
+| RTX 3090 Ti | — | — |
+| RTX 3090 | — | — |
+
+<sub>Uses the most recent logged price for each item, store and condition.</sub>
+
+#### Latest new price by model (cheapest store)
 
 ```mermaid
 xychart-beta
-    title "Lowest new NVIDIA GPU price per day (USD)"
+    title "Most recent logged new price (USD)"
+    x-axis ["RTX 5090"]
+    y-axis "USD" 7440 --> 7460
+    bar [7450.00]
+```
+
+<details>
+<summary><b>New price over time, by model</b></summary>
+
+#### RTX 5090: cheapest new price over time
+
+```mermaid
+xychart-beta
+    title "Lowest new RTX 5090 price per day (USD)"
     x-axis ["11-14"]
     y-axis "USD" 7440 --> 7460
     line [7450.00]
     bar [7450.00]
 ```
 
-#### Latest price by item (new, cheapest store)
-
-```mermaid
-xychart-beta
-    title "Most recent logged price (USD)"
-    x-axis ["RTX 5090 (ASUS TUF Gaming OC)"]
-    y-axis "USD" 7440 --> 7460
-    bar [7450.00]
-```
+</details>
 
 #### Latest prices
 
-| Item | Spec | Store | Condition | Price | Change | As of | Basis | Link |
-|---|---|---|---|--:|--:|---|---|---|
-| RTX 5090 (ASUS TUF Gaming OC) | 32GB GDDR7 | Amazon | new | **$7,450.00** | new | 2026-11-14 | reported (videocardprices.com) | [link](https://videocardprices.com/card/nvidia-rtx-5090/) |
+| Model | Item | Spec | Store | Condition | Price | Change | As of | Basis | Link |
+|---|---|---|---|---|--:|--:|---|---|---|
+| RTX 5090 | RTX 5090 (ASUS TUF Gaming OC) | 32GB GDDR7 | Amazon | new | **$7,450.00** | new | 2026-11-14 | reported (videocardprices.com) | [link](https://videocardprices.com/card/nvidia-rtx-5090/) |
 
 <details>
 <summary><b>NVIDIA GPUs: price history</b></summary>
