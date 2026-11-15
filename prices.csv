@@ -43,3 +43,11 @@ date,category,item,spec,store,condition,price_usd,basis,source_date,url
 2026-11-15,amd_gpu,RX 7900 XT,20GB GDDR6,eBay,used,900.00,reported (gpudeals.net),2026-11-15,https://www.ebay.com/itm/960194484387
 2026-11-15,ram,Crucial CT64G56C46S5,1x64GB DDR5-5600 CL46,Amazon (third-party seller),new,1199.89,direct,2026-11-15,https://www.amazon.com/dp/B0DSQWZ5G2
 2026-11-15,ram,G.Skill F5-5600S4645A64GX1-RS,1x64GB DDR5-5600 CL46,Amazon (third-party seller),new,1999.99,direct,2026-11-15,https://www.amazon.com/dp/B0G7RLK95V
+2026-11-15,ssd,TeamGroup T-Force G50,4TB TLC,Amazon (third-party seller),new,479.99,direct,2026-11-15,https://www.amazon.com/dp/B0DRVN1JXP
+2026-11-15,ssd,TeamGroup T-Force G50,4TB TLC,Walmart (third-party seller),new,485.99,reported (ByteSizedDeals),2026-11-15,https://bytesizeddeals.com/ssd/price-index
+2026-11-15,ssd,WD Blue SN5000,4TB QLC,Amazon (third-party seller),new,519.95,direct,2026-11-15,https://www.amazon.com/dp/B0D7MLB76V
+2026-11-15,ssd,Silicon Power UD90,4TB TLC (some batches reported QLC),Amazon (third-party seller),new,523.00,direct,2026-11-15,https://www.amazon.com/dp/B0BYN8NHXS
+2026-11-15,ssd,Lexar NQ780,4TB QLC,Amazon (third-party seller),new,569.67,direct,2026-11-15,https://www.amazon.com/dp/B0F25CX4LB
+2026-11-15,ssd,WD Black SN850X,4TB TLC,Amazon (third-party seller),new,789.99,direct,2026-11-15,https://www.amazon.com/dp/B0B7CQ2CHH
+2026-11-15,egpu,Razer Core X V2,"Enclosure, TB5, No PSU",Amazon,new,349.99,direct,2026-11-15,https://www.amazon.com/dp/B0FFQFDZWX
+2026-11-15,egpu,AOOSTAR EG02,"Enclosure, TB5, No PSU / ATX required",Amazon (third-party seller),new,219.00,direct,2026-11-15,https://www.amazon.com/dp/B0G3TV5HKJ
