@@ -6,6 +6,8 @@ on:
     paths:
       - prices.csv
       - scripts/build_readme.py
+      - scripts/visualize_prices.py
+      - .github/workflows/update-readme.yml
   workflow_dispatch:
 
 permissions:
@@ -40,3 +42,27 @@ jobs:
           git commit -m "Update README price dashboard"
           git pull --rebase origin main
           git push origin HEAD:main
+
+      - name: Build price visualization
+        if: always()
+        run: |
+          mkdir -p dashboard
+          python3 scripts/visualize_prices.py --no-open --out dashboard/price-dashboard.html \
+            | tee dashboard/price-summary.txt
+          python3 scripts/visualize_prices.py --terminal > dashboard/price-charts.txt
+          {
+            echo '### Price summary'
+            echo 'Download the **price-dashboard** artifact and open `price-dashboard.html` in a browser.'
+            echo '```'
+            cat dashboard/price-summary.txt
+            echo '```'
+          } >> "$GITHUB_STEP_SUMMARY"
+
+      - name: Upload price visualization
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: price-dashboard
+          path: dashboard/
+          if-no-files-found: warn
+          retention-days: 30

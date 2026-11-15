@@ -9,6 +9,7 @@ on:
       - scripts/track_gpus.py
       - scripts/price_log.py
       - scripts/add_price.py
+      - scripts/visualize_prices.py
       - tests/**
 
 permissions:
@@ -62,3 +63,22 @@ jobs:
           name: gpu-report
           path: gpu-report.json
           if-no-files-found: ignore
+
+      # This workflow's push to main does not trigger update-readme.yml, so the
+      # dashboard artifact is built here as well.
+      - name: Build price visualization
+        if: always() && github.event_name != 'pull_request'
+        run: |
+          mkdir -p dashboard
+          python3 scripts/visualize_prices.py --no-open --out dashboard/price-dashboard.html \
+            | tee dashboard/price-summary.txt
+          python3 scripts/visualize_prices.py --terminal > dashboard/price-charts.txt
+
+      - name: Upload price visualization
+        if: always() && github.event_name != 'pull_request'
+        uses: actions/upload-artifact@v4
+        with:
+          name: price-dashboard
+          path: dashboard/
+          if-no-files-found: warn
+          retention-days: 30
