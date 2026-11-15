@@ -3,9 +3,14 @@
 
 Everything between the PRICES:START and PRICES:END markers is replaced.
 Text outside the markers is left alone. Uses only the standard library.
+
+prices.csv columns:
+    date,category,item,spec,store,condition,price_usd,basis,source_date,url
+category is one of ssd, ram, nvidia_gpu, amd_gpu, egpu.
 """
 import csv
 import math
+import re
 import sys
 from collections import defaultdict
 from pathlib import Path
@@ -16,8 +21,22 @@ README_PATH = ROOT / "README.md"
 START = "<!-- PRICES:START -->"
 END = "<!-- PRICES:END -->"
 
-DEAL_PRICE = 450.0
-DEAL_DROP = 0.10
+DEAL_PRICE = 450.0      # ssd only: new 4TB TLC at or below this price
+DEAL_DROP = 0.10        # any category: at least 10% below the previous price
+ATL_MIN_DAYS = 7        # any category: all-time-low rule needs this many days of history
+
+# category -> (section heading, singular noun used in sentences)
+CATEGORIES = {
+    "ssd": ("SSDs", "SSD"),
+    "ram": ("RAM", "64GB DDR5 SO-DIMM"),
+    "nvidia_gpu": ("NVIDIA GPUs", "NVIDIA GPU"),
+    "amd_gpu": ("AMD GPUs", "AMD GPU"),
+    "egpu": ("eGPUs", "eGPU"),
+}
+
+
+def cat_names(cat):
+    return CATEGORIES.get(cat, (cat, cat))
 
 
 def load_rows():
@@ -28,8 +47,11 @@ def load_rows():
         for r in csv.DictReader(f):
             try:
                 r["price"] = float(r["price_usd"])
-            except (KeyError, ValueError):
+            except (KeyError, TypeError, ValueError):
                 continue
+            for k in ("date", "category", "item", "spec", "store", "condition", "basis", "url"):
+                r[k] = (r.get(k) or "").strip()
+            r["category"] = r["category"].lower()
             rows.append(r)
     return rows
 
@@ -42,12 +64,25 @@ def esc(s):
     return (s or "").replace("|", "\\|")
 
 
-def is_tlc(flash):
-    return (flash or "").strip().upper().startswith("TLC")
+def is_tlc(spec):
+    return re.search(r"\bTLC\b", spec or "", re.IGNORECASE) is not None
+
+
+def capacity_tb(spec):
+    """Capacity in TB parsed from the spec text (e.g. '4TB TLC', '2 TB'), or 0."""
+    m = re.search(r"(\d+(?:\.\d+)?)\s*TB\b", spec or "", re.IGNORECASE)
+    if m:
+        return float(m.group(1))
+    m = re.search(r"(\d+(?:\.\d+)?)\s*GB\b", spec or "", re.IGNORECASE)
+    return float(m.group(1)) / 1000 if m else 0.0
+
+
+def is_4tb_ssd(r):
+    return r["category"] == "ssd" and capacity_tb(r["spec"]) >= 4
 
 
 def series_key(r):
-    return (r["drive"], r["store"], r["condition"])
+    return (r["category"], r["item"], r["store"], r["condition"])
 
 
 def mermaid_label(s):
@@ -62,133 +97,155 @@ def axis_range(values):
     return lo, hi
 
 
-def build(rows):
-    if not rows:
-        return "_No prices logged yet._"
+def category_order(rows):
+    seen = {r["category"] for r in rows}
+    known = [c for c in CATEGORIES if c in seen]
+    return known + sorted(seen - set(CATEGORIES))
 
-    latest_date = max(r["date"] for r in rows)
 
-    # Full history per (drive, store, condition), in file order.
+def deal_reasons(cur, prev, earlier_item_prices, history_days):
+    """Why the latest row of a series is a DEAL (empty list = not a deal)."""
+    reasons = []
+    if (cur["category"] == "ssd" and cur["condition"] == "new" and is_tlc(cur["spec"])
+            and capacity_tb(cur["spec"]) >= 4 and cur["price"] <= DEAL_PRICE):
+        reasons.append(f"4TB TLC ≤ {money(DEAL_PRICE)}")
+    if prev is not None and cur["price"] <= prev["price"] * (1 - DEAL_DROP):
+        reasons.append(f"≥{DEAL_DROP:.0%} drop")
+    if (history_days >= ATL_MIN_DAYS and earlier_item_prices
+            and cur["price"] < min(earlier_item_prices)):
+        reasons.append("all-time low")
+    return reasons
+
+
+def analyse(rows):
+    """Latest row per series with its previous row, change and DEAL reasons."""
+    all_days = sorted({r["date"] for r in rows})
+
     history = defaultdict(list)
     for r in rows:
         history[series_key(r)].append(r)
+    for hist in history.values():
+        hist.sort(key=lambda r: r["date"])  # stable: keeps file order within a day
 
-    # Latest row of each series, with change vs the previous row of that series.
     latest = []
     for key, hist in history.items():
         cur = hist[-1]
         prev = hist[-2] if len(hist) > 1 else None
         change = None if prev is None else cur["price"] - prev["price"]
-        deal = (
-            cur["condition"] == "new"
-            and is_tlc(cur["flash"])
-            and float(cur.get("capacity_tb") or 0) >= 4
-            and cur["price"] <= DEAL_PRICE
-        ) or (prev is not None and cur["price"] <= prev["price"] * (1 - DEAL_DROP))
-        latest.append((cur, prev, change, deal))
-    latest.sort(key=lambda t: t[0]["price"])
+        # Earlier prices for the same item and condition, at any store.
+        earlier = [r["price"] for r in rows
+                   if r is not cur and r["category"] == cur["category"]
+                   and r["item"] == cur["item"] and r["condition"] == cur["condition"]
+                   and r["date"] < cur["date"]]
+        # Days of history in prices.csv as of this row's date.
+        history_days = sum(1 for d in all_days if d <= cur["date"])
+        reasons = deal_reasons(cur, prev, earlier, history_days)
+        latest.append({"row": cur, "prev": prev, "change": change, "deal": reasons})
+    latest.sort(key=lambda t: (t["row"]["category"], t["row"]["price"]))
+    return history, latest
 
-    new_today = [t for t in latest if t[0]["date"] == latest_date and t[0]["condition"] == "new"
-                 and float(t[0].get("capacity_tb") or 0) >= 4]
-    tlc_today = [t for t in new_today if is_tlc(t[0]["flash"])]
-    best = (tlc_today or new_today or [None])[0]
 
-    out = []
-    out.append(f"**Last check:** {latest_date} &nbsp;·&nbsp; "
-               f"**Prices logged:** {len(rows)} &nbsp;·&nbsp; "
-               f"**Drives tracked with prices:** {len({r['drive'] for r in rows})}")
+def chart(out, heading, title, labels, values, kind):
+    lo, hi = axis_range(values)
+    out.append(f"#### {heading}")
     out.append("")
-    if best:
-        b = best[0]
-        out.append(f"> **Cheapest new 4TB {'TLC ' if tlc_today else ''}drive on {latest_date}:** "
-                   f"{esc(b['drive'])} at **{money(b['price'])}** ({esc(b['store'])}) — "
+    out.append("```mermaid")
+    out.append("xychart-beta")
+    out.append(f"    title {mermaid_label(title)}")
+    out.append("    x-axis [" + ", ".join(mermaid_label(l) for l in labels) + "]")
+    out.append(f'    y-axis "USD" {lo} --> {hi}')
+    data = ", ".join(f"{v:.2f}" for v in values)
+    if kind == "line":
+        out.append(f"    line [{data}]")
+        if len(values) == 1:
+            out.append(f"    bar [{data}]")
+    else:
+        out.append(f"    bar [{data}]")
+    out.append("```")
+    out.append("")
+
+
+def build_category(out, cat, rows, history, latest, latest_date):
+    name, noun = cat_names(cat)
+    cat_rows = [r for r in rows if r["category"] == cat]
+    cat_latest = [t for t in latest if t["row"]["category"] == cat]
+    ssd = cat == "ssd"
+
+    out.append(f"### {name}")
+    out.append("")
+
+    # Callout: cheapest new price on the latest check (4TB, preferring TLC, for SSDs).
+    today_new = [t["row"] for t in cat_latest
+                 if t["row"]["date"] == latest_date and t["row"]["condition"] == "new"
+                 and (not ssd or is_4tb_ssd(t["row"]))]
+    tlc_today = [r for r in today_new if is_tlc(r["spec"])] if ssd else []
+    pool = tlc_today or today_new
+    what = ("new 4TB " + ("TLC " if tlc_today else "") + "SSD") if ssd else f"new {noun}"
+    if pool:
+        b = min(pool, key=lambda r: r["price"])
+        out.append(f"> **Cheapest {what} on {latest_date}:** {esc(b['item'])} "
+                   f"({esc(b['spec'])}) at **{money(b['price'])}** ({esc(b['store'])}) — "
                    f"[source]({b['url']})")
     else:
-        out.append(f"> No new 4TB price was found on {latest_date}.")
-    deals = [t for t in latest if t[3] and t[0]["date"] == latest_date]
-    out.append(">")
-    out.append("> " + ("🔥 **DEAL:** " + ", ".join(
-        f"{esc(t[0]['drive'])} {money(t[0]['price'])} at {esc(t[0]['store'])}" for t in deals)
-        if deals else "No DEAL flags on the latest check."))
+        out.append(f"> No new {'4TB SSD' if ssd else noun} price was found on {latest_date}.")
     out.append("")
 
-    # Chart: cheapest new 4TB price per day.
+    # Chart: cheapest new price per day.
     by_day = defaultdict(list)
-    for r in rows:
-        if r["condition"] == "new" and float(r.get("capacity_tb") or 0) >= 4:
+    for r in cat_rows:
+        if r["condition"] == "new" and (not ssd or is_4tb_ssd(r)):
             by_day[r["date"]].append(r["price"])
     days = sorted(by_day)[-60:]
     if days:
-        vals = [min(by_day[d]) for d in days]
-        lo, hi = axis_range(vals)
-        out.append("### Cheapest new 4TB price over time")
-        out.append("")
-        out.append("```mermaid")
-        out.append("xychart-beta")
-        out.append('    title "Lowest new 4TB price per day (USD)"')
-        out.append("    x-axis [" + ", ".join(mermaid_label(d[5:]) for d in days) + "]")
-        out.append(f'    y-axis "USD" {lo} --> {hi}')
-        out.append("    line [" + ", ".join(f"{v:.2f}" for v in vals) + "]")
-        if len(days) == 1:
-            out.append("    bar [" + ", ".join(f"{v:.2f}" for v in vals) + "]")
-        out.append("```")
-        out.append("")
+        label = "new 4TB SSD" if ssd else f"new {noun}"
+        chart(out, f"Cheapest {label} price over time",
+              f"Lowest {label} price per day (USD)",
+              [d[5:] for d in days], [min(by_day[d]) for d in days], "line")
 
-    # Chart: latest price per drive (new, cheapest store).
-    best_per_drive = {}
-    for cur, _, _, _ in latest:
-        if cur["condition"] != "new" or float(cur.get("capacity_tb") or 0) < 4:
+    # Chart: latest price per item (new, cheapest store).
+    best_per_item = {}
+    for t in cat_latest:
+        cur = t["row"]
+        if cur["condition"] != "new" or (ssd and not is_4tb_ssd(cur)):
             continue
-        d = cur["drive"]
-        if d not in best_per_drive or cur["price"] < best_per_drive[d]["price"]:
-            best_per_drive[d] = cur
-    if best_per_drive:
-        items = sorted(best_per_drive.values(), key=lambda r: r["price"])
-        lo, hi = axis_range([r["price"] for r in items])
-        out.append("### Latest 4TB price by drive (new, cheapest store)")
-        out.append("")
-        out.append("```mermaid")
-        out.append("xychart-beta")
-        out.append('    title "Most recent logged price (USD)"')
-        out.append("    x-axis [" + ", ".join(mermaid_label(r["drive"]) for r in items) + "]")
-        out.append(f'    y-axis "USD" {lo} --> {hi}')
-        out.append("    bar [" + ", ".join(f"{r['price']:.2f}" for r in items) + "]")
-        out.append("```")
-        out.append("")
+        if cur["item"] not in best_per_item or cur["price"] < best_per_item[cur["item"]]["price"]:
+            best_per_item[cur["item"]] = cur
+    if best_per_item:
+        items = sorted(best_per_item.values(), key=lambda r: r["price"])
+        chart(out, "Latest price by item (new, cheapest store)",
+              "Most recent logged price (USD)",
+              [r["item"] for r in items], [r["price"] for r in items], "bar")
 
-    # Table: latest price for every drive/store/condition.
-    out.append("### Latest prices")
+    # Table: latest price for every item/store/condition.
+    out.append("#### Latest prices")
     out.append("")
-    out.append("| Drive | Flash | Store | Condition | Price | Change | As of | Basis | Link |")
+    out.append("| Item | Spec | Store | Condition | Price | Change | As of | Basis | Link |")
     out.append("|---|---|---|---|--:|--:|---|---|---|")
-    for cur, prev, change, deal in latest:
+    for t in cat_latest:
+        cur, change = t["row"], t["change"]
         if change is None:
             ch = "new"
         elif abs(change) < 0.005:
             ch = "—"
         else:
-            arrow = "🔻" if change < 0 else "🔺"
-            ch = f"{arrow} {money(abs(change))}"
-        price = money(cur["price"]) + (" 🔥" if deal else "")
+            ch = f"{'🔻' if change < 0 else '🔺'} {money(abs(change))}"
+        price = money(cur["price"]) + (" 🔥" if t["deal"] else "")
         out.append(
-            f"| {esc(cur['drive'])} | {esc(cur['flash'])} | {esc(cur['store'])} | "
+            f"| {esc(cur['item'])} | {esc(cur['spec'])} | {esc(cur['store'])} | "
             f"{esc(cur['condition'])} | **{price}** | {ch} | {cur['date']} | "
             f"{esc(cur['basis'])} | [link]({cur['url']}) |"
         )
     out.append("")
-    out.append("🔥 = DEAL (new 4TB TLC at $450 or less, or at least 10% below its previous price). "
-               "Change is against the previous logged price for the same drive, store and condition.")
-    out.append("")
 
-    # Collapsible full history per drive.
+    # Collapsible full history per item.
     out.append("<details>")
-    out.append("<summary><b>Price history by drive</b></summary>")
+    out.append(f"<summary><b>{esc(name)}: price history</b></summary>")
     out.append("")
-    for key in sorted(history, key=lambda k: (k[0], k[1], k[2])):
-        drive, store, cond = key
+    for key in sorted(k for k in history if k[0] == cat):
+        _, item, store, cond = key
         hist = history[key]
         prices = [r["price"] for r in hist]
-        out.append(f"#### {esc(drive)} — {esc(store)} ({esc(cond)})")
+        out.append(f"##### {esc(item)} — {esc(store)} ({esc(cond)})")
         out.append(f"Low {money(min(prices))} · High {money(max(prices))} · {len(hist)} entr"
                    f"{'y' if len(hist) == 1 else 'ies'}")
         out.append("")
@@ -198,6 +255,51 @@ def build(rows):
             out.append(f"| {r['date']} | [{money(r['price'])}]({r['url']}) | {esc(r['basis'])} |")
         out.append("")
     out.append("</details>")
+    out.append("")
+
+
+def build(rows):
+    if not rows:
+        return "_No prices logged yet._"
+
+    latest_date = max(r["date"] for r in rows)
+    history, latest = analyse(rows)
+    cats = category_order(rows)
+
+    out = []
+    out.append(f"**Last check:** {latest_date} &nbsp;·&nbsp; "
+               f"**Prices logged:** {len(rows)} &nbsp;·&nbsp; "
+               f"**Items tracked with prices:** "
+               f"{len({(r['category'], r['item']) for r in rows})} "
+               f"across {len(cats)} categor{'y' if len(cats) == 1 else 'ies'}")
+    out.append("")
+    deals = [t for t in latest if t["deal"] and t["row"]["date"] == latest_date]
+    out.append("> " + ("🔥 **DEAL:** " + "; ".join(
+        f"{esc(t['row']['item'])} {money(t['row']['price'])} at {esc(t['row']['store'])} "
+        f"({', '.join(t['deal'])})" for t in deals)
+        if deals else "No DEAL flags on the latest check."))
+    out.append("")
+    out.append("| Category | Latest-check rows | Cheapest new on latest check |")
+    out.append("|---|--:|---|")
+    for cat in cats:
+        todays = [r for r in rows if r["category"] == cat and r["date"] == latest_date]
+        new = [r for r in todays if r["condition"] == "new"
+               and (cat != "ssd" or is_4tb_ssd(r))]
+        cheapest = min(new, key=lambda r: r["price"]) if new else None
+        out.append(f"| {esc(cat_names(cat)[0])} | {len(todays)} | "
+                   + (f"{esc(cheapest['item'])} — {money(cheapest['price'])} "
+                      f"({esc(cheapest['store'])})" if cheapest else "—") + " |")
+    out.append("")
+
+    for cat in cats:
+        build_category(out, cat, rows, history, latest, latest_date)
+
+    out.append(f"🔥 = DEAL: a new 4TB TLC SSD at {money(DEAL_PRICE)} or less (SSDs only); "
+               f"or, in any category, a price at least {DEAL_DROP:.0%} below the previous "
+               f"logged price for the same item, store and condition, or strictly below every "
+               f"earlier price for that item and condition once prices.csv has at least "
+               f"{ATL_MIN_DAYS} days of history. Change is against the previous logged price "
+               f"for the same item, store and condition.")
     out.append("")
     out.append(f"<sub>Generated from [`prices.csv`](prices.csv) by "
                f"[`scripts/build_readme.py`](scripts/build_readme.py). "
