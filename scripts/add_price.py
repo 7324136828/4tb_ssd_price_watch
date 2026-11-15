@@ -2,7 +2,7 @@
 """Append one hand-checked price to prices.csv, with the same checks as the tracker.
 
 Use it for prices the automatic tracker cannot log: RTX 4090 / 3090 / 3090 Ti
-and RX 7900 XT (not covered by the source), verified eBay used listings, RAM,
+and RX 7900 XT (not covered by the source), eBay listings, RAM,
 SSDs and eGPUs.
 
 Examples:
@@ -12,7 +12,7 @@ Examples:
         Newegg new 649.99 "https://www.newegg.com/p/..." --basis "reported (9to5Toys)"
 
 Rows with the wrong category/condition, a store that is not approved, or a
-source_date outside the 2-day window are refused. A row already logged today
+source_date after the run date are refused. Prices of any age are accepted. A row already logged today
 for the same item, store and condition is skipped.
 """
 import argparse

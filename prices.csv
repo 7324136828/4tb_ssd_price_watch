@@ -25,3 +25,11 @@ date,category,item,spec,store,condition,price_usd,basis,source_date,url
 2026-11-15,ssd,Crucial T500,4TB TLC,Amazon,new,869.00,reported (cheapestssd.com),2026-11-14,https://cheapestssd.com/4tb-nvme-ssd/
 2026-11-15,nvidia_gpu,RTX 5090 (ASUS TUF Gaming OC),32GB GDDR7,Amazon,new,7450.00,reported (videocardprices.com),2026-11-13,https://videocardprices.com/card/nvidia-rtx-5090/
 2026-11-15,amd_gpu,RX 9070 XT (GIGABYTE Gaming OC),16GB GDDR6,Amazon,new,1034.99,reported (videocardprices.com),2026-11-14,https://videocardprices.com/card/amd-rx-9070-xt/
+2026-11-15,nvidia_gpu,RTX 5090 (ASUS ROG Astral OC),32GB GDDR7,eBay,used,5999.00,reported (videocardprices.com),2026-11-14,https://www.ebay.com/itm/880090793238
+2026-11-15,nvidia_gpu,RTX 5090 (ASUS ROG Astral OC),32GB GDDR7,Newegg,new,6249.99,reported (videocardprices.com),2026-11-14,https://www.newegg.com/asus-rog-astral-rog-astral-rtx5090-o32g-gaming-geforce-rtx-5090-32gb-graphics-card-triple-fans/p/N82E16814126751?item=N82E16814126751
+2026-11-15,amd_gpu,RX 9070 XT (PowerColor OC),16GB GDDR6,eBay,used,899.00,reported (videocardprices.com),2026-11-14,https://www.ebay.com/itm/168853292500
+2026-11-15,amd_gpu,RX 9070 XT (ASRock Challenger),16GB GDDR6,Newegg,new,949.99,reported (videocardprices.com),2026-11-14,https://www.newegg.com/asrock-challenger-rx9070xt-cl-16g-radeon-rx-9070-xt-16gb-graphics-card-triple-fans/p/N82E16814930145?item=N82E16814930145
+2026-11-15,amd_gpu,RX 9070 (XFX Swift OC Triple Fan),16GB GDDR6,Amazon,new,879.99,reported (videocardprices.com),2026-11-11,https://www.amazon.com/dp/B0DXLBTL4B
+2026-11-15,amd_gpu,RX 9070 (ASRock Steel Legend),16GB GDDR6,eBay,used,848.99,reported (videocardprices.com),2026-11-14,https://www.ebay.com/itm/327453479284
+2026-11-15,amd_gpu,RX 9070 (GIGABYTE Gaming),16GB GDDR6,Newegg,new,934.99,reported (videocardprices.com),2026-11-14,https://www.newegg.com/gigabyte-gv-r9070gaming-oc-16gd-radeon-rx-9070-16gb-graphics-card-triple-fans/p/N82E16814932752?item=N82E16814932752
+2026-11-15,amd_gpu,RX 7900 XTX (ASRock Phantom Gaming OC),24GB GDDR6,Amazon,new,1099.99,reported (videocardprices.com),2026-11-12,https://www.amazon.com/dp/B0BTPK5J68

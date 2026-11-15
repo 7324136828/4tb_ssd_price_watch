@@ -4,8 +4,8 @@ Used by scripts/track_gpus.py and scripts/add_price.py. Standard library only.
 
 The rules mirror claude.md:
   * 10-column schema, lowercase condition, numeric price, ISO dates.
-  * A price may only be logged when its source_date is within
-    WINDOW_DAYS calendar days of the run date (and not in the future).
+  * A price of any age may be logged; source_date only has to be a real
+    date that is not after the run date.
   * One row per (date, category, item, store, condition); repeated runs on
     the same day never duplicate a row.
 """
@@ -22,17 +22,14 @@ CATEGORIES = ("ssd", "ram", "nvidia_gpu", "amd_gpu", "egpu")
 CONDITIONS = ("new", "used", "refurbished")
 APPROVED_STORES = ("Amazon", "eBay", "Newegg", "Best Buy", "Walmart",
                    "B&H Photo", "Micro Center")
-WINDOW_DAYS = 2
-
 
 def parse_date(value):
     return dt.date.fromisoformat(str(value).strip())
 
 
-def within_window(source_date, run_date, days=WINDOW_DAYS):
-    """True when run_date - days <= source_date <= run_date."""
-    s, r = parse_date(source_date), parse_date(run_date)
-    return r - dt.timedelta(days=days) <= s <= r
+def not_in_future(source_date, run_date):
+    """True when source_date <= run_date (there is no lower age limit)."""
+    return parse_date(source_date) <= parse_date(run_date)
 
 
 def dedupe_key(row):
@@ -67,9 +64,8 @@ def validate_row(row, run_date=None):
     try:
         parse_date(row["date"])
         parse_date(row["source_date"])
-        if not within_window(row["source_date"], run_date or row["date"]):
-            problems.append(f"source_date {row['source_date']} is outside the "
-                            f"{WINDOW_DAYS}-day window for run date "
+        if not not_in_future(row["source_date"], run_date or row["date"]):
+            problems.append(f"source_date {row['source_date']} is after run date "
                             f"{run_date or row['date']}")
     except ValueError:
         problems.append("date and source_date must be YYYY-MM-DD")
