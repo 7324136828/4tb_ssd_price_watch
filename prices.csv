@@ -1,3 +1,5 @@
-date,drive,capacity_tb,flash,store,condition,price_usd,basis,source_date,url
-2026-11-14,Silicon Power UD90,4,TLC (some batches reported QLC),Amazon,new,474.97,reported (PC Gamer),2026-11-13,https://www.pcgamer.com/best-ssd-deals-today/
-2026-11-14,TeamGroup MP44Q,4,QLC,Amazon,new,499.99,reported (PC Gamer),2026-11-13,https://www.pcgamer.com/best-ssd-deals-today/
+date,category,item,spec,store,condition,price_usd,basis,source_date,url
+2026-11-14,ssd,Silicon Power UD90,4TB TLC (some batches reported QLC),Amazon,new,474.97,reported (PC Gamer),2026-11-13,https://www.pcgamer.com/best-ssd-deals-today/
+2026-11-14,ssd,TeamGroup MP44Q,4TB QLC,Amazon,new,499.99,reported (PC Gamer),2026-11-13,https://www.pcgamer.com/best-ssd-deals-today/
+2026-11-14,ssd,Samsung 990 EVO Plus,"4TB, flash type not confirmed",B&H Photo,new,649.99,reported (9to5Toys),2026-11-14,https://9to5toys.com/2026/11/14/this-weeks-pc-deals-and-news/
+2026-11-14,nvidia_gpu,RTX 5090 (ASUS TUF Gaming OC),32GB GDDR7,Amazon,new,7450.00,reported (videocardprices.com),2026-11-13,https://videocardprices.com/card/nvidia-rtx-5090/
