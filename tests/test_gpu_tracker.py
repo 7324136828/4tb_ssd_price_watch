@@ -92,6 +92,42 @@ class ParsingTests(unittest.TestCase):
         self.assertIsNone(track_gpus.iso_date(None))
 
 
+FALLBACK_PAGE = """
+<div class="buy-now-buttons"><a href="https://www.amazon.com/dp/B0TEST?tag=x&amp;th=1" class="buy-now-btn amazon" target="_blank">
+ <span class="retailer-name">Amazon</span> <span class="price">$5,500</span> </a><a href="https://www.ebay.com/itm/123?mkcid=1&amp;campid=2" class="buy-now-btn ebay" target="_blank">
+ <span class="retailer-name">Ebay</span> <span class="price">$1,300</span> </a></div>
+<a href="https://www.amazon.com/dp/OTHER" class="header-price-button amazon"><span class="price">$7,499</span></a>
+<p class="date-generated">Date Generated: Sun Nov 15 2026 03:10:36 GMT+0000 (Coordinated Universal Time)</p>
+"""
+
+
+class FallbackTests(unittest.TestCase):
+    def test_slug(self):
+        self.assertEqual(track_gpus.fallback_slug("RTX 3090 Ti"), "rtx-3090-ti")
+        self.assertEqual(track_gpus.fallback_slug("RX 7900 XT"), "rx-7900-xt")
+
+    def test_parse_and_evaluate(self):
+        listings, page_date = track_gpus.parse_fallback_page(FALLBACK_PAGE)
+        self.assertEqual(page_date, "2026-11-15")
+        self.assertEqual(listings, [
+            {"source": "amazon", "url": "https://www.amazon.com/dp/B0TEST", "price": 5500.0},
+            {"source": "ebay", "url": "https://www.ebay.com/itm/123", "price": 1300.0},
+        ])
+        rows, skipped = track_gpus.evaluate_fallback(
+            listings, page_date, "RTX 4090", "nvidia_gpu", "24GB GDDR6X", "2026-11-15")
+        self.assertEqual(skipped, [])
+        self.assertEqual([(r["item"], r["store"], r["condition"], r["price_usd"]) for r in rows], [
+            ("RTX 4090", "Amazon", "new", "5500.00"),
+            ("RTX 4090", "eBay", "used", "1300.00"),
+        ])
+        for r in rows:
+            self.assertEqual(r["basis"], "reported (gpudeals.net)")
+            self.assertEqual(price_log.validate_row(r, "2026-11-15"), [])
+
+    def test_empty_page(self):
+        self.assertEqual(track_gpus.parse_fallback_page("<html></html>"), ([], None))
+
+
 class EvaluateTests(unittest.TestCase):
     def evaluate(self, run_date="2026-11-15", card=CARD):
         return track_gpus.evaluate(card, "RX 9070 XT", "amd_gpu", "16GB GDDR6", run_date,

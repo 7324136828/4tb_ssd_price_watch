@@ -38,7 +38,7 @@ python3 scripts/track_gpus.py            # dry run: show what would be logged
 python3 scripts/track_gpus.py --write    # append new rows to prices.csv
 ```
 
-The source doesn't cover the RTX 4090, 3090 Ti, 3090 or RX 7900 XT, and the tracker lists them as "check by hand". Log those prices with [`scripts/add_price.py`](scripts/add_price.py). It applies the same rules:
+videocardprices.com doesn't cover the RTX 4090, 3090 Ti, 3090 or RX 7900 XT, so the tracker reads those from [gpudeals.net](https://gpudeals.net/) instead. That site shows one Amazon and one eBay price per model, in whole dollars, with no board name or condition; the tracker logs the Amazon price as new and the eBay price as used under the bare model name. Log any other price by hand with [`scripts/add_price.py`](scripts/add_price.py). It applies the same rules:
 
 ```bash
 python3 scripts/add_price.py nvidia_gpu "RTX 4090 (MSI Gaming X Trio)" "24GB GDDR6X" eBay used 1899.00 "https://www.ebay.com/itm/..."
@@ -49,15 +49,15 @@ Run the tests with `python3 -m unittest discover tests`.
 ## Dashboard
 
 <!-- PRICES:START -->
-**Last check:** 2026-11-15 &nbsp;·&nbsp; **Prices logged:** 34 &nbsp;·&nbsp; **Items tracked with prices:** 20 across 3 categories
+**Last check:** 2026-11-15 &nbsp;·&nbsp; **Prices logged:** 42 &nbsp;·&nbsp; **Items tracked with prices:** 24 across 3 categories
 
 > No DEAL flags on the latest check.
 
 | Category | Latest-check rows | Cheapest new on latest check |
 |---|--:|---|
 | SSDs | 12 | Silicon Power UD90 — $475.00 (Newegg) |
-| NVIDIA GPUs | 3 | RTX 5090 (ASUS ROG Astral OC) — $6,249.99 (Newegg) |
-| AMD GPUs | 7 | RX 9070 (XFX Swift OC Triple Fan) — $879.99 (Amazon) |
+| NVIDIA GPUs | 9 | RTX 3090 Ti — $2,150.00 (Amazon) |
+| AMD GPUs | 9 | RX 9070 (XFX Swift OC Triple Fan) — $879.99 (Amazon) |
 
 ### SSDs
 
@@ -200,16 +200,16 @@ Low $529.99 · High $529.99 · 1 entry
 
 ### NVIDIA GPUs
 
-> **Cheapest new NVIDIA GPU on 2026-11-15:** RTX 5090 (ASUS ROG Astral OC) (32GB GDDR7) at **$6,249.99** (Newegg) — [source](https://www.newegg.com/asus-rog-astral-rog-astral-rtx5090-o32g-gaming-geforce-rtx-5090-32gb-graphics-card-triple-fans/p/N82E16814126751?item=N82E16814126751)
+> **Cheapest new NVIDIA GPU on 2026-11-15:** RTX 3090 Ti (24GB GDDR6X) at **$2,150.00** (Amazon) — [source](https://www.amazon.com/dp/B0BKH8HDWK)
 
 #### Cheapest by model
 
 | Model | Cheapest new | Cheapest used / refurbished |
 |---|---|---|
 | RTX 5090 | [$6,249.99](https://www.newegg.com/asus-rog-astral-rog-astral-rtx5090-o32g-gaming-geforce-rtx-5090-32gb-graphics-card-triple-fans/p/N82E16814126751?item=N82E16814126751) Newegg, 2026-11-15 | [$5,999.00](https://www.ebay.com/itm/880090793238) eBay, 2026-11-15 |
-| RTX 4090 | — | — |
-| RTX 3090 Ti | — | — |
-| RTX 3090 | — | [$1,799.22](https://camelcamelcamel.com/product/B08HR6ZBYJ) Amazon (third-party seller), 2026-11-14 |
+| RTX 4090 | [$5,500.00](https://www.amazon.com/dp/B0BJFRT43X) Amazon, 2026-11-15 | [$1,300.00](https://www.ebay.com/itm/366745135471) eBay, 2026-11-15 |
+| RTX 3090 Ti | [$2,150.00](https://www.amazon.com/dp/B0BKH8HDWK) Amazon, 2026-11-15 | [$1,895.00](https://www.ebay.com/itm/366810925420) eBay, 2026-11-15 |
+| RTX 3090 | [$2,450.00](https://www.amazon.com/dp/B09GWB753L) Amazon, 2026-11-15 | [$1,500.00](https://www.ebay.com/itm/287671509732) eBay, 2026-11-15 |
 
 <sub>Uses the most recent logged price for each item, store and condition.</sub>
 
@@ -218,9 +218,9 @@ Low $529.99 · High $529.99 · 1 entry
 ```mermaid
 xychart-beta
     title "Most recent logged new price (USD)"
-    x-axis ["RTX 5090"]
-    y-axis "USD" 6230 --> 6260
-    bar [6249.99]
+    x-axis ["RTX 5090", "RTX 4090", "RTX 3090 Ti", "RTX 3090"]
+    y-axis "USD" 1530 --> 6870
+    bar [6249.99, 5500.00, 2150.00, 2450.00]
 ```
 
 <details>
@@ -236,6 +236,39 @@ xychart-beta
     line [7450.00, 6249.99]
 ```
 
+#### RTX 4090: cheapest new price over time
+
+```mermaid
+xychart-beta
+    title "Lowest new RTX 4090 price per day (USD)"
+    x-axis ["11-15"]
+    y-axis "USD" 5490 --> 5510
+    line [5500.00]
+    bar [5500.00]
+```
+
+#### RTX 3090 Ti: cheapest new price over time
+
+```mermaid
+xychart-beta
+    title "Lowest new RTX 3090 Ti price per day (USD)"
+    x-axis ["11-15"]
+    y-axis "USD" 2140 --> 2160
+    line [2150.00]
+    bar [2150.00]
+```
+
+#### RTX 3090: cheapest new price over time
+
+```mermaid
+xychart-beta
+    title "Lowest new RTX 3090 price per day (USD)"
+    x-axis ["11-15"]
+    y-axis "USD" 2440 --> 2460
+    line [2450.00]
+    bar [2450.00]
+```
+
 </details>
 
 #### Latest prices
@@ -245,10 +278,30 @@ xychart-beta
 | RTX 5090 | RTX 5090 (ASUS ROG Astral OC) | 32GB GDDR7 | eBay | used | **$5,999.00** | new | 2026-11-15 | reported (videocardprices.com) | [link](https://www.ebay.com/itm/880090793238) |
 | RTX 5090 | RTX 5090 (ASUS ROG Astral OC) | 32GB GDDR7 | Newegg | new | **$6,249.99** | new | 2026-11-15 | reported (videocardprices.com) | [link](https://www.newegg.com/asus-rog-astral-rog-astral-rtx5090-o32g-gaming-geforce-rtx-5090-32gb-graphics-card-triple-fans/p/N82E16814126751?item=N82E16814126751) |
 | RTX 5090 | RTX 5090 (ASUS TUF Gaming OC) | 32GB GDDR7 | Amazon | new | **$7,450.00** | — | 2026-11-15 | reported (videocardprices.com) | [link](https://videocardprices.com/card/nvidia-rtx-5090/) |
+| RTX 4090 | RTX 4090 | 24GB GDDR6X | eBay | used | **$1,300.00** | new | 2026-11-15 | reported (gpudeals.net) | [link](https://www.ebay.com/itm/366745135471) |
+| RTX 4090 | RTX 4090 | 24GB GDDR6X | Amazon | new | **$5,500.00** | new | 2026-11-15 | reported (gpudeals.net) | [link](https://www.amazon.com/dp/B0BJFRT43X) |
+| RTX 3090 Ti | RTX 3090 Ti | 24GB GDDR6X | eBay | used | **$1,895.00** | new | 2026-11-15 | reported (gpudeals.net) | [link](https://www.ebay.com/itm/366810925420) |
+| RTX 3090 Ti | RTX 3090 Ti | 24GB GDDR6X | Amazon | new | **$2,150.00** | new | 2026-11-15 | reported (gpudeals.net) | [link](https://www.amazon.com/dp/B0BKH8HDWK) |
+| RTX 3090 | RTX 3090 | 24GB GDDR6X | eBay | used | **$1,500.00** | new | 2026-11-15 | reported (gpudeals.net) | [link](https://www.ebay.com/itm/287671509732) |
 | RTX 3090 | RTX 3090 (NVIDIA Founders Edition) | 24GB GDDR6X | Amazon (third-party seller) | used | **$1,799.22** | new | 2026-11-14 | reported (camelcamelcamel) | [link](https://camelcamelcamel.com/product/B08HR6ZBYJ) |
+| RTX 3090 | RTX 3090 | 24GB GDDR6X | Amazon | new | **$2,450.00** | new | 2026-11-15 | reported (gpudeals.net) | [link](https://www.amazon.com/dp/B09GWB753L) |
 
 <details>
 <summary><b>NVIDIA GPUs: price history</b></summary>
+
+##### RTX 3090 — Amazon (new)
+Low $2,450.00 · High $2,450.00 · 1 entry
+
+| Date | Price | Basis |
+|---|--:|---|
+| 2026-11-15 | [$2,450.00](https://www.amazon.com/dp/B09GWB753L) | reported (gpudeals.net) |
+
+##### RTX 3090 — eBay (used)
+Low $1,500.00 · High $1,500.00 · 1 entry
+
+| Date | Price | Basis |
+|---|--:|---|
+| 2026-11-15 | [$1,500.00](https://www.ebay.com/itm/287671509732) | reported (gpudeals.net) |
 
 ##### RTX 3090 (NVIDIA Founders Edition) — Amazon (third-party seller) (used)
 Low $1,799.22 · High $1,799.22 · 1 entry
@@ -256,6 +309,34 @@ Low $1,799.22 · High $1,799.22 · 1 entry
 | Date | Price | Basis |
 |---|--:|---|
 | 2026-11-14 | [$1,799.22](https://camelcamelcamel.com/product/B08HR6ZBYJ) | reported (camelcamelcamel) |
+
+##### RTX 3090 Ti — Amazon (new)
+Low $2,150.00 · High $2,150.00 · 1 entry
+
+| Date | Price | Basis |
+|---|--:|---|
+| 2026-11-15 | [$2,150.00](https://www.amazon.com/dp/B0BKH8HDWK) | reported (gpudeals.net) |
+
+##### RTX 3090 Ti — eBay (used)
+Low $1,895.00 · High $1,895.00 · 1 entry
+
+| Date | Price | Basis |
+|---|--:|---|
+| 2026-11-15 | [$1,895.00](https://www.ebay.com/itm/366810925420) | reported (gpudeals.net) |
+
+##### RTX 4090 — Amazon (new)
+Low $5,500.00 · High $5,500.00 · 1 entry
+
+| Date | Price | Basis |
+|---|--:|---|
+| 2026-11-15 | [$5,500.00](https://www.amazon.com/dp/B0BJFRT43X) | reported (gpudeals.net) |
+
+##### RTX 4090 — eBay (used)
+Low $1,300.00 · High $1,300.00 · 1 entry
+
+| Date | Price | Basis |
+|---|--:|---|
+| 2026-11-15 | [$1,300.00](https://www.ebay.com/itm/366745135471) | reported (gpudeals.net) |
 
 ##### RTX 5090 (ASUS ROG Astral OC) — Newegg (new)
 Low $6,249.99 · High $6,249.99 · 1 entry
@@ -293,7 +374,7 @@ Low $7,450.00 · High $7,450.00 · 3 entries
 | RX 9070 XT | [$949.99](https://www.newegg.com/asrock-challenger-rx9070xt-cl-16g-radeon-rx-9070-xt-16gb-graphics-card-triple-fans/p/N82E16814930145?item=N82E16814930145) Newegg, 2026-11-15 | [$899.00](https://www.ebay.com/itm/168853292500) eBay, 2026-11-15 |
 | RX 9070 | [$879.99](https://www.amazon.com/dp/B0DXLBTL4B) Amazon, 2026-11-15 | [$848.99](https://www.ebay.com/itm/327453479284) eBay, 2026-11-15 |
 | RX 7900 XTX | [$1,099.99](https://www.amazon.com/dp/B0BTPK5J68) Amazon, 2026-11-15 | — |
-| RX 7900 XT | — | — |
+| RX 7900 XT | [$946.00](https://www.amazon.com/dp/B0BMNGT8XM) Amazon, 2026-11-15 | [$900.00](https://www.ebay.com/itm/960194484387) eBay, 2026-11-15 |
 
 <sub>Uses the most recent logged price for each item, store and condition.</sub>
 
@@ -302,9 +383,9 @@ Low $7,450.00 · High $7,450.00 · 3 entries
 ```mermaid
 xychart-beta
     title "Most recent logged new price (USD)"
-    x-axis ["RX 9070 XT", "RX 9070", "RX 7900 XTX"]
+    x-axis ["RX 9070 XT", "RX 9070", "RX 7900 XTX", "RX 7900 XT"]
     y-axis "USD" 840 --> 1140
-    bar [949.99, 879.99, 1099.99]
+    bar [949.99, 879.99, 1099.99, 946.00]
 ```
 
 <details>
@@ -343,6 +424,17 @@ xychart-beta
     bar [1099.99]
 ```
 
+#### RX 7900 XT: cheapest new price over time
+
+```mermaid
+xychart-beta
+    title "Lowest new RX 7900 XT price per day (USD)"
+    x-axis ["11-15"]
+    y-axis "USD" 930 --> 960
+    line [946.00]
+    bar [946.00]
+```
+
 </details>
 
 #### Latest prices
@@ -356,9 +448,25 @@ xychart-beta
 | RX 9070 | RX 9070 (XFX Swift OC Triple Fan) | 16GB GDDR6 | Amazon | new | **$879.99** | new | 2026-11-15 | reported (videocardprices.com) | [link](https://www.amazon.com/dp/B0DXLBTL4B) |
 | RX 9070 | RX 9070 (GIGABYTE Gaming) | 16GB GDDR6 | Newegg | new | **$934.99** | new | 2026-11-15 | reported (videocardprices.com) | [link](https://www.newegg.com/gigabyte-gv-r9070gaming-oc-16gd-radeon-rx-9070-16gb-graphics-card-triple-fans/p/N82E16814932752?item=N82E16814932752) |
 | RX 7900 XTX | RX 7900 XTX (ASRock Phantom Gaming OC) | 24GB GDDR6 | Amazon | new | **$1,099.99** | new | 2026-11-15 | reported (videocardprices.com) | [link](https://www.amazon.com/dp/B0BTPK5J68) |
+| RX 7900 XT | RX 7900 XT | 20GB GDDR6 | eBay | used | **$900.00** | new | 2026-11-15 | reported (gpudeals.net) | [link](https://www.ebay.com/itm/960194484387) |
+| RX 7900 XT | RX 7900 XT | 20GB GDDR6 | Amazon | new | **$946.00** | new | 2026-11-15 | reported (gpudeals.net) | [link](https://www.amazon.com/dp/B0BMNGT8XM) |
 
 <details>
 <summary><b>AMD GPUs: price history</b></summary>
+
+##### RX 7900 XT — Amazon (new)
+Low $946.00 · High $946.00 · 1 entry
+
+| Date | Price | Basis |
+|---|--:|---|
+| 2026-11-15 | [$946.00](https://www.amazon.com/dp/B0BMNGT8XM) | reported (gpudeals.net) |
+
+##### RX 7900 XT — eBay (used)
+Low $900.00 · High $900.00 · 1 entry
+
+| Date | Price | Basis |
+|---|--:|---|
+| 2026-11-15 | [$900.00](https://www.ebay.com/itm/960194484387) | reported (gpudeals.net) |
 
 ##### RX 7900 XTX (ASRock Phantom Gaming OC) — Amazon (new)
 Low $1,099.99 · High $1,099.99 · 1 entry

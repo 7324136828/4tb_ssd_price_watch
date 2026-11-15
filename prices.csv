@@ -33,3 +33,11 @@ date,category,item,spec,store,condition,price_usd,basis,source_date,url
 2026-11-15,amd_gpu,RX 9070 (ASRock Steel Legend),16GB GDDR6,eBay,used,848.99,reported (videocardprices.com),2026-11-14,https://www.ebay.com/itm/327453479284
 2026-11-15,amd_gpu,RX 9070 (GIGABYTE Gaming),16GB GDDR6,Newegg,new,934.99,reported (videocardprices.com),2026-11-14,https://www.newegg.com/gigabyte-gv-r9070gaming-oc-16gd-radeon-rx-9070-16gb-graphics-card-triple-fans/p/N82E16814932752?item=N82E16814932752
 2026-11-15,amd_gpu,RX 7900 XTX (ASRock Phantom Gaming OC),24GB GDDR6,Amazon,new,1099.99,reported (videocardprices.com),2026-11-12,https://www.amazon.com/dp/B0BTPK5J68
+2026-11-15,nvidia_gpu,RTX 4090,24GB GDDR6X,Amazon,new,5500.00,reported (gpudeals.net),2026-11-15,https://www.amazon.com/dp/B0BJFRT43X
+2026-11-15,nvidia_gpu,RTX 4090,24GB GDDR6X,eBay,used,1300.00,reported (gpudeals.net),2026-11-15,https://www.ebay.com/itm/366745135471
+2026-11-15,nvidia_gpu,RTX 3090 Ti,24GB GDDR6X,Amazon,new,2150.00,reported (gpudeals.net),2026-11-15,https://www.amazon.com/dp/B0BKH8HDWK
+2026-11-15,nvidia_gpu,RTX 3090 Ti,24GB GDDR6X,eBay,used,1895.00,reported (gpudeals.net),2026-11-15,https://www.ebay.com/itm/366810925420
+2026-11-15,nvidia_gpu,RTX 3090,24GB GDDR6X,Amazon,new,2450.00,reported (gpudeals.net),2026-11-15,https://www.amazon.com/dp/B09GWB753L
+2026-11-15,nvidia_gpu,RTX 3090,24GB GDDR6X,eBay,used,1500.00,reported (gpudeals.net),2026-11-15,https://www.ebay.com/itm/287671509732
+2026-11-15,amd_gpu,RX 7900 XT,20GB GDDR6,Amazon,new,946.00,reported (gpudeals.net),2026-11-15,https://www.amazon.com/dp/B0BMNGT8XM
+2026-11-15,amd_gpu,RX 7900 XT,20GB GDDR6,eBay,used,900.00,reported (gpudeals.net),2026-11-15,https://www.ebay.com/itm/960194484387

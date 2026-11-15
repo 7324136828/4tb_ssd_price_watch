@@ -32,6 +32,7 @@ A cloud routine runs daily at **9:00 AM Eastern** to track current US street pri
 ### (3) `nvidia_gpu` — High-VRAM Desktop NVIDIA GPUs
 * **Models:** GeForce RTX 5090 (32 GB), RTX 4090 (24 GB), RTX 3090 Ti (24 GB), RTX 3090 (24 GB).
 * **Tracking Target:** Log the **cheapest New** listing and the **cheapest Used/Refurbished** listing for each model.
+* **Sources:** `scripts/track_gpus.py --write` logs every GPU model in categories (3) and (4). It reads `videocardprices.com`, and falls back to `gpudeals.net` for the models that site lacks (RTX 4090, RTX 3090 Ti, RTX 3090, RX 7900 XT). `gpudeals.net` gives no board name or condition, so those rows use the bare model name as `item` (e.g., `RTX 4090`), with Amazon logged as `new` and eBay as `used`.
 
 ### (4) `amd_gpu` — High-End Desktop AMD Radeon GPUs
 * **Models:** Radeon RX 9070 XT, RX 9070, RX 7900 XTX, RX 7900 XT, plus **any newer Radeon model positioned above the RX 9070 XT**.

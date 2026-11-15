@@ -11,8 +11,11 @@ Rules applied (see claude.md):
   * The listing title must be the exact model (an RX 9070 XT listing is never
     logged as an RX 9070).
   * eBay used listings are logged like any other store.
-  * Models the source does not cover (for example RTX 4090 / 3090) are listed
-    in the report so they can be checked manually.
+  * Models videocardprices.com does not cover (RTX 4090 / 3090 Ti / 3090 and
+    RX 7900 XT) fall back to gpudeals.net, which shows one Amazon and one eBay
+    price per model with a page date. It gives no board name or condition, so
+    those rows use the bare model name, Amazon is logged as new and eBay as
+    used, and prices are whole dollars.
 
 Usage:
     python scripts/track_gpus.py                 # dry run: print what would be logged
@@ -38,6 +41,11 @@ BASE_URL = "https://videocardprices.com"
 SOURCE_NAME = "videocardprices.com"
 USER_AGENT = "Mozilla/5.0 (compatible; gpu-price-watch/1.0)"
 TIMEOUT = 30
+
+# Fallback for models the main source has no page for.
+FALLBACK_URL = "https://gpudeals.net"
+FALLBACK_NAME = "gpudeals.net"
+FALLBACK_CONDITION = {"amazon": "new", "ebay": "used"}  # the site states neither
 
 # Tracked models: category, card-page slugs to try (first hit wins), and a
 # fallback spec used when the page does not list the memory.
@@ -170,6 +178,56 @@ def parse_card_page(page_html):
     return None
 
 
+def fallback_slug(model):
+    """'RTX 3090 Ti' -> 'rtx-3090-ti' (gpudeals.net page name)."""
+    return model.lower().replace(" ", "-")
+
+
+def parse_fallback_page(page_html):
+    """Return (listings, page_date) from a gpudeals.net model page.
+
+    listings: [{"source", "price", "url"}] from the "buy now" buttons.
+    page_date: ISO date from the "Date Generated" footer, or None.
+    """
+    listings = []
+    for m in re.finditer(
+            r'<a href="([^"]+)" class="buy-now-btn (amazon|ebay)"(.*?)</a>', page_html, re.S):
+        price = re.search(r'class="price">\s*\$([\d,]+(?:\.\d+)?)', m.group(3))
+        if not price:
+            continue
+        url = html.unescape(m.group(1)).split("?", 1)[0]
+        listings.append({"source": m.group(2), "url": url,
+                         "price": float(price.group(1).replace(",", ""))})
+    page_date = None
+    d = re.search(r"Date Generated: \w{3} (\w{3}) (\d{1,2}) (\d{4})", page_html)
+    if d:
+        try:
+            page_date = dt.datetime.strptime(" ".join(d.groups()), "%b %d %Y").date().isoformat()
+        except ValueError:
+            pass
+    return listings, page_date
+
+
+def evaluate_fallback(listings, page_date, model, category, spec, run_date):
+    """Rows and skipped listings for a model taken from the fallback source."""
+    rows, skipped = [], []
+    for lst in listings:
+        store = STORE_NAMES.get(lst["source"], lst["source"].title())
+        if page_date and not price_log.not_in_future(page_date, run_date):
+            skipped.append({"listing": f"{model} {store} ${lst['price']}", "title": model,
+                            "url": lst["url"], "date": page_date,
+                            "reason": f"price dated {page_date} is after the run date"})
+            continue
+        rows.append({
+            "date": run_date, "category": category, "item": model, "spec": spec,
+            "store": store, "condition": FALLBACK_CONDITION[lst["source"]],
+            "price_usd": price_log.format_price(lst["price"]),
+            "basis": f"reported ({FALLBACK_NAME})",
+            "source_date": page_date or run_date, "url": lst["url"],
+        })
+    return rows, skipped
+
+
 def discover_newer_radeons(home_html):
     """Card slugs for Radeon models numbered >= NEWER_RADEON_MIN found on the home page."""
     found = {}
@@ -294,7 +352,16 @@ def track(models, run_date):
                 break
         if card is None:
             if all(s == 404 for s in statuses):
-                report["no_source"].append(model)
+                url = f"{FALLBACK_URL}/gpus/{fallback_slug(model)}.html"
+                status, body = fetch(url)
+                listings, page_date = parse_fallback_page(body) if status == 200 else ([], None)
+                if listings:
+                    rows, skipped = evaluate_fallback(listings, page_date, model, category,
+                                                      fallback_spec, run_date)
+                    report["rows"].extend(rows)
+                    report["skipped"].extend(skipped)
+                else:
+                    report["no_source"].append(model)
             elif not any(model in e for e in report["errors"]):
                 report["errors"].append(f"{model}: fetch failed (status {statuses})")
             continue
@@ -306,7 +373,8 @@ def track(models, run_date):
 
 # --------------------------------------------------------------------------- CLI
 def print_report(report, added=None, dupes=None):
-    print(f"\nGPU price check for {report['run_date']} (source: {SOURCE_NAME})")
+    print(f"\nGPU price check for {report['run_date']} "
+          f"(sources: {SOURCE_NAME}, fallback {FALLBACK_NAME})")
     print("\nQualifying prices:")
     for r in report["rows"]:
         print(f"  {r['item']:<45} {r['store']:<8} {r['condition']:<5} "
@@ -321,7 +389,7 @@ def print_report(report, added=None, dupes=None):
         for s in report["skipped"]:
             print(f"  {s['listing']}: {s['reason']}")
     if report["no_source"]:
-        print("\nNot covered by the source, check by hand: " + ", ".join(report["no_source"]))
+        print("\nNot covered by either source, check by hand: " + ", ".join(report["no_source"]))
     if report["errors"]:
         print("\nErrors:")
         for e in report["errors"]:
