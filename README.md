@@ -1,8 +1,35 @@
 # 4TB SSD Price Watch
 
-Daily US prices for 4TB M.2 2280 NVMe PCIe 4.0 SSDs (no heatsink) that fit an Acer Nitro V 16S (ANV16S-71), plus the Micron 2500.
+Daily US prices (USD) for upgrades and GPUs for an Acer Nitro V 16S (ANV16S-71), in five categories:
 
-The dashboard below is rebuilt automatically from [`prices.csv`](prices.csv) whenever it changes.
+| Category | What's tracked |
+|---|---|
+| `ssd` | 4TB M.2 2280 NVMe PCIe 4.0 SSDs without a heatsink (Lexar NM790, TeamGroup MP44 and T-Force G50, WD Black SN7100 and SN850X, WD Blue SN5000, Samsung 990 EVO Plus and 990 Pro, Crucial T500 and P310, Kingston KC3000, Silicon Power UD90 and other reputable brands), plus the Micron 2500 |
+| `ram` | Single 64GB DDR5 SO-DIMM modules, non-ECC, 5600 MT/s or faster |
+| `nvidia_gpu` | Desktop RTX 5090, 4090, 3090 Ti and 3090, new and used/refurbished |
+| `amd_gpu` | Desktop RX 9070 XT, 9070, 7900 XTX and 7900 XT (plus any newer Radeon above the 9070 XT), new and used/refurbished |
+| `egpu` | Thunderbolt/USB4 eGPU enclosures and complete external GPUs |
+
+Stores: Amazon, eBay, Newegg, Best Buy, Walmart, B&H Photo and Micro Center.
+
+**DEAL flags (🔥):**
+- A new 4TB TLC SSD at $450 or less (SSDs only).
+- In any category, a price at least 10% below the previous logged price for the same item, store and condition.
+- In any category, a price strictly below every earlier price for that item and condition, once there are at least 7 days of history.
+
+## How it works
+
+- A daily routine adds prices to [`prices.csv`](prices.csv) (`date,category,item,spec,store,condition,price_usd,basis,source_date,url`) and writes notes to [`claude.md`](claude.md).
+- [`scripts/build_readme.py`](scripts/build_readme.py) rebuilds the dashboard below. GPUs are grouped by model.
+- The [Update README dashboard](.github/workflows/update-readme.yml) Action runs the script whenever `prices.csv` or the script changes on `main`. To run it yourself:
+
+```bash
+python3 scripts/build_readme.py
+```
+
+Only the text between the `PRICES:START` and `PRICES:END` markers is regenerated. Everything above them can be edited by hand.
+
+## Dashboard
 
 <!-- PRICES:START -->
 **Last check:** 2026-11-14 &nbsp;·&nbsp; **Prices logged:** 4 &nbsp;·&nbsp; **Items tracked with prices:** 4 across 2 categories
