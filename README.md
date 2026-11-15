@@ -58,16 +58,17 @@ Run the tests with `python3 -m unittest discover tests`.
 ## Dashboard
 
 <!-- PRICES:START -->
-**Last check:** 2026-11-15 &nbsp;·&nbsp; **Prices logged:** 44 &nbsp;·&nbsp; **Items tracked with prices:** 26 across 4 categories
+**Last check:** 2026-11-15 &nbsp;·&nbsp; **Prices logged:** 52 &nbsp;·&nbsp; **Items tracked with prices:** 30 across 5 categories
 
 > No DEAL flags on the latest check.
 
 | Category | Latest-check rows | Cheapest new on latest check |
 |---|--:|---|
-| SSDs | 12 | Silicon Power UD90 — $475.00 (Newegg) |
+| SSDs | 18 | Silicon Power UD90 — $475.00 (Newegg) |
 | RAM | 2 | Crucial CT64G56C46S5 — $1,199.89 (Amazon (third-party seller)) |
 | NVIDIA GPUs | 9 | RTX 3090 Ti — $2,150.00 (Amazon) |
 | AMD GPUs | 9 | RX 9070 (XFX Swift OC Triple Fan) — $879.99 (Amazon) |
+| eGPUs | 2 | AOOSTAR EG02 — $219.00 (Amazon (third-party seller)) |
 
 ### SSDs
 
@@ -88,9 +89,9 @@ xychart-beta
 ```mermaid
 xychart-beta
     title "Most recent logged price (USD)"
-    x-axis ["Silicon Power UD90", "WD Blue SN5000", "TeamGroup MP44Q", "TeamGroup MP44", "WD Blue SN5100", "WD Black SN7100", "Samsung 990 EVO Plus", "WD Black SN850X", "Samsung 990 Pro", "Crucial T500"]
+    x-axis ["Silicon Power UD90", "TeamGroup T-Force G50", "WD Blue SN5000", "TeamGroup MP44Q", "TeamGroup MP44", "WD Blue SN5100", "Lexar NQ780", "WD Black SN7100", "Samsung 990 EVO Plus", "WD Black SN850X", "Samsung 990 Pro", "Crucial T500"]
     y-axis "USD" 410 --> 930
-    bar [475.00, 491.00, 499.99, 516.99, 529.99, 629.99, 649.99, 784.99, 799.99, 869.00]
+    bar [475.00, 479.99, 491.00, 499.99, 516.99, 529.99, 569.67, 629.99, 649.99, 784.99, 799.99, 869.00]
 ```
 
 #### Latest prices
@@ -98,15 +99,21 @@ xychart-beta
 | Item | Spec | Store | Condition | Price | Change | As of | Basis | Link |
 |---|---|---|---|--:|--:|---|---|---|
 | Silicon Power UD90 | 4TB TLC (some batches reported QLC) | Newegg | new | **$475.00** | — | 2026-11-15 | reported (PC Gamer) | [link](https://www.pcgamer.com/black-friday-ssd-deals/) |
+| TeamGroup T-Force G50 | 4TB TLC | Amazon (third-party seller) | new | **$479.99** | new | 2026-11-15 | direct | [link](https://www.amazon.com/dp/B0DRVN1JXP) |
+| TeamGroup T-Force G50 | 4TB TLC | Walmart (third-party seller) | new | **$485.99** | new | 2026-11-15 | reported (ByteSizedDeals) | [link](https://bytesizeddeals.com/ssd/price-index) |
 | WD Blue SN5000 | 4TB QLC | Newegg | new | **$491.00** | — | 2026-11-15 | reported (PC Gamer) | [link](https://www.pcgamer.com/black-friday-ssd-deals/) |
 | TeamGroup MP44Q | 4TB QLC | Amazon | new | **$499.99** | — | 2026-11-15 | reported (PC Gamer) | [link](https://www.pcgamer.com/black-friday-ssd-deals/) |
 | TeamGroup MP44 | 4TB TLC | Newegg | new | **$516.99** | — | 2026-11-15 | reported (PC Gamer) | [link](https://www.pcgamer.com/black-friday-ssd-deals/) |
+| WD Blue SN5000 | 4TB QLC | Amazon (third-party seller) | new | **$519.95** | new | 2026-11-15 | direct | [link](https://www.amazon.com/dp/B0D7MLB76V) |
+| Silicon Power UD90 | 4TB TLC (some batches reported QLC) | Amazon (third-party seller) | new | **$523.00** | new | 2026-11-15 | direct | [link](https://www.amazon.com/dp/B0BYN8NHXS) |
 | Silicon Power UD90 | 4TB TLC (some batches reported QLC) | Amazon | new | **$529.97** | 🔺 $55.00 | 2026-11-15 | reported (cheapestssd.com) | [link](https://cheapestssd.com/4tb-nvme-ssd/) |
 | WD Blue SN5100 | 4TB QLC | Amazon | new | **$529.99** | new | 2026-11-15 | reported (cheapestssd.com) | [link](https://cheapestssd.com/4tb-nvme-ssd/) |
+| Lexar NQ780 | 4TB QLC | Amazon (third-party seller) | new | **$569.67** | new | 2026-11-15 | direct | [link](https://www.amazon.com/dp/B0F25CX4LB) |
 | WD Black SN7100 | 4TB TLC | Amazon | new | **$629.99** | new | 2026-11-15 | reported (cheapestssd.com) | [link](https://cheapestssd.com/4tb-nvme-ssd/) |
 | Samsung 990 EVO Plus | 4TB TLC | B&H Photo | new | **$649.99** | — | 2026-11-15 | reported (9to5Toys) | [link](https://9to5toys.com/2026/11/14/this-weeks-pc-deals-and-news/) |
 | Samsung 990 EVO Plus | 4TB TLC | Amazon | new | **$679.99** | new | 2026-11-15 | reported (cheapestssd.com) | [link](https://cheapestssd.com/4tb-nvme-ssd/) |
 | WD Black SN850X | 4TB TLC | Amazon | new | **$784.99** | new | 2026-11-15 | reported (cheapestssd.com) | [link](https://cheapestssd.com/4tb-nvme-ssd/) |
+| WD Black SN850X | 4TB TLC | Amazon (third-party seller) | new | **$789.99** | new | 2026-11-15 | direct | [link](https://www.amazon.com/dp/B0B7CQ2CHH) |
 | Samsung 990 Pro | 4TB TLC | Amazon | new | **$799.99** | new | 2026-11-15 | reported (cheapestssd.com) | [link](https://cheapestssd.com/4tb-nvme-ssd/) |
 | Crucial T500 | 4TB TLC | Amazon | new | **$869.00** | new | 2026-11-15 | reported (cheapestssd.com) | [link](https://cheapestssd.com/4tb-nvme-ssd/) |
 
@@ -119,6 +126,13 @@ Low $869.00 · High $869.00 · 1 entry
 | Date | Price | Basis |
 |---|--:|---|
 | 2026-11-15 | [$869.00](https://cheapestssd.com/4tb-nvme-ssd/) | reported (cheapestssd.com) |
+
+##### Lexar NQ780 — Amazon (third-party seller) (new)
+Low $569.67 · High $569.67 · 1 entry
+
+| Date | Price | Basis |
+|---|--:|---|
+| 2026-11-15 | [$569.67](https://www.amazon.com/dp/B0F25CX4LB) | direct |
 
 ##### Samsung 990 EVO Plus — Amazon (new)
 Low $679.99 · High $679.99 · 1 entry
@@ -152,6 +166,13 @@ Low $474.97 · High $529.97 · 3 entries
 | 2026-11-14 | [$474.97](https://www.pcgamer.com/black-friday-ssd-deals/) | reported (PC Gamer) |
 | 2026-11-14 | [$474.97](https://www.pcgamer.com/best-ssd-deals-today/) | reported (PC Gamer) |
 
+##### Silicon Power UD90 — Amazon (third-party seller) (new)
+Low $523.00 · High $523.00 · 1 entry
+
+| Date | Price | Basis |
+|---|--:|---|
+| 2026-11-15 | [$523.00](https://www.amazon.com/dp/B0BYN8NHXS) | direct |
+
 ##### Silicon Power UD90 — Newegg (new)
 Low $475.00 · High $475.00 · 2 entries
 
@@ -177,6 +198,20 @@ Low $499.99 · High $499.99 · 3 entries
 | 2026-11-14 | [$499.99](https://www.pcgamer.com/black-friday-ssd-deals/) | reported (PC Gamer) |
 | 2026-11-14 | [$499.99](https://www.pcgamer.com/best-ssd-deals-today/) | reported (PC Gamer) |
 
+##### TeamGroup T-Force G50 — Amazon (third-party seller) (new)
+Low $479.99 · High $479.99 · 1 entry
+
+| Date | Price | Basis |
+|---|--:|---|
+| 2026-11-15 | [$479.99](https://www.amazon.com/dp/B0DRVN1JXP) | direct |
+
+##### TeamGroup T-Force G50 — Walmart (third-party seller) (new)
+Low $485.99 · High $485.99 · 1 entry
+
+| Date | Price | Basis |
+|---|--:|---|
+| 2026-11-15 | [$485.99](https://bytesizeddeals.com/ssd/price-index) | reported (ByteSizedDeals) |
+
 ##### WD Black SN7100 — Amazon (new)
 Low $629.99 · High $629.99 · 1 entry
 
@@ -190,6 +225,20 @@ Low $784.99 · High $784.99 · 1 entry
 | Date | Price | Basis |
 |---|--:|---|
 | 2026-11-15 | [$784.99](https://cheapestssd.com/4tb-nvme-ssd/) | reported (cheapestssd.com) |
+
+##### WD Black SN850X — Amazon (third-party seller) (new)
+Low $789.99 · High $789.99 · 1 entry
+
+| Date | Price | Basis |
+|---|--:|---|
+| 2026-11-15 | [$789.99](https://www.amazon.com/dp/B0B7CQ2CHH) | direct |
+
+##### WD Blue SN5000 — Amazon (third-party seller) (new)
+Low $519.95 · High $519.95 · 1 entry
+
+| Date | Price | Basis |
+|---|--:|---|
+| 2026-11-15 | [$519.95](https://www.amazon.com/dp/B0D7MLB76V) | direct |
 
 ##### WD Blue SN5000 — Newegg (new)
 Low $491.00 · High $491.00 · 2 entries
@@ -577,6 +626,57 @@ Low $899.00 · High $899.00 · 1 entry
 | Date | Price | Basis |
 |---|--:|---|
 | 2026-11-15 | [$899.00](https://www.ebay.com/itm/168853292500) | reported (videocardprices.com) |
+
+</details>
+
+### eGPUs
+
+> **Cheapest new eGPU on 2026-11-15:** AOOSTAR EG02 (Enclosure, TB5, No PSU / ATX required) at **$219.00** (Amazon (third-party seller)) — [source](https://www.amazon.com/dp/B0G3TV5HKJ)
+
+#### Cheapest new eGPU price over time
+
+```mermaid
+xychart-beta
+    title "Lowest new eGPU price per day (USD)"
+    x-axis ["11-15"]
+    y-axis "USD" 200 --> 230
+    line [219.00]
+    bar [219.00]
+```
+
+#### Latest price by item (new, cheapest store)
+
+```mermaid
+xychart-beta
+    title "Most recent logged price (USD)"
+    x-axis ["AOOSTAR EG02", "Razer Core X V2"]
+    y-axis "USD" 190 --> 370
+    bar [219.00, 349.99]
+```
+
+#### Latest prices
+
+| Item | Spec | Store | Condition | Price | Change | As of | Basis | Link |
+|---|---|---|---|--:|--:|---|---|---|
+| AOOSTAR EG02 | Enclosure, TB5, No PSU / ATX required | Amazon (third-party seller) | new | **$219.00** | new | 2026-11-15 | direct | [link](https://www.amazon.com/dp/B0G3TV5HKJ) |
+| Razer Core X V2 | Enclosure, TB5, No PSU | Amazon | new | **$349.99** | new | 2026-11-15 | direct | [link](https://www.amazon.com/dp/B0FFQFDZWX) |
+
+<details>
+<summary><b>eGPUs: price history</b></summary>
+
+##### AOOSTAR EG02 — Amazon (third-party seller) (new)
+Low $219.00 · High $219.00 · 1 entry
+
+| Date | Price | Basis |
+|---|--:|---|
+| 2026-11-15 | [$219.00](https://www.amazon.com/dp/B0G3TV5HKJ) | direct |
+
+##### Razer Core X V2 — Amazon (new)
+Low $349.99 · High $349.99 · 1 entry
+
+| Date | Price | Basis |
+|---|--:|---|
+| 2026-11-15 | [$349.99](https://www.amazon.com/dp/B0FFQFDZWX) | direct |
 
 </details>
 
