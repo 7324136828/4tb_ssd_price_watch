@@ -101,6 +101,7 @@ class EvaluateTests(unittest.TestCase):
         rows, skipped = self.evaluate()
         self.assertEqual([(r["item"], r["store"], r["price_usd"]) for r in rows], [
             ("RX 9070 XT (GIGABYTE Gaming OC)", "Amazon", "1034.99"),
+            ("RX 9070 XT (PowerColor OC)", "eBay", "899.00"),  # used eBay is logged
             ("RX 9070 XT (ASRock Challenger)", "Newegg", "949.99"),
         ])
         for r in rows:
@@ -109,13 +110,22 @@ class EvaluateTests(unittest.TestCase):
             self.assertEqual(r["basis"], "reported (videocardprices.com)")
             self.assertEqual(price_log.validate_row(r, "2026-11-15"), [])
         reasons = " | ".join(s["reason"] for s in skipped)
-        self.assertIn("eBay seller", reasons)           # used eBay is never written
         self.assertIn("RX 9070, not RX 9070 XT", reasons)  # wrong model on the page
 
-    def test_old_prices_are_skipped(self):
-        rows, skipped = self.evaluate(run_date="2026-11-20")
+    def test_old_prices_are_logged(self):
+        rows, _ = self.evaluate(run_date="2027-03-01")
+        self.assertEqual(len(rows), 3)
+        self.assertEqual({r["source_date"] for r in rows}, {"2026-11-14"})
+
+    def test_future_prices_are_skipped(self):
+        rows, skipped = self.evaluate(run_date="2026-11-10")
         self.assertEqual(rows, [])
-        self.assertTrue(any("outside the 2-day window" in s["reason"] for s in skipped))
+        self.assertTrue(any("after the run date" in s["reason"] for s in skipped))
+
+    def test_undated_listing_uses_run_date(self):
+        card = dict(CARD, lastUpdated=None, prices=[])
+        rows, _ = self.evaluate(card=card)
+        self.assertEqual(rows[0]["source_date"], "2026-11-15")
 
     def test_out_of_stock_is_skipped(self):
         card = dict(CARD, inStock=False, prices=[])
@@ -145,10 +155,10 @@ class PriceLogTests(unittest.TestCase):
         base.update(kw)
         return base
 
-    def test_window(self):
-        self.assertTrue(price_log.within_window("2026-11-13", "2026-11-15"))
-        self.assertFalse(price_log.within_window("2026-11-12", "2026-11-15"))
-        self.assertFalse(price_log.within_window("2026-11-16", "2026-11-15"))
+    def test_any_age_but_not_future(self):
+        self.assertTrue(price_log.not_in_future("2026-11-15", "2026-11-15"))
+        self.assertTrue(price_log.not_in_future("2025-01-01", "2026-11-15"))
+        self.assertFalse(price_log.not_in_future("2026-11-16", "2026-11-15"))
 
     def test_validate_row_catches_problems(self):
         self.assertEqual(price_log.validate_row(self.row()), [])

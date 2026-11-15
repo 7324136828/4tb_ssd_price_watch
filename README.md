@@ -31,14 +31,14 @@ Only the text between the `PRICES:START` and `PRICES:END` markers is regenerated
 
 ### GPU price tracker
 
-[`scripts/track_gpus.py`](scripts/track_gpus.py) checks the RTX 5090, 4090, 3090 Ti and 3090 and the RX 9070 XT, 9070, 7900 XTX and 7900 XT on [videocardprices.com](https://videocardprices.com/). It also picks up any newer Radeon card numbered 9080 or higher. It logs in-stock Amazon and Newegg prices that are dated within 2 days. eBay used listings are only reported, because the script can't check the seller. The [Track GPU prices](.github/workflows/track-gpus.yml) Action runs it every day and rebuilds the dashboard.
+[`scripts/track_gpus.py`](scripts/track_gpus.py) checks the RTX 5090, 4090, 3090 Ti and 3090 and the RX 9070 XT, 9070, 7900 XTX and 7900 XT on [videocardprices.com](https://videocardprices.com/). It also picks up any newer Radeon card numbered 9080 or higher. It logs in-stock Amazon, Newegg and eBay (used) prices of any age, with the date the source gives. The [Track GPU prices](.github/workflows/track-gpus.yml) Action runs it every day and rebuilds the dashboard.
 
 ```bash
 python3 scripts/track_gpus.py            # dry run: show what would be logged
 python3 scripts/track_gpus.py --write    # append new rows to prices.csv
 ```
 
-The source doesn't cover the RTX 4090, 3090 Ti, 3090 or RX 7900 XT, and the tracker lists them as "check by hand". Log those prices, and any eBay listing you have checked, with [`scripts/add_price.py`](scripts/add_price.py). It applies the same rules:
+The source doesn't cover the RTX 4090, 3090 Ti, 3090 or RX 7900 XT, and the tracker lists them as "check by hand". Log those prices with [`scripts/add_price.py`](scripts/add_price.py). It applies the same rules:
 
 ```bash
 python3 scripts/add_price.py nvidia_gpu "RTX 4090 (MSI Gaming X Trio)" "24GB GDDR6X" eBay used 1899.00 "https://www.ebay.com/itm/..."
@@ -49,15 +49,15 @@ Run the tests with `python3 -m unittest discover tests`.
 ## Dashboard
 
 <!-- PRICES:START -->
-**Last check:** 2026-11-15 &nbsp;·&nbsp; **Prices logged:** 26 &nbsp;·&nbsp; **Items tracked with prices:** 13 across 3 categories
+**Last check:** 2026-11-15 &nbsp;·&nbsp; **Prices logged:** 34 &nbsp;·&nbsp; **Items tracked with prices:** 20 across 3 categories
 
 > No DEAL flags on the latest check.
 
 | Category | Latest-check rows | Cheapest new on latest check |
 |---|--:|---|
 | SSDs | 12 | Silicon Power UD90 — $475.00 (Newegg) |
-| NVIDIA GPUs | 1 | RTX 5090 (ASUS TUF Gaming OC) — $7,450.00 (Amazon) |
-| AMD GPUs | 1 | RX 9070 XT (GIGABYTE Gaming OC) — $1,034.99 (Amazon) |
+| NVIDIA GPUs | 3 | RTX 5090 (ASUS ROG Astral OC) — $6,249.99 (Newegg) |
+| AMD GPUs | 7 | RX 9070 (XFX Swift OC Triple Fan) — $879.99 (Amazon) |
 
 ### SSDs
 
@@ -200,13 +200,13 @@ Low $529.99 · High $529.99 · 1 entry
 
 ### NVIDIA GPUs
 
-> **Cheapest new NVIDIA GPU on 2026-11-15:** RTX 5090 (ASUS TUF Gaming OC) (32GB GDDR7) at **$7,450.00** (Amazon) — [source](https://videocardprices.com/card/nvidia-rtx-5090/)
+> **Cheapest new NVIDIA GPU on 2026-11-15:** RTX 5090 (ASUS ROG Astral OC) (32GB GDDR7) at **$6,249.99** (Newegg) — [source](https://www.newegg.com/asus-rog-astral-rog-astral-rtx5090-o32g-gaming-geforce-rtx-5090-32gb-graphics-card-triple-fans/p/N82E16814126751?item=N82E16814126751)
 
 #### Cheapest by model
 
 | Model | Cheapest new | Cheapest used / refurbished |
 |---|---|---|
-| RTX 5090 | [$7,450.00](https://videocardprices.com/card/nvidia-rtx-5090/) Amazon, 2026-11-15 | — |
+| RTX 5090 | [$6,249.99](https://www.newegg.com/asus-rog-astral-rog-astral-rtx5090-o32g-gaming-geforce-rtx-5090-32gb-graphics-card-triple-fans/p/N82E16814126751?item=N82E16814126751) Newegg, 2026-11-15 | [$5,999.00](https://www.ebay.com/itm/880090793238) eBay, 2026-11-15 |
 | RTX 4090 | — | — |
 | RTX 3090 Ti | — | — |
 | RTX 3090 | — | [$1,799.22](https://camelcamelcamel.com/product/B08HR6ZBYJ) Amazon (third-party seller), 2026-11-14 |
@@ -219,8 +219,8 @@ Low $529.99 · High $529.99 · 1 entry
 xychart-beta
     title "Most recent logged new price (USD)"
     x-axis ["RTX 5090"]
-    y-axis "USD" 7440 --> 7460
-    bar [7450.00]
+    y-axis "USD" 6230 --> 6260
+    bar [6249.99]
 ```
 
 <details>
@@ -232,8 +232,8 @@ xychart-beta
 xychart-beta
     title "Lowest new RTX 5090 price per day (USD)"
     x-axis ["11-14", "11-15"]
-    y-axis "USD" 7440 --> 7460
-    line [7450.00, 7450.00]
+    y-axis "USD" 6060 --> 7640
+    line [7450.00, 6249.99]
 ```
 
 </details>
@@ -242,6 +242,8 @@ xychart-beta
 
 | Model | Item | Spec | Store | Condition | Price | Change | As of | Basis | Link |
 |---|---|---|---|---|--:|--:|---|---|---|
+| RTX 5090 | RTX 5090 (ASUS ROG Astral OC) | 32GB GDDR7 | eBay | used | **$5,999.00** | new | 2026-11-15 | reported (videocardprices.com) | [link](https://www.ebay.com/itm/880090793238) |
+| RTX 5090 | RTX 5090 (ASUS ROG Astral OC) | 32GB GDDR7 | Newegg | new | **$6,249.99** | new | 2026-11-15 | reported (videocardprices.com) | [link](https://www.newegg.com/asus-rog-astral-rog-astral-rtx5090-o32g-gaming-geforce-rtx-5090-32gb-graphics-card-triple-fans/p/N82E16814126751?item=N82E16814126751) |
 | RTX 5090 | RTX 5090 (ASUS TUF Gaming OC) | 32GB GDDR7 | Amazon | new | **$7,450.00** | — | 2026-11-15 | reported (videocardprices.com) | [link](https://videocardprices.com/card/nvidia-rtx-5090/) |
 | RTX 3090 | RTX 3090 (NVIDIA Founders Edition) | 24GB GDDR6X | Amazon (third-party seller) | used | **$1,799.22** | new | 2026-11-14 | reported (camelcamelcamel) | [link](https://camelcamelcamel.com/product/B08HR6ZBYJ) |
 
@@ -254,6 +256,20 @@ Low $1,799.22 · High $1,799.22 · 1 entry
 | Date | Price | Basis |
 |---|--:|---|
 | 2026-11-14 | [$1,799.22](https://camelcamelcamel.com/product/B08HR6ZBYJ) | reported (camelcamelcamel) |
+
+##### RTX 5090 (ASUS ROG Astral OC) — Newegg (new)
+Low $6,249.99 · High $6,249.99 · 1 entry
+
+| Date | Price | Basis |
+|---|--:|---|
+| 2026-11-15 | [$6,249.99](https://www.newegg.com/asus-rog-astral-rog-astral-rtx5090-o32g-gaming-geforce-rtx-5090-32gb-graphics-card-triple-fans/p/N82E16814126751?item=N82E16814126751) | reported (videocardprices.com) |
+
+##### RTX 5090 (ASUS ROG Astral OC) — eBay (used)
+Low $5,999.00 · High $5,999.00 · 1 entry
+
+| Date | Price | Basis |
+|---|--:|---|
+| 2026-11-15 | [$5,999.00](https://www.ebay.com/itm/880090793238) | reported (videocardprices.com) |
 
 ##### RTX 5090 (ASUS TUF Gaming OC) — Amazon (new)
 Low $7,450.00 · High $7,450.00 · 3 entries
@@ -268,15 +284,15 @@ Low $7,450.00 · High $7,450.00 · 3 entries
 
 ### AMD GPUs
 
-> **Cheapest new AMD GPU on 2026-11-15:** RX 9070 XT (GIGABYTE Gaming OC) (16GB GDDR6) at **$1,034.99** (Amazon) — [source](https://videocardprices.com/card/amd-rx-9070-xt/)
+> **Cheapest new AMD GPU on 2026-11-15:** RX 9070 (XFX Swift OC Triple Fan) (16GB GDDR6) at **$879.99** (Amazon) — [source](https://www.amazon.com/dp/B0DXLBTL4B)
 
 #### Cheapest by model
 
 | Model | Cheapest new | Cheapest used / refurbished |
 |---|---|---|
-| RX 9070 XT | [$1,034.99](https://videocardprices.com/card/amd-rx-9070-xt/) Amazon, 2026-11-15 | — |
-| RX 9070 | — | — |
-| RX 7900 XTX | — | — |
+| RX 9070 XT | [$949.99](https://www.newegg.com/asrock-challenger-rx9070xt-cl-16g-radeon-rx-9070-xt-16gb-graphics-card-triple-fans/p/N82E16814930145?item=N82E16814930145) Newegg, 2026-11-15 | [$899.00](https://www.ebay.com/itm/168853292500) eBay, 2026-11-15 |
+| RX 9070 | [$879.99](https://www.amazon.com/dp/B0DXLBTL4B) Amazon, 2026-11-15 | [$848.99](https://www.ebay.com/itm/327453479284) eBay, 2026-11-15 |
+| RX 7900 XTX | [$1,099.99](https://www.amazon.com/dp/B0BTPK5J68) Amazon, 2026-11-15 | — |
 | RX 7900 XT | — | — |
 
 <sub>Uses the most recent logged price for each item, store and condition.</sub>
@@ -286,9 +302,9 @@ Low $7,450.00 · High $7,450.00 · 3 entries
 ```mermaid
 xychart-beta
     title "Most recent logged new price (USD)"
-    x-axis ["RX 9070 XT"]
-    y-axis "USD" 1020 --> 1050
-    bar [1034.99]
+    x-axis ["RX 9070 XT", "RX 9070", "RX 7900 XTX"]
+    y-axis "USD" 840 --> 1140
+    bar [949.99, 879.99, 1099.99]
 ```
 
 <details>
@@ -300,9 +316,31 @@ xychart-beta
 xychart-beta
     title "Lowest new RX 9070 XT price per day (USD)"
     x-axis ["11-15"]
-    y-axis "USD" 1020 --> 1050
-    line [1034.99]
-    bar [1034.99]
+    y-axis "USD" 930 --> 960
+    line [949.99]
+    bar [949.99]
+```
+
+#### RX 9070: cheapest new price over time
+
+```mermaid
+xychart-beta
+    title "Lowest new RX 9070 price per day (USD)"
+    x-axis ["11-15"]
+    y-axis "USD" 860 --> 890
+    line [879.99]
+    bar [879.99]
+```
+
+#### RX 7900 XTX: cheapest new price over time
+
+```mermaid
+xychart-beta
+    title "Lowest new RX 7900 XTX price per day (USD)"
+    x-axis ["11-15"]
+    y-axis "USD" 1080 --> 1110
+    line [1099.99]
+    bar [1099.99]
 ```
 
 </details>
@@ -311,10 +349,51 @@ xychart-beta
 
 | Model | Item | Spec | Store | Condition | Price | Change | As of | Basis | Link |
 |---|---|---|---|---|--:|--:|---|---|---|
+| RX 9070 XT | RX 9070 XT (PowerColor OC) | 16GB GDDR6 | eBay | used | **$899.00** | new | 2026-11-15 | reported (videocardprices.com) | [link](https://www.ebay.com/itm/168853292500) |
+| RX 9070 XT | RX 9070 XT (ASRock Challenger) | 16GB GDDR6 | Newegg | new | **$949.99** | new | 2026-11-15 | reported (videocardprices.com) | [link](https://www.newegg.com/asrock-challenger-rx9070xt-cl-16g-radeon-rx-9070-xt-16gb-graphics-card-triple-fans/p/N82E16814930145?item=N82E16814930145) |
 | RX 9070 XT | RX 9070 XT (GIGABYTE Gaming OC) | 16GB GDDR6 | Amazon | new | **$1,034.99** | new | 2026-11-15 | reported (videocardprices.com) | [link](https://videocardprices.com/card/amd-rx-9070-xt/) |
+| RX 9070 | RX 9070 (ASRock Steel Legend) | 16GB GDDR6 | eBay | used | **$848.99** | new | 2026-11-15 | reported (videocardprices.com) | [link](https://www.ebay.com/itm/327453479284) |
+| RX 9070 | RX 9070 (XFX Swift OC Triple Fan) | 16GB GDDR6 | Amazon | new | **$879.99** | new | 2026-11-15 | reported (videocardprices.com) | [link](https://www.amazon.com/dp/B0DXLBTL4B) |
+| RX 9070 | RX 9070 (GIGABYTE Gaming) | 16GB GDDR6 | Newegg | new | **$934.99** | new | 2026-11-15 | reported (videocardprices.com) | [link](https://www.newegg.com/gigabyte-gv-r9070gaming-oc-16gd-radeon-rx-9070-16gb-graphics-card-triple-fans/p/N82E16814932752?item=N82E16814932752) |
+| RX 7900 XTX | RX 7900 XTX (ASRock Phantom Gaming OC) | 24GB GDDR6 | Amazon | new | **$1,099.99** | new | 2026-11-15 | reported (videocardprices.com) | [link](https://www.amazon.com/dp/B0BTPK5J68) |
 
 <details>
 <summary><b>AMD GPUs: price history</b></summary>
+
+##### RX 7900 XTX (ASRock Phantom Gaming OC) — Amazon (new)
+Low $1,099.99 · High $1,099.99 · 1 entry
+
+| Date | Price | Basis |
+|---|--:|---|
+| 2026-11-15 | [$1,099.99](https://www.amazon.com/dp/B0BTPK5J68) | reported (videocardprices.com) |
+
+##### RX 9070 (ASRock Steel Legend) — eBay (used)
+Low $848.99 · High $848.99 · 1 entry
+
+| Date | Price | Basis |
+|---|--:|---|
+| 2026-11-15 | [$848.99](https://www.ebay.com/itm/327453479284) | reported (videocardprices.com) |
+
+##### RX 9070 (GIGABYTE Gaming) — Newegg (new)
+Low $934.99 · High $934.99 · 1 entry
+
+| Date | Price | Basis |
+|---|--:|---|
+| 2026-11-15 | [$934.99](https://www.newegg.com/gigabyte-gv-r9070gaming-oc-16gd-radeon-rx-9070-16gb-graphics-card-triple-fans/p/N82E16814932752?item=N82E16814932752) | reported (videocardprices.com) |
+
+##### RX 9070 (XFX Swift OC Triple Fan) — Amazon (new)
+Low $879.99 · High $879.99 · 1 entry
+
+| Date | Price | Basis |
+|---|--:|---|
+| 2026-11-15 | [$879.99](https://www.amazon.com/dp/B0DXLBTL4B) | reported (videocardprices.com) |
+
+##### RX 9070 XT (ASRock Challenger) — Newegg (new)
+Low $949.99 · High $949.99 · 1 entry
+
+| Date | Price | Basis |
+|---|--:|---|
+| 2026-11-15 | [$949.99](https://www.newegg.com/asrock-challenger-rx9070xt-cl-16g-radeon-rx-9070-xt-16gb-graphics-card-triple-fans/p/N82E16814930145?item=N82E16814930145) | reported (videocardprices.com) |
 
 ##### RX 9070 XT (GIGABYTE Gaming OC) — Amazon (new)
 Low $1,034.99 · High $1,034.99 · 1 entry
@@ -322,6 +401,13 @@ Low $1,034.99 · High $1,034.99 · 1 entry
 | Date | Price | Basis |
 |---|--:|---|
 | 2026-11-15 | [$1,034.99](https://videocardprices.com/card/amd-rx-9070-xt/) | reported (videocardprices.com) |
+
+##### RX 9070 XT (PowerColor OC) — eBay (used)
+Low $899.00 · High $899.00 · 1 entry
+
+| Date | Price | Basis |
+|---|--:|---|
+| 2026-11-15 | [$899.00](https://www.ebay.com/itm/168853292500) | reported (videocardprices.com) |
 
 </details>
 

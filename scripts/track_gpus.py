@@ -6,12 +6,11 @@ listing plus the cheapest Newegg (new) and eBay (used) listings it found, each
 with a fetch timestamp, so every price comes with a date we can check.
 
 Rules applied (see claude.md):
-  * Only in-stock listings whose timestamp is within 2 days of the run date.
+  * Only in-stock listings. Prices of any age are logged with the date the
+    source gives; a listing with no date is logged with the run date.
   * The listing title must be the exact model (an RX 9070 XT listing is never
     logged as an RX 9070).
-  * eBay used listings are only reported, never written, because the script
-    cannot check seller feedback or the return policy. Verify them by hand and
-    log them with scripts/add_price.py.
+  * eBay used listings are logged like any other store.
   * Models the source does not cover (for example RTX 4090 / 3090) are listed
     in the report so they can be checked manually.
 
@@ -59,7 +58,6 @@ NEWER_RADEON_MIN = 9080
 STORE_NAMES = {"amazon": "Amazon", "newegg": "Newegg", "ebay": "eBay",
                "bestbuy": "Best Buy", "walmart": "Walmart", "bhphoto": "B&H Photo",
                "microcenter": "Micro Center"}
-NOT_WRITTEN_SOURCES = {"ebay"}  # seller feedback / returns cannot be verified here
 
 MODEL_RE = re.compile(
     r"\b(RTX|RX)\s*-?\s*(\d{4})(?:\s*-?\s*(Ti\s*Super|Ti|Super|XTX|XT|GRE))?(?![A-Za-z])",
@@ -225,16 +223,12 @@ def evaluate(card, model, category, fallback_spec, run_date, page_url):
             reason = f"listing is a {title_model or 'different card'}, not {model}"
         elif not lst["in_stock"]:
             reason = "out of stock"
-        elif not lst["date"]:
-            reason = "listing has no date"
-        elif not price_log.within_window(lst["date"], run_date):
-            reason = f"price dated {lst['date']} is outside the {price_log.WINDOW_DAYS}-day window"
+        elif lst["date"] and not price_log.not_in_future(lst["date"], run_date):
+            reason = f"price dated {lst['date']} is after the run date"
         elif lst["condition"] not in price_log.CONDITIONS:
             reason = f"unknown condition '{lst['condition']}'"
         elif store not in price_log.APPROVED_STORES:
             reason = f"{store} is not an approved store"
-        elif lst["source"] in NOT_WRITTEN_SOURCES:
-            reason = "eBay seller feedback/returns not verified (check by hand, log with add_price.py)"
         if reason:
             skipped.append({"listing": label, "title": lst["title"], "url": lst["url"],
                             "date": lst["date"], "reason": reason})
@@ -248,7 +242,7 @@ def evaluate(card, model, category, fallback_spec, run_date, page_url):
             "condition": lst["condition"],
             "price_usd": price_log.format_price(lst["price"]),
             "basis": f"reported ({SOURCE_NAME})",
-            "source_date": lst["date"],
+            "source_date": lst["date"] or run_date,
             "url": lst["url"] or page_url,
         })
     return rows, skipped

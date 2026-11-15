@@ -3,7 +3,7 @@
 ## 1. Purpose & Schedule
 A cloud routine runs daily at **9:00 AM Eastern** to track current US street prices across five hardware upgrade categories for an **Acer Nitro V 16S (ANV16S-71)** laptop setup.
 
-**CSV-Only Output Rule:** Each run **must only write to `prices.csv`** (appending verified, dated rows). Do **not** modify or append logs to `claude.md`, `README.md` (auto-regenerated from `prices.csv` by GitHub Actions), `scripts/build_readme.py`, `scripts/visualize_prices.py`, or any other file in the repository.
+**CSV-Only Output Rule:** Each run **must only write to `prices.csv`** (appending rows with their source date). Do **not** modify or append logs to `claude.md`, `README.md` (auto-regenerated from `prices.csv` by GitHub Actions), `scripts/build_readme.py`, `scripts/visualize_prices.py`, or any other file in the repository.
 
 ---
 
@@ -47,9 +47,9 @@ A cloud routine runs daily at **9:00 AM Eastern** to track current US street pri
 ## 3. Qualifying Stores & Verification Rules
 
 * **Approved Stores (US, USD):** Amazon, eBay, Newegg, Best Buy, Walmart, B&H Photo, Micro Center.
-* **2-Day Date Window:** Only log prices confirmed by a direct live store check or a reliable price tracker/deal report (`cheapestssd.com`, `PC Gamer`, `9to5Toys`, `videocardprices.com`, `camelcamelcamel`, `Keepa`, etc.) dated within **2 calendar days** of the run date (`run_date - 2 days` to `run_date`).
-* **Undated / Older Figures:** Do **not** write undated listings, out-of-stock prices, or multi-listing tracker averages (such as eBay lowest-three averages or median asks) into `prices.csv`.
-* **eBay Used/Refurbished Rules:** Only log individual eBay listings into `prices.csv` if seller feedback and return policy can be verified.
+* **No Date Window:** Log every price found by a direct live store check or a price tracker/deal report (`cheapestssd.com`, `PC Gamer`, `9to5Toys`, `videocardprices.com`, `camelcamelcamel`, `Keepa`, etc.), **whatever its age**. Record the date the source gives in `source_date`; if the source gives no date, use the run date (the day the price was seen).
+* **Still Excluded:** Out-of-stock prices and multi-listing tracker averages (such as eBay lowest-three averages or median asks).
+* **eBay Used/Refurbished:** eBay used and refurbished listings are allowed, including ones reported by a tracker. Seller feedback and return policy do not have to be verified.
 * **Three-Strike Fetch Fallback:** If direct page fetches fail on **3 consecutive attempts** (e.g., HTTP 403/503, truncated output, or captcha on PCPartPicker, Newegg, Best Buy, Micro Center, Walmart), immediately switch to web search and aggregator snapshots for the remainder of the run. Mention blocked sites only in the run's final response/commit message, never in `claude.md`.
 
 ---
@@ -79,11 +79,11 @@ date,category,item,spec,store,condition,price_usd,basis,source_date,url
 * `condition`: Lowercase `new`, `used`, or `refurbished` (lowercase required by `scripts/build_readme.py`).
 * `price_usd`: Numeric price without `$` or commas (e.g., `475.00`).
 * `basis`: `direct` or `reported (<Source Name>)`.
-* `source_date`: Date the price was observed or reported (`YYYY-MM-DD`).
+* `source_date`: Date the price was observed or reported (`YYYY-MM-DD`); the run date when the source is undated.
 * `url`: Direct listing URL or reporting article URL.
 
 ### Write Constraints
-* **Allowed File:** Append new verified rows to `prices.csv` **only**.
+* **Allowed File:** Append new rows to `prices.csv` **only**.
 * **No Other File Edits:** Never edit `claude.md`, `README.md`, or scripts during a scheduled price-check run.
-* **No Placeholder Rows:** If no qualifying dated price is found for an item or category, omit it from `prices.csv` rather than writing `None found` or empty rows.
-* **Run Reporting:** Put any brief summary, blocked-site notes, or notable undated deals in the run response / commit message rather than modifying repository markdown files.
+* **No Placeholder Rows:** If no qualifying price is found for an item or category, omit it from `prices.csv` rather than writing `None found` or empty rows.
+* **Run Reporting:** Put any brief summary, blocked-site notes, or notable deals in the run response / commit message rather than modifying repository markdown files.
