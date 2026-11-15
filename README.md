@@ -1,4 +1,4 @@
-# 4TB SSD Price Watch
+# Nitro V 16S Upgrade Price Watch
 
 Daily US prices (USD) for upgrades and GPUs for an Acer Nitro V 16S (ANV16S-71), in five categories:
 
