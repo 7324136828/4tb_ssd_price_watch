@@ -1,0 +1,42 @@
+name: Update README dashboard
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - prices.csv
+      - scripts/build_readme.py
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: update-readme
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Regenerate README from prices.csv
+        run: python scripts/build_readme.py
+
+      - name: Commit README if it changed
+        run: |
+          if git diff --quiet -- README.md; then
+            echo "No README changes."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898699+github-actions[bot]@users.noreply.github.com"
+          git add README.md
+          git commit -m "Update README price dashboard"
+          git pull --rebase origin main
+          git push origin HEAD:main
