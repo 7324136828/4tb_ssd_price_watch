@@ -44,18 +44,28 @@ videocardprices.com doesn't cover the RTX 4090, 3090 Ti, 3090 or RX 7900 XT, so 
 python3 scripts/add_price.py nvidia_gpu "RTX 4090 (MSI Gaming X Trio)" "24GB GDDR6X" eBay used 1899.00 "https://www.ebay.com/itm/..."
 ```
 
+### RAM price tracker
+
+[`scripts/track_ram.py`](scripts/track_ram.py) checks single 64GB DDR5 SO-DIMM modules (1x64GB, 5600 MT/s) on their Amazon product pages: the Crucial CT64G56C46S5 and the G.Skill F5-5600S4645A64GX1-RS. It logs the in-stock price and marks the store as a third-party seller when Amazon isn't the seller. Add a module's Amazon ASIN and part number to `MODULES` in the script to track it.
+
+```bash
+python3 scripts/track_ram.py            # dry run: show what would be logged
+python3 scripts/track_ram.py --write    # append new rows to prices.csv
+```
+
 Run the tests with `python3 -m unittest discover tests`.
 
 ## Dashboard
 
 <!-- PRICES:START -->
-**Last check:** 2026-11-15 &nbsp;·&nbsp; **Prices logged:** 42 &nbsp;·&nbsp; **Items tracked with prices:** 24 across 3 categories
+**Last check:** 2026-11-15 &nbsp;·&nbsp; **Prices logged:** 44 &nbsp;·&nbsp; **Items tracked with prices:** 26 across 4 categories
 
 > No DEAL flags on the latest check.
 
 | Category | Latest-check rows | Cheapest new on latest check |
 |---|--:|---|
 | SSDs | 12 | Silicon Power UD90 — $475.00 (Newegg) |
+| RAM | 2 | Crucial CT64G56C46S5 — $1,199.89 (Amazon (third-party seller)) |
 | NVIDIA GPUs | 9 | RTX 3090 Ti — $2,150.00 (Amazon) |
 | AMD GPUs | 9 | RX 9070 (XFX Swift OC Triple Fan) — $879.99 (Amazon) |
 
@@ -195,6 +205,57 @@ Low $529.99 · High $529.99 · 1 entry
 | Date | Price | Basis |
 |---|--:|---|
 | 2026-11-15 | [$529.99](https://cheapestssd.com/4tb-nvme-ssd/) | reported (cheapestssd.com) |
+
+</details>
+
+### RAM
+
+> **Cheapest new 64GB DDR5 SO-DIMM on 2026-11-15:** Crucial CT64G56C46S5 (1x64GB DDR5-5600 CL46) at **$1,199.89** (Amazon (third-party seller)) — [source](https://www.amazon.com/dp/B0DSQWZ5G2)
+
+#### Cheapest new 64GB DDR5 SO-DIMM price over time
+
+```mermaid
+xychart-beta
+    title "Lowest new 64GB DDR5 SO-DIMM price per day (USD)"
+    x-axis ["11-15"]
+    y-axis "USD" 1180 --> 1210
+    line [1199.89]
+    bar [1199.89]
+```
+
+#### Latest price by item (new, cheapest store)
+
+```mermaid
+xychart-beta
+    title "Most recent logged price (USD)"
+    x-axis ["Crucial CT64G56C46S5", "G.Skill F5-5600S4645A64GX1-RS"]
+    y-axis "USD" 1070 --> 2130
+    bar [1199.89, 1999.99]
+```
+
+#### Latest prices
+
+| Item | Spec | Store | Condition | Price | Change | As of | Basis | Link |
+|---|---|---|---|--:|--:|---|---|---|
+| Crucial CT64G56C46S5 | 1x64GB DDR5-5600 CL46 | Amazon (third-party seller) | new | **$1,199.89** | new | 2026-11-15 | direct | [link](https://www.amazon.com/dp/B0DSQWZ5G2) |
+| G.Skill F5-5600S4645A64GX1-RS | 1x64GB DDR5-5600 CL46 | Amazon (third-party seller) | new | **$1,999.99** | new | 2026-11-15 | direct | [link](https://www.amazon.com/dp/B0G7RLK95V) |
+
+<details>
+<summary><b>RAM: price history</b></summary>
+
+##### Crucial CT64G56C46S5 — Amazon (third-party seller) (new)
+Low $1,199.89 · High $1,199.89 · 1 entry
+
+| Date | Price | Basis |
+|---|--:|---|
+| 2026-11-15 | [$1,199.89](https://www.amazon.com/dp/B0DSQWZ5G2) | direct |
+
+##### G.Skill F5-5600S4645A64GX1-RS — Amazon (third-party seller) (new)
+Low $1,999.99 · High $1,999.99 · 1 entry
+
+| Date | Price | Basis |
+|---|--:|---|
+| 2026-11-15 | [$1,999.99](https://www.amazon.com/dp/B0G7RLK95V) | direct |
 
 </details>
 

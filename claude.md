@@ -27,6 +27,7 @@ A cloud routine runs daily at **9:00 AM Eastern** to track current US street pri
 ### (2) `ram` — Single 64 GB DDR5 SO-DIMM Module
 * **Specs:** 1x64 GB (single module only), DDR5 SO-DIMM (262-pin laptop form factor), non-ECC, unbuffered, **5600 MT/s or faster**.
 * **Known Part Numbers / Lines:** Crucial `CT64G56C46S5`, G.Skill Ripjaws `F5-5600S4645A64GX1-RS`, Kingston FURY Impact, Corsair Vengeance, TeamGroup Elite, Samsung/SK Hynix/Micron OEM 64 GB modules.
+* **Source:** `scripts/track_ram.py --write` checks the Amazon product page of each module in its `MODULES` list (currently Crucial `CT64G56C46S5` and G.Skill `F5-5600S4645A64GX1-RS`) and logs in-stock prices as `direct`. Run it on every price check. Add any other qualifying single 64 GB module found during a run to `MODULES`, or log it by hand with `scripts/add_price.py`.
 * **Exclusions:** 2x32 GB kits, desktop UDIMMs/CUDIMMs, ECC/registered modules, or speeds below DDR5-5600 (do not log to `prices.csv`).
 
 ### (3) `nvidia_gpu` — High-VRAM Desktop NVIDIA GPUs
