@@ -21,6 +21,7 @@ A cloud routine runs daily at **9:00 AM Eastern** to track current US street pri
   * Kingston KC3000
   * Silicon Power UD90
   * Other reputable tier-1 brands meeting the exact spec.
+* **eBay Source:** `scripts/track_ebay.py --write` logs the cheapest qualifying **New** and the cheapest **Used/Refurbished** eBay listing (US, Buy It Now) for each drive in its `SSDS` list and each module in its `RAM_MODULES` list, as `direct` rows with store `eBay`. It uses the eBay Browse API and needs `EBAY_CLIENT_ID` and `EBAY_CLIENT_SECRET` in the environment. Run it on every price check; if the keys are missing or eBay blocks the request, find eBay listings by web search and log them with `scripts/add_price.py`.
 * **Special Target — Micron 2500:** Check for a 4 TB version (`MTFDKBA4T0QGN`). If no 4 TB version exists, check and log the 2 TB version (`MTFDKBA2T0QGN`).
 * **Exclusions:** PCIe 5.0 drives (unless priced below the cheapest qualifying Gen 4 drive), drives with pre-installed heatsinks/PS5 editions, and unverified off-brand drives. Always record NAND flash type (`TLC` vs. `QLC`) in `spec`.
 
@@ -28,6 +29,7 @@ A cloud routine runs daily at **9:00 AM Eastern** to track current US street pri
 * **Specs:** 1x64 GB (single module only), DDR5 SO-DIMM (262-pin laptop form factor), non-ECC, unbuffered, **5600 MT/s or faster**.
 * **Known Part Numbers / Lines:** Crucial `CT64G56C46S5`, G.Skill Ripjaws `F5-5600S4645A64GX1-RS`, Kingston FURY Impact, Corsair Vengeance, TeamGroup Elite, Samsung/SK Hynix/Micron OEM 64 GB modules.
 * **Source:** `scripts/track_ram.py --write` checks the Amazon product page of each module in its `MODULES` list (currently Crucial `CT64G56C46S5` and G.Skill `F5-5600S4645A64GX1-RS`) and logs in-stock prices as `direct`. Run it on every price check. Add any other qualifying single 64 GB module found during a run to `MODULES`, or log it by hand with `scripts/add_price.py`.
+* **eBay Source:** `scripts/track_ebay.py --write` also logs the cheapest New and cheapest Used/Refurbished eBay listing of each module (see category 1).
 * **Exclusions:** 2x32 GB kits, desktop UDIMMs/CUDIMMs, ECC/registered modules, or speeds below DDR5-5600 (do not log to `prices.csv`).
 
 ### (3) `nvidia_gpu` — High-VRAM Desktop NVIDIA GPUs

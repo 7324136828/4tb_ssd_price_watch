@@ -1,6 +1,6 @@
 """Shared helpers for reading, validating and appending rows to prices.csv.
 
-Used by scripts/track_gpus.py and scripts/add_price.py. Standard library only.
+Used by the scripts/track_*.py trackers and scripts/add_price.py. Standard library only.
 
 The rules mirror claude.md:
   * 10-column schema, lowercase condition, numeric price, ISO dates.
