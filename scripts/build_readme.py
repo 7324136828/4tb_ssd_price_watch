@@ -6,7 +6,7 @@ Text outside the markers is left alone. Uses only the standard library.
 
 prices.csv columns:
     date,category,item,spec,store,condition,price_usd,basis,source_date,url
-category is one of ssd, ram, nvidia_gpu, amd_gpu, egpu.
+category is one of ssd, ram, nvidia_gpu, amd_gpu, egpu, macbook.
 """
 import csv
 import math
@@ -32,6 +32,7 @@ CATEGORIES = {
     "nvidia_gpu": ("NVIDIA GPUs", "NVIDIA GPU"),
     "amd_gpu": ("AMD GPUs", "AMD GPU"),
     "egpu": ("eGPUs", "eGPU"),
+    "macbook": ("MacBooks", "high-memory MacBook"),
 }
 
 

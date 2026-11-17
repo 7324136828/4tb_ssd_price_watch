@@ -1,6 +1,6 @@
 """Shared helpers for reading, validating and appending rows to prices.csv.
 
-Used by scripts/track_gpus.py and scripts/add_price.py. Standard library only.
+Used by the scripts/track_*.py trackers and scripts/add_price.py. Standard library only.
 
 The rules mirror claude.md:
   * 10-column schema, lowercase condition, numeric price, ISO dates.
@@ -18,10 +18,10 @@ CSV_PATH = ROOT / "prices.csv"
 
 FIELDS = ["date", "category", "item", "spec", "store", "condition",
           "price_usd", "basis", "source_date", "url"]
-CATEGORIES = ("ssd", "ram", "nvidia_gpu", "amd_gpu", "egpu")
+CATEGORIES = ("ssd", "ram", "nvidia_gpu", "amd_gpu", "egpu", "macbook")
 CONDITIONS = ("new", "used", "refurbished")
 APPROVED_STORES = ("Amazon", "eBay", "Newegg", "Best Buy", "Walmart",
-                   "B&H Photo", "Micro Center")
+                   "B&H Photo", "Micro Center", "Apple")
 
 def parse_date(value):
     return dt.date.fromisoformat(str(value).strip())

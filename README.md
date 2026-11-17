@@ -1,6 +1,6 @@
 # Nitro V 16S Upgrade Price Watch
 
-Daily US prices (USD) for upgrades and GPUs for an Acer Nitro V 16S (ANV16S-71), in five categories:
+Daily US prices (USD) for upgrades and GPUs for an Acer Nitro V 16S (ANV16S-71), in five categories, plus high-memory MacBooks for comparison:
 
 | Category | What's tracked |
 |---|---|
@@ -9,6 +9,7 @@ Daily US prices (USD) for upgrades and GPUs for an Acer Nitro V 16S (ANV16S-71),
 | `nvidia_gpu` | Desktop RTX 5090, 4090, 3090 Ti and 3090, new and used/refurbished |
 | `amd_gpu` | Desktop RX 9070 XT, 9070, 7900 XTX and 7900 XT (plus any newer Radeon above the 9070 XT), new and used/refurbished |
 | `egpu` | Thunderbolt/USB4 eGPU enclosures and complete external GPUs |
+| `macbook` | MacBook Pro and MacBook Air configurations with 48GB, 64GB, 96GB or 128GB of memory, new and used/refurbished |
 
 Stores: Amazon, eBay, Newegg, Best Buy, Walmart, B&H Photo and Micro Center.
 
