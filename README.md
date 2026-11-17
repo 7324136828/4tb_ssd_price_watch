@@ -59,21 +59,22 @@ Run the tests with `python3 -m unittest discover tests`.
 ## Dashboard
 
 <!-- PRICES:START -->
-**Last check:** 2026-11-16 &nbsp;·&nbsp; **Prices logged:** 88 &nbsp;·&nbsp; **Items tracked with prices:** 34 across 5 categories
+**Last check:** 2026-11-17 &nbsp;·&nbsp; **Prices logged:** 104 &nbsp;·&nbsp; **Items tracked with prices:** 49 across 6 categories
 
 > No DEAL flags on the latest check.
 
 | Category | Latest-check rows | Cheapest new on latest check |
 |---|--:|---|
-| SSDs | 14 | TeamGroup MP44Q — $484.99 (Walmart (third-party seller)) |
-| RAM | 2 | Crucial CT64G56C46S5 — $1,199.89 (Amazon (third-party seller)) |
-| NVIDIA GPUs | 9 | RTX 3090 Ti — $2,150.00 (Amazon) |
-| AMD GPUs | 9 | RX 9070 (XFX Swift OC Triple Fan) — $879.99 (Amazon) |
-| eGPUs | 2 | AOOSTAR EG02 — $219.00 (Amazon (third-party seller)) |
+| SSDs | 0 | — |
+| RAM | 0 | — |
+| NVIDIA GPUs | 0 | — |
+| AMD GPUs | 0 | — |
+| eGPUs | 0 | — |
+| MacBooks | 16 | MacBook Pro 14 M5 Pro 48GB — $3,239.09 (Amazon (third-party seller)) |
 
 ### SSDs
 
-> **Cheapest new 4TB TLC SSD on 2026-11-16:** TeamGroup T-Force G50 (4TB TLC) at **$495.99** (Amazon (third-party seller)) — [source](https://www.amazon.com/dp/B0DRVN1JXP)
+> No new 4TB SSD price was found on 2026-11-17.
 
 #### Cheapest new 4TB SSD price over time
 
@@ -323,7 +324,7 @@ Low $529.99 · High $599.99 · 2 entries
 
 ### RAM
 
-> **Cheapest new 64GB DDR5 SO-DIMM on 2026-11-16:** Crucial CT64G56C46S5 (1x64GB DDR5-5600 CL46) at **$1,199.89** (Amazon (third-party seller)) — [source](https://www.amazon.com/dp/B0DSQWZ5G2)
+> No new 64GB DDR5 SO-DIMM price was found on 2026-11-17.
 
 #### Cheapest new 64GB DDR5 SO-DIMM price over time
 
@@ -375,7 +376,7 @@ Low $1,999.99 · High $1,999.99 · 2 entries
 
 ### NVIDIA GPUs
 
-> **Cheapest new NVIDIA GPU on 2026-11-16:** RTX 3090 Ti (24GB GDDR6X) at **$2,150.00** (Amazon) — [source](https://www.amazon.com/dp/B0BKH8HDWK)
+> No new NVIDIA GPU price was found on 2026-11-17.
 
 #### Cheapest by model
 
@@ -560,7 +561,7 @@ Low $5,750.00 · High $5,750.00 · 1 entry
 
 ### AMD GPUs
 
-> **Cheapest new AMD GPU on 2026-11-16:** RX 9070 (XFX Swift OC Triple Fan) (16GB GDDR6) at **$879.99** (Amazon) — [source](https://www.amazon.com/dp/B0DXLBTL4B)
+> No new AMD GPU price was found on 2026-11-17.
 
 #### Cheapest by model
 
@@ -735,7 +736,7 @@ Low $929.97 · High $929.97 · 1 entry
 
 ### eGPUs
 
-> **Cheapest new eGPU on 2026-11-16:** AOOSTAR EG02 (Enclosure, TB5, No PSU / ATX required) at **$219.00** (Amazon (third-party seller)) — [source](https://www.amazon.com/dp/B0G3TV5HKJ)
+> No new eGPU price was found on 2026-11-17.
 
 #### Cheapest new eGPU price over time
 
@@ -782,6 +783,169 @@ Low $349.99 · High $349.99 · 2 entries
 |---|--:|---|
 | 2026-11-16 | [$349.99](https://www.amazon.com/dp/B0FFQFDZWX) | direct |
 | 2026-11-15 | [$349.99](https://www.amazon.com/dp/B0FFQFDZWX) | direct |
+
+</details>
+
+### MacBooks
+
+> **Cheapest new high-memory MacBook on 2026-11-17:** MacBook Pro 14 M5 Pro 48GB (48GB RAM, 1TB SSD, 15C CPU/16C GPU) at **$3,239.09** (Amazon (third-party seller)) — [source](https://www.amazon.com/dp/B0H46QQ5KM)
+
+#### Cheapest new high-memory MacBook price over time
+
+```mermaid
+xychart-beta
+    title "Lowest new high-memory MacBook price per day (USD)"
+    x-axis ["11-17"]
+    y-axis "USD" 3220 --> 3250
+    line [3239.09]
+    bar [3239.09]
+```
+
+#### Latest price by item (new, cheapest store)
+
+```mermaid
+xychart-beta
+    title "Most recent logged price (USD)"
+    x-axis ["MacBook Pro 14 M5 Pro 48GB", "MacBook Pro 14 M5 Pro 64GB", "MacBook Pro 16 M5 Max 48GB", "MacBook Pro 16 M5 Pro 64GB", "MacBook Pro 14 M5 Max 64GB", "MacBook Pro 14 M5 Max 128GB", "MacBook Pro 16 M5 Max 128GB"]
+    y-axis "USD" 2670 --> 7570
+    bar [3239.09, 3699.00, 4499.00, 4599.00, 5099.00, 6699.00, 6999.00]
+```
+
+#### Latest prices
+
+| Item | Spec | Store | Condition | Price | Change | As of | Basis | Link |
+|---|---|---|---|--:|--:|---|---|---|
+| MacBook Pro 16 M1 Max 64GB | 64GB RAM, 1TB SSD | Amazon (third-party seller) | refurbished | **$1,654.00** | new | 2026-11-17 | direct | [link](https://www.amazon.com/dp/B0CLJTSXHF) |
+| MacBook Pro 14 M1 Max 64GB | 64GB RAM, 2TB SSD | Amazon (third-party seller) | refurbished | **$1,779.99** | new | 2026-11-17 | direct | [link](https://www.amazon.com/dp/B0F8JNXBY4) |
+| MacBook Pro 16 M4 Pro 48GB | 48GB RAM, 512GB SSD, 14C CPU/20C GPU | Amazon (third-party seller) | refurbished | **$2,199.00** | new | 2026-11-17 | direct | [link](https://www.amazon.com/dp/B0FT4PJ9QP) |
+| MacBook Pro 16 M2 Max 64GB | 64GB RAM, 1TB SSD | Amazon (third-party seller) | refurbished | **$2,488.80** | new | 2026-11-17 | direct | [link](https://www.amazon.com/dp/B0FHP6C3BL) |
+| MacBook Pro 16 M5 Pro 48GB | 48GB RAM, 1TB SSD, 18C CPU/20C GPU | Apple (Certified Refurbished) | refurbished | **$3,059.00** | new | 2026-11-17 | direct | [link](https://www.apple.com/shop/product/fgec4ll/a/Refurbished-16-inch-MacBook-Pro-Apple-M5-Pro-chip-with-18%E2%80%91Core-CPU-and-20%E2%80%91Core-GPU-Space-Black) |
+| MacBook Pro 16 M3 Max 64GB | 64GB RAM, 1TB SSD, 16C CPU/40C GPU | Amazon (third-party seller) | refurbished | **$3,199.00** | new | 2026-11-17 | direct | [link](https://www.amazon.com/dp/B0F1Z7BR77) |
+| MacBook Pro 14 M5 Pro 48GB | 48GB RAM, 1TB SSD, 15C CPU/16C GPU | Amazon (third-party seller) | new | **$3,239.09** | new | 2026-11-17 | direct | [link](https://www.amazon.com/dp/B0H46QQ5KM) |
+| MacBook Pro 14 M4 Pro 48GB | 48GB RAM, 2TB SSD, 14C CPU/20C GPU | Apple (Certified Refurbished) | refurbished | **$3,269.00** | new | 2026-11-17 | direct | [link](https://www.apple.com/shop/product/g1ff9ll/a/Refurbished-14-inch-MacBook-Pro-Apple-M4-Pro-Chip-with-14%E2%80%91Core-CPU-and-20%E2%80%91Core-GPU-Nano-texture-display-Space-Black) |
+| MacBook Pro 16 M4 Max 48GB | 48GB RAM, 1TB SSD | Amazon (third-party seller) | refurbished | **$3,272.00** | new | 2026-11-17 | direct | [link](https://www.amazon.com/dp/B0DN25LGK8) |
+| MacBook Pro 14 M5 Pro 64GB | 64GB RAM, 1TB SSD, 18C CPU/20C GPU | Amazon (third-party seller) | new | **$3,699.00** | new | 2026-11-17 | direct | [link](https://www.amazon.com/dp/B0GYZKZ2WX) |
+| MacBook Pro 16 M5 Max 48GB | 48GB RAM, 2TB SSD, 18C CPU/40C GPU | Apple (Certified Refurbished) | refurbished | **$4,249.00** | new | 2026-11-17 | direct | [link](https://www.apple.com/shop/product/fge94ll/a/Refurbished-16-inch-MacBook-Pro-Apple-M5-Max-chip-with-18%E2%80%91Core-CPU-and-40%E2%80%91Core-GPU-Silver) |
+| MacBook Pro 16 M5 Max 48GB | 48GB RAM, 2TB SSD, 18C CPU/40C GPU | Amazon | new | **$4,499.00** | new | 2026-11-17 | direct | [link](https://www.amazon.com/dp/B0GR1G6V6H) |
+| MacBook Pro 16 M5 Pro 64GB | 64GB RAM, 1TB SSD, 18C CPU/20C GPU | Amazon (third-party seller) | new | **$4,599.00** | new | 2026-11-17 | direct | [link](https://www.amazon.com/dp/B0H7Z68CLL) |
+| MacBook Pro 14 M5 Max 64GB | 64GB RAM, 2TB SSD, 18C CPU/40C GPU | Amazon (third-party seller) | new | **$5,099.00** | new | 2026-11-17 | direct | [link](https://www.amazon.com/dp/B0GWS9J8KY) |
+| MacBook Pro 14 M5 Max 128GB | 128GB RAM, 2TB SSD, 18C CPU/40C GPU | Amazon (third-party seller) | new | **$6,699.00** | new | 2026-11-17 | direct | [link](https://www.amazon.com/dp/B0GZ4SQXGD) |
+| MacBook Pro 16 M5 Max 128GB | 128GB RAM, 2TB SSD, 18C CPU/40C GPU | Amazon (third-party seller) | new | **$6,999.00** | new | 2026-11-17 | direct | [link](https://www.amazon.com/dp/B0GYZYQC19) |
+
+<details>
+<summary><b>MacBooks: price history</b></summary>
+
+##### MacBook Pro 14 M1 Max 64GB — Amazon (third-party seller) (refurbished)
+Low $1,779.99 · High $1,779.99 · 1 entry
+
+| Date | Price | Basis |
+|---|--:|---|
+| 2026-11-17 | [$1,779.99](https://www.amazon.com/dp/B0F8JNXBY4) | direct |
+
+##### MacBook Pro 14 M4 Pro 48GB — Apple (Certified Refurbished) (refurbished)
+Low $3,269.00 · High $3,269.00 · 1 entry
+
+| Date | Price | Basis |
+|---|--:|---|
+| 2026-11-17 | [$3,269.00](https://www.apple.com/shop/product/g1ff9ll/a/Refurbished-14-inch-MacBook-Pro-Apple-M4-Pro-Chip-with-14%E2%80%91Core-CPU-and-20%E2%80%91Core-GPU-Nano-texture-display-Space-Black) | direct |
+
+##### MacBook Pro 14 M5 Max 128GB — Amazon (third-party seller) (new)
+Low $6,699.00 · High $6,699.00 · 1 entry
+
+| Date | Price | Basis |
+|---|--:|---|
+| 2026-11-17 | [$6,699.00](https://www.amazon.com/dp/B0GZ4SQXGD) | direct |
+
+##### MacBook Pro 14 M5 Max 64GB — Amazon (third-party seller) (new)
+Low $5,099.00 · High $5,099.00 · 1 entry
+
+| Date | Price | Basis |
+|---|--:|---|
+| 2026-11-17 | [$5,099.00](https://www.amazon.com/dp/B0GWS9J8KY) | direct |
+
+##### MacBook Pro 14 M5 Pro 48GB — Amazon (third-party seller) (new)
+Low $3,239.09 · High $3,239.09 · 1 entry
+
+| Date | Price | Basis |
+|---|--:|---|
+| 2026-11-17 | [$3,239.09](https://www.amazon.com/dp/B0H46QQ5KM) | direct |
+
+##### MacBook Pro 14 M5 Pro 64GB — Amazon (third-party seller) (new)
+Low $3,699.00 · High $3,699.00 · 1 entry
+
+| Date | Price | Basis |
+|---|--:|---|
+| 2026-11-17 | [$3,699.00](https://www.amazon.com/dp/B0GYZKZ2WX) | direct |
+
+##### MacBook Pro 16 M1 Max 64GB — Amazon (third-party seller) (refurbished)
+Low $1,654.00 · High $1,654.00 · 1 entry
+
+| Date | Price | Basis |
+|---|--:|---|
+| 2026-11-17 | [$1,654.00](https://www.amazon.com/dp/B0CLJTSXHF) | direct |
+
+##### MacBook Pro 16 M2 Max 64GB — Amazon (third-party seller) (refurbished)
+Low $2,488.80 · High $2,488.80 · 1 entry
+
+| Date | Price | Basis |
+|---|--:|---|
+| 2026-11-17 | [$2,488.80](https://www.amazon.com/dp/B0FHP6C3BL) | direct |
+
+##### MacBook Pro 16 M3 Max 64GB — Amazon (third-party seller) (refurbished)
+Low $3,199.00 · High $3,199.00 · 1 entry
+
+| Date | Price | Basis |
+|---|--:|---|
+| 2026-11-17 | [$3,199.00](https://www.amazon.com/dp/B0F1Z7BR77) | direct |
+
+##### MacBook Pro 16 M4 Max 48GB — Amazon (third-party seller) (refurbished)
+Low $3,272.00 · High $3,272.00 · 1 entry
+
+| Date | Price | Basis |
+|---|--:|---|
+| 2026-11-17 | [$3,272.00](https://www.amazon.com/dp/B0DN25LGK8) | direct |
+
+##### MacBook Pro 16 M4 Pro 48GB — Amazon (third-party seller) (refurbished)
+Low $2,199.00 · High $2,199.00 · 1 entry
+
+| Date | Price | Basis |
+|---|--:|---|
+| 2026-11-17 | [$2,199.00](https://www.amazon.com/dp/B0FT4PJ9QP) | direct |
+
+##### MacBook Pro 16 M5 Max 128GB — Amazon (third-party seller) (new)
+Low $6,999.00 · High $6,999.00 · 1 entry
+
+| Date | Price | Basis |
+|---|--:|---|
+| 2026-11-17 | [$6,999.00](https://www.amazon.com/dp/B0GYZYQC19) | direct |
+
+##### MacBook Pro 16 M5 Max 48GB — Amazon (new)
+Low $4,499.00 · High $4,499.00 · 1 entry
+
+| Date | Price | Basis |
+|---|--:|---|
+| 2026-11-17 | [$4,499.00](https://www.amazon.com/dp/B0GR1G6V6H) | direct |
+
+##### MacBook Pro 16 M5 Max 48GB — Apple (Certified Refurbished) (refurbished)
+Low $4,249.00 · High $4,249.00 · 1 entry
+
+| Date | Price | Basis |
+|---|--:|---|
+| 2026-11-17 | [$4,249.00](https://www.apple.com/shop/product/fge94ll/a/Refurbished-16-inch-MacBook-Pro-Apple-M5-Max-chip-with-18%E2%80%91Core-CPU-and-40%E2%80%91Core-GPU-Silver) | direct |
+
+##### MacBook Pro 16 M5 Pro 48GB — Apple (Certified Refurbished) (refurbished)
+Low $3,059.00 · High $3,059.00 · 1 entry
+
+| Date | Price | Basis |
+|---|--:|---|
+| 2026-11-17 | [$3,059.00](https://www.apple.com/shop/product/fgec4ll/a/Refurbished-16-inch-MacBook-Pro-Apple-M5-Pro-chip-with-18%E2%80%91Core-CPU-and-20%E2%80%91Core-GPU-Space-Black) | direct |
+
+##### MacBook Pro 16 M5 Pro 64GB — Amazon (third-party seller) (new)
+Low $4,599.00 · High $4,599.00 · 1 entry
+
+| Date | Price | Basis |
+|---|--:|---|
+| 2026-11-17 | [$4,599.00](https://www.amazon.com/dp/B0H7Z68CLL) | direct |
 
 </details>
 
