@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Track eBay listings for the SSDs and RAM modules and append rows to prices.csv.
+"""Track eBay listings for SSDs, RAM modules and MacBooks and append rows to prices.csv.
 
 Source: the official eBay Browse API (item_summary/search), a direct store
 check. For every tracked item the script logs the cheapest qualifying New
@@ -19,17 +19,20 @@ Rules applied (see claude.md):
     multi-variation listing whose low price belongs to a smaller drive),
     heatsink / PS5 editions, kits, lots, empty boxes and for-parts items are
     skipped.
+  * MacBooks: the title must name exactly one screen size, chip and memory
+    size, and they must match the tracked configuration. Locked, damaged and
+    parts listings are skipped. The storage in the title goes in spec.
   * A price below the item's floor (MIN_PRICE) is skipped as a likely scam or
     mislabeled listing rather than logged as a deal.
   * eBay condition "New" is logged as new, the refurbished grades as
     refurbished, and open box / used grades as used.
 
-To track another product, add it to SSDS or RAM_MODULES.
+To track another product, add it to SSDS, RAM_MODULES or MACBOOKS.
 
 Usage:
     python scripts/track_ebay.py                    # dry run: print what would be logged
     python scripts/track_ebay.py --write            # append new rows to prices.csv
-    python scripts/track_ebay.py --category ram     # only RAM (or: ssd)
+    python scripts/track_ebay.py --category ram     # only RAM (or: ssd, macbook)
 """
 import argparse
 import base64
@@ -46,6 +49,7 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 import price_log  # noqa: E402
+import track_macbooks  # noqa: E402
 
 TOKEN_URL = "https://api.ebay.com/identity/v1/oauth2/token"
 SEARCH_URL = "https://api.ebay.com/buy/browse/v1/item_summary/search"
@@ -69,7 +73,7 @@ CONDITION_GROUPS = (
 )
 
 # Prices below these are treated as scams or mislabeled listings.
-MIN_PRICE = {"ssd": 150.00, "ram": 250.00}
+MIN_PRICE = {"ssd": 150.00, "ram": 250.00, "macbook": 900.00}
 
 # item (as used in prices.csv), spec, search query, regex the title must match.
 SSDS = [
@@ -95,6 +99,19 @@ RAM_MODULES = [
     ("G.Skill F5-5600S4645A64GX1-RS", "1x64GB DDR5-5600 CL46", "F5-5600S4645A64GX1-RS"),
 ]
 
+# MacBook configurations: (screen sizes, chip, memory levels in GB). Each
+# combination is one tracked item, named like scripts/track_macbooks.py names it.
+MACBOOKS = [
+    ((14, 16), "M1 Max", (64,)),
+    ((14, 16), "M2 Max", (64, 96)),
+    ((14, 16), "M3 Max", (64, 96, 128)),
+    ((14, 16), "M4 Max", (64, 128)),
+    ((14, 16), "M5 Max", (64, 128)),
+]
+MACBOOK_REJECT_RE = re.compile(
+    r"\b(icloud|activation lock|mdm|locked|cracked|damaged?|no power|water|"
+    r"bad (battery|screen|display)|missing)\b", re.IGNORECASE)
+
 JUNK_RE = re.compile(
     r"\b(for parts|not working|broken|faulty|untested|as[- ]is|read (the )?description|"
     r"empty box|box only|no (ssd|drive)|lot of|bulk lot|\d+\s*(pcs|pack|lot)\b|"
@@ -108,7 +125,11 @@ CAPACITY_RE = re.compile(r"(?<![\d.])(\d+(?:\.\d+)?)\s*(TB|GB)\b", re.IGNORECASE
 
 
 def targets(category=None):
-    """Tracked products as dicts: category, item, spec, query, title_re."""
+    """Tracked products as dicts: category, item, spec, query, title_re.
+
+    MacBook targets have no fixed spec or title_re; reject_reason and to_row
+    read the configuration from each listing title instead.
+    """
     out = []
     if category in (None, "ssd"):
         for item, spec, query, pattern in SSDS:
@@ -118,6 +139,13 @@ def targets(category=None):
         for item, spec, part in RAM_MODULES:
             out.append({"category": "ram", "item": item, "spec": spec, "query": part,
                         "title_re": re.compile(re.escape(part), re.IGNORECASE)})
+    if category in (None, "macbook"):
+        for sizes, chip, levels in MACBOOKS:
+            for size in sizes:
+                for ram in levels:
+                    item = f"MacBook Pro {size} {chip} {ram}GB"
+                    out.append({"category": "macbook", "item": item,
+                                "query": f"MacBook Pro {size} {chip} {ram}GB"})
     return out
 
 
@@ -137,11 +165,20 @@ def reject_reason(target, listing):
         return "not a US listing"
     if str(listing.get("conditionId", "")) not in CONDITION_BY_ID:
         return f"condition not logged ({listing.get('condition') or 'unknown'})"
-    if not target["title_re"].search(title):
+    if target["category"] == "macbook":
+        config, reason = track_macbooks.parse_config(title)
+        if not config:
+            return reason
+        if track_macbooks.item_name(config) != target["item"]:
+            return "title names a different configuration"
+    elif not target["title_re"].search(title):
         return "title does not name the product"
     if JUNK_RE.search(title):
         return "parts, lot, empty box or accessory listing"
-    if target["category"] == "ssd":
+    if target["category"] == "macbook":
+        if MACBOOK_REJECT_RE.search(title):
+            return "locked or damaged listing"
+    elif target["category"] == "ssd":
         sizes = {f"{float(n):g}{u.upper()}" for n, u in CAPACITY_RE.findall(title)}
         if "4TB" not in sizes:
             return "title does not say 4TB"
@@ -159,9 +196,12 @@ def reject_reason(target, listing):
 
 def to_row(target, listing, run_date):
     item_id = listing.get("legacyItemId") or str(listing.get("itemId", "")).split("|")[1]
+    spec = target.get("spec")
+    if target["category"] == "macbook":
+        spec = track_macbooks.spec_text(track_macbooks.parse_config(listing["title"])[0])
     return {
         "date": run_date, "category": target["category"], "item": target["item"],
-        "spec": target["spec"], "store": "eBay",
+        "spec": spec, "store": "eBay",
         "condition": CONDITION_BY_ID[str(listing["conditionId"])],
         "price_usd": price_log.format_price(listing["price"]["value"]),
         "basis": "direct", "source_date": run_date,
@@ -229,7 +269,7 @@ def track(run_date, token, category=None, request=_request, pause=0.5):
 def main(argv=None):
     ap = argparse.ArgumentParser(description=__doc__.split("\n\n")[0])
     ap.add_argument("--write", action="store_true", help="append qualifying rows to prices.csv")
-    ap.add_argument("--category", choices=("ssd", "ram"), help="check only this category")
+    ap.add_argument("--category", choices=("ssd", "ram", "macbook"), help="check only this category")
     ap.add_argument("--date", default=dt.date.today().isoformat(),
                     help="run date YYYY-MM-DD (default: today)")
     ap.add_argument("--csv", default=str(price_log.CSV_PATH), help="path to prices.csv")
@@ -254,7 +294,7 @@ def main(argv=None):
     print(f"\neBay price check for {report['run_date']} (source: eBay Browse API)")
     print("\nQualifying prices:")
     for r in report["rows"]:
-        print(f"  {r['category']:<4} {r['item']:<32} {r['condition']:<12} "
+        print(f"  {r['category']:<7} {r['item']:<32} {r['condition']:<12} "
               f"${float(r['price_usd']):>9,.2f}  {r['url']}")
     if not report["rows"]:
         print("  none")

@@ -2258,7 +2258,7 @@ def build_arg_parser():
     parser.add_argument(
         "--category",
         default="all",
-        help="Filter to a category (ssd, ram, nvidia_gpu, amd_gpu, egpu, or all).",
+        help="Filter to a category (ssd, ram, nvidia_gpu, amd_gpu, egpu, macbook, or all).",
     )
     parser.add_argument(
         "--item",

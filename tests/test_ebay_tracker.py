@@ -106,6 +106,27 @@ class EbayTrackerTests(unittest.TestCase):
                          [("Crucial CT64G56C46S5", "new")])
         self.assertEqual(len(report["skipped"]), 1)  # the Crucial listing under the G.Skill search
 
+    def test_macbook_listings(self):
+        mac = TARGETS["MacBook Pro 16 M4 Max 64GB"]
+        good = 'Apple MacBook Pro 16" M4 Max 16-Core CPU 40-Core GPU 64GB RAM 2TB SSD Space Black'
+        self.assertIsNone(self.reason(mac, good, 3200, "3000"))
+        row, _ = track_ebay.cheapest(mac, [listing(good, 3200, "3000", "7")], RUN_DATE)
+        self.assertEqual((row["category"], row["item"], row["spec"], row["condition"]),
+                         ("macbook", "MacBook Pro 16 M4 Max 64GB",
+                          "64GB RAM, 2TB SSD, 16C CPU/40C GPU", "used"))
+        self.assertEqual(price_log.validate_row(row, RUN_DATE), [])
+        cases = {
+            'MacBook Pro 14" M4 Max 64GB 1TB': "different configuration",
+            'MacBook Pro 16" M4 Max 128GB 2TB': "different configuration",
+            'MacBook Pro 16" M4 Max 36GB 48GB 64GB 1TB': "more than one memory",
+            'MacBook Pro 16" M4 Max 64GB 1TB iCloud locked': "locked or damaged",
+            'MacBook Pro 16" M4 Max 64GB 1TB for parts': "parts",
+            'MacBook Pro 16" M4 Max 64GB logic board': "accessory",
+        }
+        for title, expected in cases.items():
+            self.assertIn(expected, self.reason(mac, title, 3200, "3000"), title)
+        self.assertIn("floor", self.reason(mac, good, 499))
+
     def test_missing_keys(self):
         import os
         saved = {k: os.environ.pop(k, None) for k in ("EBAY_CLIENT_ID", "EBAY_CLIENT_SECRET")}

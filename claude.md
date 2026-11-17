@@ -1,7 +1,7 @@
 # Nitro V 16S Hardware Price Watch (`claude.md`)
 
 ## 1. Purpose & Schedule
-A cloud routine runs daily at **9:00 AM Eastern** to track current US street prices across five hardware upgrade categories for an **Acer Nitro V 16S (ANV16S-71)** laptop setup.
+A cloud routine runs daily at **9:00 AM Eastern** to track current US street prices across five hardware upgrade categories for an **Acer Nitro V 16S (ANV16S-71)** laptop setup, plus a sixth category of high-memory MacBooks as an alternative to upgrading.
 
 **CSV-Only Output Rule:** Each run **must only write to `prices.csv`** (appending rows with their source date). Do **not** modify or append logs to `claude.md`, `README.md` (auto-regenerated from `prices.csv` by GitHub Actions), `scripts/build_readme.py`, `scripts/visualize_prices.py`, or any other file in the repository.
 
@@ -46,11 +46,18 @@ A cloud routine runs daily at **9:00 AM Eastern** to track current US street pri
 * **Details to Record (in `spec`):** Type (`Enclosure` vs. `Complete eGPU`), Connection (`TB3`, `TB4`, `TB5`, `USB4`), and PSU (`Built-in XW`, `Included`, or `No PSU / ATX required`).
 * **Exclusions:** OCuLink-only docks or proprietary-connector-only docks without Thunderbolt/USB4 support.
 
+### (6) `macbook` — High-Memory MacBooks
+* **Specs:** MacBook Pro or MacBook Air with **48 GB, 64 GB, 96 GB or 128 GB** of unified memory (the `RAM_LEVELS` list in `scripts/track_macbooks.py`), any Apple-silicon chip and screen size.
+* **Series Naming:** One `item` per model, screen size, chip and memory level, e.g. `MacBook Pro 16 M5 Max 64GB`. `spec` records the memory, storage and core counts of the unit that was priced (`64GB RAM, 2TB SSD, 18C CPU/40C GPU`). Storage is not part of `item`, so the cheapest unit's storage can change between runs.
+* **Sources:** `scripts/track_macbooks.py --write` logs the cheapest unit of each series from **Apple Certified Refurbished** (store `Apple (Certified Refurbished)`, condition `refurbished`) and from **Amazon** (new, and Renewed logged as `refurbished`). `scripts/track_ebay.py --write` logs the cheapest New and cheapest Used/Refurbished eBay listing for the 64 GB and larger MacBook Pro configurations in its `MACBOOKS` list. Run both on every price check.
+* **Apple New Price:** The Apple Store price of a new custom-memory order is not read by the script. Log it by hand with `scripts/add_price.py` (store `Apple`) when it is seen.
+* **Exclusions:** Mac Studio, Mac mini and iMac; accessories, parts and bundles; locked or damaged units; listings whose title names more than one memory or storage size.
+
 ---
 
 ## 3. Qualifying Stores & Verification Rules
 
-* **Approved Stores (US, USD):** Amazon, eBay, Newegg, Best Buy, Walmart, B&H Photo, Micro Center.
+* **Approved Stores (US, USD):** Amazon, eBay, Newegg, Best Buy, Walmart, B&H Photo, Micro Center, and Apple (the Apple Store and Apple Certified Refurbished; `macbook` category only).
 * **No Date Window:** Log every price found by a direct live store check or a price tracker/deal report (`cheapestssd.com`, `PC Gamer`, `9to5Toys`, `videocardprices.com`, `camelcamelcamel`, `Keepa`, etc.), **whatever its age**. Record the date the source gives in `source_date`; if the source gives no date, use the run date (the day the price was seen).
 * **Still Excluded:** Out-of-stock prices and multi-listing tracker averages (such as eBay lowest-three averages or median asks).
 * **eBay Used/Refurbished:** eBay used and refurbished listings are allowed, including ones reported by a tracker. Seller feedback and return policy do not have to be verified.
@@ -62,7 +69,7 @@ A cloud routine runs daily at **9:00 AM Eastern** to track current US street pri
 
 `scripts/build_readme.py` and `scripts/visualize_prices.py` automatically flag **`DEAL`** items from `prices.csv` when any of the following hold (mention triggered deals in the run response/commit summary if applicable):
 1. **SSD Threshold:** A **new 4 TB TLC SSD** from a reputable brand priced at **$450.00 or less**.
-2. **10% Price Drop:** Any tracked item (in any of the 5 categories) priced **at least 10% below** its most recent earlier price in `prices.csv` (matching `category`, `item`, `store`, and `condition`).
+2. **10% Price Drop:** Any tracked item (in any category) priced **at least 10% below** its most recent earlier price in `prices.csv` (matching `category`, `item`, `store`, and `condition`).
 3. **All-Time Low (7+ Days History):** Once `prices.csv` contains at least 7 distinct dates of history, any tracked item priced **strictly below every earlier logged price** for that `category`, `item`, and `condition` (across any store).
 
 ---
@@ -76,9 +83,9 @@ date,category,item,spec,store,condition,price_usd,basis,source_date,url
 ```
 
 * `date`: Run date (`YYYY-MM-DD`).
-* `category`: One of `ssd`, `ram`, `nvidia_gpu`, `amd_gpu`, `egpu`.
+* `category`: One of `ssd`, `ram`, `nvidia_gpu`, `amd_gpu`, `egpu`, `macbook`.
 * `item`: Normalized model name, kept consistent with existing `prices.csv` entries for series continuity (e.g., `Silicon Power UD90`, `Crucial CT64G56C46S5`, `RTX 5090 (ASUS TUF Gaming OC)`).
-* `spec`: Capacity and flash type for SSDs (`4TB TLC`, `4TB QLC`, `2TB TLC` — capacity must appear in `spec` for `scripts/build_readme.py`), module size/speed/CL for RAM (`1x64GB DDR5-5600 CL46`), VRAM/memory type for GPUs (`32GB GDDR7`, `24GB GDDR6X`), or type/connection/PSU for eGPUs (`Enclosure, TB5, No PSU`).
+* `spec`: Capacity and flash type for SSDs (`4TB TLC`, `4TB QLC`, `2TB TLC` — capacity must appear in `spec` for `scripts/build_readme.py`), module size/speed/CL for RAM (`1x64GB DDR5-5600 CL46`), VRAM/memory type for GPUs (`32GB GDDR7`, `24GB GDDR6X`), type/connection/PSU for eGPUs (`Enclosure, TB5, No PSU`), or memory/storage/cores for MacBooks (`64GB RAM, 2TB SSD, 18C CPU/40C GPU`).
 * `store`: Store name (note third-party seller if applicable, e.g., `Amazon (third-party seller)`).
 * `condition`: Lowercase `new`, `used`, or `refurbished` (lowercase required by `scripts/build_readme.py`).
 * `price_usd`: Numeric price without `$` or commas (e.g., `475.00`).
