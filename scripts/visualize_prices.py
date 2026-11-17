@@ -1810,7 +1810,9 @@ HTML_TEMPLATE = r"""<!DOCTYPE html>
 
           if (state.showLabels && (idx === pts.length - 1 || singleDay)) {
             const valLabel = isPct ? fmtSignedPct(p.yVal) : fmtMoney(p.price);
-            const nameShort = s.item.length > 22 ? s.item.slice(0, 20) + "…" : s.item;
+            // "MacBook Pro 16 M5 Max 128GB": the memory level at the end must stay visible.
+            const name = s.item.replace(/^MacBook (?=Pro|Air)/, "");
+            const nameShort = name.length > 22 ? name.slice(0, 20) + "…" : name;
             labelNodes.push({
               x: cx,
               y: cy,

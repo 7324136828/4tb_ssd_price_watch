@@ -87,3 +87,19 @@ date,category,item,spec,store,condition,price_usd,basis,source_date,url
 2026-11-16,ssd,Samsung 990 Pro,4TB TLC,Best Buy,new,799.99,reported (ByteSizedDeals),2026-11-16,https://bytesizeddeals.com/ssd/4tb-pcie-4
 2026-11-16,egpu,Razer Core X V2,"Enclosure, TB5, No PSU",Amazon,new,349.99,direct,2026-11-16,https://www.amazon.com/dp/B0FFQFDZWX
 2026-11-16,egpu,AOOSTAR EG02,"Enclosure, TB5, No PSU / ATX required",Amazon (third-party seller),new,219.00,direct,2026-11-16,https://www.amazon.com/dp/B0G3TV5HKJ
+2026-11-17,macbook,MacBook Pro 14 M4 Pro 48GB,"48GB RAM, 2TB SSD, 14C CPU/20C GPU",Apple (Certified Refurbished),refurbished,3269.00,direct,2026-11-17,https://www.apple.com/shop/product/g1ff9ll/a/Refurbished-14-inch-MacBook-Pro-Apple-M4-Pro-Chip-with-14%E2%80%91Core-CPU-and-20%E2%80%91Core-GPU-Nano-texture-display-Space-Black
+2026-11-17,macbook,MacBook Pro 16 M5 Max 48GB,"48GB RAM, 2TB SSD, 18C CPU/40C GPU",Apple (Certified Refurbished),refurbished,4249.00,direct,2026-11-17,https://www.apple.com/shop/product/fge94ll/a/Refurbished-16-inch-MacBook-Pro-Apple-M5-Max-chip-with-18%E2%80%91Core-CPU-and-40%E2%80%91Core-GPU-Silver
+2026-11-17,macbook,MacBook Pro 16 M5 Pro 48GB,"48GB RAM, 1TB SSD, 18C CPU/20C GPU",Apple (Certified Refurbished),refurbished,3059.00,direct,2026-11-17,https://www.apple.com/shop/product/fgec4ll/a/Refurbished-16-inch-MacBook-Pro-Apple-M5-Pro-chip-with-18%E2%80%91Core-CPU-and-20%E2%80%91Core-GPU-Space-Black
+2026-11-17,macbook,MacBook Pro 14 M1 Max 64GB,"64GB RAM, 2TB SSD",Amazon (third-party seller),refurbished,1779.99,direct,2026-11-17,https://www.amazon.com/dp/B0F8JNXBY4
+2026-11-17,macbook,MacBook Pro 14 M5 Max 128GB,"128GB RAM, 2TB SSD, 18C CPU/40C GPU",Amazon (third-party seller),new,6699.00,direct,2026-11-17,https://www.amazon.com/dp/B0GZ4SQXGD
+2026-11-17,macbook,MacBook Pro 14 M5 Max 64GB,"64GB RAM, 2TB SSD, 18C CPU/40C GPU",Amazon (third-party seller),new,5099.00,direct,2026-11-17,https://www.amazon.com/dp/B0GWS9J8KY
+2026-11-17,macbook,MacBook Pro 14 M5 Pro 48GB,"48GB RAM, 1TB SSD, 15C CPU/16C GPU",Amazon (third-party seller),new,3239.09,direct,2026-11-17,https://www.amazon.com/dp/B0H46QQ5KM
+2026-11-17,macbook,MacBook Pro 14 M5 Pro 64GB,"64GB RAM, 1TB SSD, 18C CPU/20C GPU",Amazon (third-party seller),new,3699.00,direct,2026-11-17,https://www.amazon.com/dp/B0GYZKZ2WX
+2026-11-17,macbook,MacBook Pro 16 M1 Max 64GB,"64GB RAM, 1TB SSD",Amazon (third-party seller),refurbished,1654.00,direct,2026-11-17,https://www.amazon.com/dp/B0CLJTSXHF
+2026-11-17,macbook,MacBook Pro 16 M2 Max 64GB,"64GB RAM, 1TB SSD",Amazon (third-party seller),refurbished,2488.80,direct,2026-11-17,https://www.amazon.com/dp/B0FHP6C3BL
+2026-11-17,macbook,MacBook Pro 16 M3 Max 64GB,"64GB RAM, 1TB SSD, 16C CPU/40C GPU",Amazon (third-party seller),refurbished,3199.00,direct,2026-11-17,https://www.amazon.com/dp/B0F1Z7BR77
+2026-11-17,macbook,MacBook Pro 16 M4 Max 48GB,"48GB RAM, 1TB SSD",Amazon (third-party seller),refurbished,3272.00,direct,2026-11-17,https://www.amazon.com/dp/B0DN25LGK8
+2026-11-17,macbook,MacBook Pro 16 M4 Pro 48GB,"48GB RAM, 512GB SSD, 14C CPU/20C GPU",Amazon (third-party seller),refurbished,2199.00,direct,2026-11-17,https://www.amazon.com/dp/B0FT4PJ9QP
+2026-11-17,macbook,MacBook Pro 16 M5 Max 128GB,"128GB RAM, 2TB SSD, 18C CPU/40C GPU",Amazon (third-party seller),new,6999.00,direct,2026-11-17,https://www.amazon.com/dp/B0GYZYQC19
+2026-11-17,macbook,MacBook Pro 16 M5 Max 48GB,"48GB RAM, 2TB SSD, 18C CPU/40C GPU",Amazon,new,4499.00,direct,2026-11-17,https://www.amazon.com/dp/B0GR1G6V6H
+2026-11-17,macbook,MacBook Pro 16 M5 Pro 64GB,"64GB RAM, 1TB SSD, 18C CPU/20C GPU",Amazon (third-party seller),new,4599.00,direct,2026-11-17,https://www.amazon.com/dp/B0H7Z68CLL
