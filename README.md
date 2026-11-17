@@ -59,31 +59,31 @@ Run the tests with `python3 -m unittest discover tests`.
 ## Dashboard
 
 <!-- PRICES:START -->
-**Last check:** 2026-11-17 &nbsp;·&nbsp; **Prices logged:** 104 &nbsp;·&nbsp; **Items tracked with prices:** 49 across 6 categories
+**Last check:** 2026-11-17 &nbsp;·&nbsp; **Prices logged:** 138 &nbsp;·&nbsp; **Items tracked with prices:** 50 across 6 categories
 
-> No DEAL flags on the latest check.
+> 🔥 **DEAL:** RTX 4090 $4,449.00 at Amazon (≥10% drop)
 
 | Category | Latest-check rows | Cheapest new on latest check |
 |---|--:|---|
-| SSDs | 0 | — |
-| RAM | 0 | — |
-| NVIDIA GPUs | 0 | — |
-| AMD GPUs | 0 | — |
-| eGPUs | 0 | — |
+| SSDs | 12 | TeamGroup MP44Q — $484.99 (Walmart (third-party seller)) |
+| RAM | 2 | Crucial CT64G56C46S5 — $1,199.89 (Amazon (third-party seller)) |
+| NVIDIA GPUs | 9 | RTX 3090 Ti — $2,150.00 (Amazon) |
+| AMD GPUs | 9 | RX 9070 (XFX Swift OC Triple Fan) — $879.99 (Amazon) |
+| eGPUs | 2 | AOOSTAR EG02 — $219.00 (Amazon (third-party seller)) |
 | MacBooks | 16 | MacBook Pro 14 M5 Pro 48GB — $3,239.09 (Amazon (third-party seller)) |
 
 ### SSDs
 
-> No new 4TB SSD price was found on 2026-11-17.
+> **Cheapest new 4TB TLC SSD on 2026-11-17:** TeamGroup T-Force G50 (4TB TLC) at **$495.99** (Amazon (third-party seller)) — [source](https://www.amazon.com/dp/B0DRVN1JXP)
 
 #### Cheapest new 4TB SSD price over time
 
 ```mermaid
 xychart-beta
     title "Lowest new 4TB SSD price per day (USD)"
-    x-axis ["11-14", "11-15", "11-16"]
+    x-axis ["11-14", "11-15", "11-16", "11-17"]
     y-axis "USD" 460 --> 500
-    line [474.97, 475.00, 484.99]
+    line [474.97, 475.00, 484.99, 484.99]
 ```
 
 #### Latest price by item (new, cheapest store)
@@ -91,9 +91,9 @@ xychart-beta
 ```mermaid
 xychart-beta
     title "Most recent logged price (USD)"
-    x-axis ["Silicon Power UD90", "TeamGroup MP44Q", "TeamGroup T-Force G50", "WD Blue SN5000", "TeamGroup MP44", "WD Blue SN5100", "Lexar NQ780", "WD Black SN7100", "Samsung 990 EVO Plus", "WD Black SN850X", "Samsung 990 Pro", "Crucial T500"]
+    x-axis ["Silicon Power UD90", "TeamGroup MP44Q", "TeamGroup T-Force G50", "WD Blue SN5000", "TeamGroup MP44", "Lexar NQ780", "WD Blue SN5100", "WD Black SN7100", "Samsung 990 EVO Plus", "WD Black SN850X", "Samsung 990 Pro", "Crucial T500"]
     y-axis "USD" 410 --> 930
-    bar [475.00, 484.99, 485.99, 491.00, 516.99, 599.99, 606.77, 629.99, 649.99, 784.99, 799.99, 869.00]
+    bar [475.00, 484.99, 485.99, 491.00, 516.99, 588.57, 599.99, 629.99, 649.99, 784.99, 797.96, 869.00]
 ```
 
 #### Latest prices
@@ -101,30 +101,30 @@ xychart-beta
 | Item | Spec | Store | Condition | Price | Change | As of | Basis | Link |
 |---|---|---|---|--:|--:|---|---|---|
 | Silicon Power UD90 | 4TB TLC (some batches reported QLC) | Newegg | new | **$475.00** | — | 2026-11-15 | reported (PC Gamer) | [link](https://www.pcgamer.com/black-friday-ssd-deals/) |
-| TeamGroup MP44Q | 4TB QLC | Walmart (third-party seller) | new | **$484.99** | new | 2026-11-16 | reported (ByteSizedDeals) | [link](https://bytesizeddeals.com/ssd/4tb-pcie-4) |
+| TeamGroup MP44Q | 4TB QLC | Walmart (third-party seller) | new | **$484.99** | — | 2026-11-17 | reported (ByteSizedDeals) | [link](https://bytesizeddeals.com/ssd/4tb-pcie-4) |
 | TeamGroup T-Force G50 | 4TB TLC | Walmart (third-party seller) | new | **$485.99** | new | 2026-11-15 | reported (ByteSizedDeals) | [link](https://bytesizeddeals.com/ssd/price-index) |
 | WD Blue SN5000 | 4TB QLC | Newegg | new | **$491.00** | — | 2026-11-15 | reported (PC Gamer) | [link](https://www.pcgamer.com/black-friday-ssd-deals/) |
-| TeamGroup T-Force G50 | 4TB TLC | Amazon (third-party seller) | new | **$495.99** | 🔺 $16.00 | 2026-11-16 | direct | [link](https://www.amazon.com/dp/B0DRVN1JXP) |
-| TeamGroup T-Force G50 | 4TB TLC | Newegg | new | **$495.99** | new | 2026-11-16 | reported (ByteSizedDeals) | [link](https://bytesizeddeals.com/ssd/4tb-pcie-4) |
+| TeamGroup T-Force G50 | 4TB TLC | Amazon (third-party seller) | new | **$495.99** | — | 2026-11-17 | direct | [link](https://www.amazon.com/dp/B0DRVN1JXP) |
+| TeamGroup T-Force G50 | 4TB TLC | Newegg | new | **$495.99** | — | 2026-11-17 | reported (ByteSizedDeals) | [link](https://bytesizeddeals.com/ssd/4tb-pcie-4) |
 | TeamGroup MP44Q | 4TB QLC | Amazon | new | **$499.99** | — | 2026-11-15 | reported (PC Gamer) | [link](https://www.pcgamer.com/black-friday-ssd-deals/) |
+| WD Blue SN5000 | 4TB QLC | Amazon (third-party seller) | new | **$499.99** | 🔻 $19.96 | 2026-11-17 | direct | [link](https://www.amazon.com/dp/B0D7MLB76V) |
 | TeamGroup MP44 | 4TB TLC | Newegg | new | **$516.99** | — | 2026-11-15 | reported (PC Gamer) | [link](https://www.pcgamer.com/black-friday-ssd-deals/) |
-| WD Blue SN5000 | 4TB QLC | Amazon (third-party seller) | new | **$519.95** | — | 2026-11-16 | direct | [link](https://www.amazon.com/dp/B0D7MLB76V) |
-| Silicon Power UD90 | 4TB TLC (some batches reported QLC) | Amazon (third-party seller) | new | **$523.00** | — | 2026-11-16 | direct | [link](https://www.amazon.com/dp/B0BYN8NHXS) |
+| Silicon Power UD90 | 4TB TLC (some batches reported QLC) | Amazon (third-party seller) | new | **$523.00** | — | 2026-11-17 | direct | [link](https://www.amazon.com/dp/B0BYN8NHXS) |
 | Samsung 990 EVO Plus | 4TB TLC | Amazon (Amazon Resale) | used | **$525.36** | new | 2026-11-16 | direct | [link](https://www.amazon.com/dp/B0DHLBDSP7) |
 | Silicon Power UD90 | 4TB TLC (some batches reported QLC) | Amazon | new | **$529.97** | 🔺 $55.00 | 2026-11-15 | reported (cheapestssd.com) | [link](https://cheapestssd.com/4tb-nvme-ssd/) |
+| Lexar NQ780 | 4TB QLC | Amazon (third-party seller) | new | **$588.57** | 🔻 $18.20 | 2026-11-17 | direct | [link](https://www.amazon.com/dp/B0F25CX4LB) |
 | WD Blue SN5100 | 4TB QLC | Amazon | new | **$599.99** | 🔺 $70.00 | 2026-11-16 | direct | [link](https://www.amazon.com/dp/B0GJSJSDSM) |
-| Lexar NQ780 | 4TB QLC | Amazon (third-party seller) | new | **$606.77** | 🔺 $37.10 | 2026-11-16 | direct | [link](https://www.amazon.com/dp/B0F25CX4LB) |
 | WD Black SN7100 | 4TB TLC | Amazon | new | **$629.99** | new | 2026-11-15 | reported (cheapestssd.com) | [link](https://cheapestssd.com/4tb-nvme-ssd/) |
-| WD Black SN7100 | 4TB TLC | Amazon (third-party seller) | new | **$629.99** | new | 2026-11-16 | direct | [link](https://www.amazon.com/dp/B0DZK9C789) |
+| WD Black SN7100 | 4TB TLC | Amazon (third-party seller) | new | **$629.99** | — | 2026-11-17 | direct | [link](https://www.amazon.com/dp/B0DZK9C789) |
 | Samsung 990 EVO Plus | 4TB TLC | B&H Photo | new | **$649.99** | — | 2026-11-15 | reported (9to5Toys) | [link](https://9to5toys.com/2026/11/14/this-weeks-pc-deals-and-news/) |
 | Samsung 990 EVO Plus | 4TB TLC | Amazon | new | **$679.99** | new | 2026-11-15 | reported (cheapestssd.com) | [link](https://cheapestssd.com/4tb-nvme-ssd/) |
-| Samsung 990 EVO Plus | 4TB TLC | Amazon (third-party seller) | new | **$679.99** | new | 2026-11-16 | direct | [link](https://www.amazon.com/dp/B0DHLBDSP7) |
+| Samsung 990 EVO Plus | 4TB TLC | Amazon (third-party seller) | new | **$679.99** | — | 2026-11-17 | direct | [link](https://www.amazon.com/dp/B0DHLBDSP7) |
 | WD Black SN850X | 4TB TLC | Amazon | new | **$784.99** | new | 2026-11-15 | reported (cheapestssd.com) | [link](https://cheapestssd.com/4tb-nvme-ssd/) |
-| WD Black SN850X | 4TB TLC | Amazon (third-party seller) | new | **$789.99** | — | 2026-11-16 | direct | [link](https://www.amazon.com/dp/B0B7CQ2CHH) |
-| Samsung 990 Pro | 4TB TLC | Amazon | new | **$799.99** | — | 2026-11-16 | direct | [link](https://www.amazon.com/dp/B0CHGT1KFJ) |
-| Samsung 990 Pro | 4TB TLC | Best Buy | new | **$799.99** | new | 2026-11-16 | reported (ByteSizedDeals) | [link](https://bytesizeddeals.com/ssd/4tb-pcie-4) |
+| WD Black SN850X | 4TB TLC | Amazon (third-party seller) | new | **$789.99** | — | 2026-11-17 | direct | [link](https://www.amazon.com/dp/B0B7CQ2CHH) |
+| Samsung 990 Pro | 4TB TLC | Amazon | new | **$797.96** | 🔻 $2.03 | 2026-11-17 | direct | [link](https://www.amazon.com/dp/B0CHGT1KFJ) |
+| Samsung 990 Pro | 4TB TLC | Best Buy | new | **$799.99** | — | 2026-11-17 | reported (ByteSizedDeals) | [link](https://bytesizeddeals.com/ssd/4tb-pcie-4) |
 | Crucial T500 | 4TB TLC | Amazon | new | **$869.00** | new | 2026-11-15 | reported (cheapestssd.com) | [link](https://cheapestssd.com/4tb-nvme-ssd/) |
-| Crucial T500 | 4TB TLC | Amazon (third-party seller) | new | **$869.00** | new | 2026-11-16 | direct | [link](https://www.amazon.com/dp/B0DBBG7CG7) |
+| Crucial T500 | 4TB TLC | Amazon (third-party seller) | new | **$869.00** | — | 2026-11-17 | direct | [link](https://www.amazon.com/dp/B0DBBG7CG7) |
 
 <details>
 <summary><b>SSDs: price history</b></summary>
@@ -137,17 +137,19 @@ Low $869.00 · High $869.00 · 1 entry
 | 2026-11-15 | [$869.00](https://cheapestssd.com/4tb-nvme-ssd/) | reported (cheapestssd.com) |
 
 ##### Crucial T500 — Amazon (third-party seller) (new)
-Low $869.00 · High $869.00 · 1 entry
+Low $869.00 · High $869.00 · 2 entries
 
 | Date | Price | Basis |
 |---|--:|---|
+| 2026-11-17 | [$869.00](https://www.amazon.com/dp/B0DBBG7CG7) | direct |
 | 2026-11-16 | [$869.00](https://www.amazon.com/dp/B0DBBG7CG7) | direct |
 
 ##### Lexar NQ780 — Amazon (third-party seller) (new)
-Low $569.67 · High $606.77 · 2 entries
+Low $569.67 · High $606.77 · 3 entries
 
 | Date | Price | Basis |
 |---|--:|---|
+| 2026-11-17 | [$588.57](https://www.amazon.com/dp/B0F25CX4LB) | direct |
 | 2026-11-16 | [$606.77](https://www.amazon.com/dp/B0F25CX4LB) | direct |
 | 2026-11-15 | [$569.67](https://www.amazon.com/dp/B0F25CX4LB) | direct |
 
@@ -166,10 +168,11 @@ Low $525.36 · High $525.36 · 1 entry
 | 2026-11-16 | [$525.36](https://www.amazon.com/dp/B0DHLBDSP7) | direct |
 
 ##### Samsung 990 EVO Plus — Amazon (third-party seller) (new)
-Low $679.99 · High $679.99 · 1 entry
+Low $679.99 · High $679.99 · 2 entries
 
 | Date | Price | Basis |
 |---|--:|---|
+| 2026-11-17 | [$679.99](https://www.amazon.com/dp/B0DHLBDSP7) | direct |
 | 2026-11-16 | [$679.99](https://www.amazon.com/dp/B0DHLBDSP7) | direct |
 
 ##### Samsung 990 EVO Plus — B&H Photo (new)
@@ -182,18 +185,20 @@ Low $649.99 · High $649.99 · 3 entries
 | 2026-11-14 | [$649.99](https://9to5toys.com/2026/11/14/this-weeks-pc-deals-and-news/) | reported (9to5Toys) |
 
 ##### Samsung 990 Pro — Amazon (new)
-Low $799.99 · High $799.99 · 2 entries
+Low $797.96 · High $799.99 · 3 entries
 
 | Date | Price | Basis |
 |---|--:|---|
+| 2026-11-17 | [$797.96](https://www.amazon.com/dp/B0CHGT1KFJ) | direct |
 | 2026-11-16 | [$799.99](https://www.amazon.com/dp/B0CHGT1KFJ) | direct |
 | 2026-11-15 | [$799.99](https://cheapestssd.com/4tb-nvme-ssd/) | reported (cheapestssd.com) |
 
 ##### Samsung 990 Pro — Best Buy (new)
-Low $799.99 · High $799.99 · 1 entry
+Low $799.99 · High $799.99 · 2 entries
 
 | Date | Price | Basis |
 |---|--:|---|
+| 2026-11-17 | [$799.99](https://bytesizeddeals.com/ssd/4tb-pcie-4) | reported (ByteSizedDeals) |
 | 2026-11-16 | [$799.99](https://bytesizeddeals.com/ssd/4tb-pcie-4) | reported (ByteSizedDeals) |
 
 ##### Silicon Power UD90 — Amazon (new)
@@ -206,10 +211,11 @@ Low $474.97 · High $529.97 · 3 entries
 | 2026-11-14 | [$474.97](https://www.pcgamer.com/best-ssd-deals-today/) | reported (PC Gamer) |
 
 ##### Silicon Power UD90 — Amazon (third-party seller) (new)
-Low $523.00 · High $523.00 · 2 entries
+Low $523.00 · High $523.00 · 3 entries
 
 | Date | Price | Basis |
 |---|--:|---|
+| 2026-11-17 | [$523.00](https://www.amazon.com/dp/B0BYN8NHXS) | direct |
 | 2026-11-16 | [$523.00](https://www.amazon.com/dp/B0BYN8NHXS) | direct |
 | 2026-11-15 | [$523.00](https://www.amazon.com/dp/B0BYN8NHXS) | direct |
 
@@ -239,25 +245,28 @@ Low $499.99 · High $499.99 · 3 entries
 | 2026-11-14 | [$499.99](https://www.pcgamer.com/best-ssd-deals-today/) | reported (PC Gamer) |
 
 ##### TeamGroup MP44Q — Walmart (third-party seller) (new)
-Low $484.99 · High $484.99 · 1 entry
+Low $484.99 · High $484.99 · 2 entries
 
 | Date | Price | Basis |
 |---|--:|---|
+| 2026-11-17 | [$484.99](https://bytesizeddeals.com/ssd/4tb-pcie-4) | reported (ByteSizedDeals) |
 | 2026-11-16 | [$484.99](https://bytesizeddeals.com/ssd/4tb-pcie-4) | reported (ByteSizedDeals) |
 
 ##### TeamGroup T-Force G50 — Amazon (third-party seller) (new)
-Low $479.99 · High $495.99 · 2 entries
+Low $479.99 · High $495.99 · 3 entries
 
 | Date | Price | Basis |
 |---|--:|---|
+| 2026-11-17 | [$495.99](https://www.amazon.com/dp/B0DRVN1JXP) | direct |
 | 2026-11-16 | [$495.99](https://www.amazon.com/dp/B0DRVN1JXP) | direct |
 | 2026-11-15 | [$479.99](https://www.amazon.com/dp/B0DRVN1JXP) | direct |
 
 ##### TeamGroup T-Force G50 — Newegg (new)
-Low $495.99 · High $495.99 · 1 entry
+Low $495.99 · High $495.99 · 2 entries
 
 | Date | Price | Basis |
 |---|--:|---|
+| 2026-11-17 | [$495.99](https://bytesizeddeals.com/ssd/4tb-pcie-4) | reported (ByteSizedDeals) |
 | 2026-11-16 | [$495.99](https://bytesizeddeals.com/ssd/4tb-pcie-4) | reported (ByteSizedDeals) |
 
 ##### TeamGroup T-Force G50 — Walmart (third-party seller) (new)
@@ -275,10 +284,11 @@ Low $629.99 · High $629.99 · 1 entry
 | 2026-11-15 | [$629.99](https://cheapestssd.com/4tb-nvme-ssd/) | reported (cheapestssd.com) |
 
 ##### WD Black SN7100 — Amazon (third-party seller) (new)
-Low $629.99 · High $629.99 · 1 entry
+Low $629.99 · High $629.99 · 2 entries
 
 | Date | Price | Basis |
 |---|--:|---|
+| 2026-11-17 | [$629.99](https://www.amazon.com/dp/B0DZK9C789) | direct |
 | 2026-11-16 | [$629.99](https://www.amazon.com/dp/B0DZK9C789) | direct |
 
 ##### WD Black SN850X — Amazon (new)
@@ -289,18 +299,20 @@ Low $784.99 · High $784.99 · 1 entry
 | 2026-11-15 | [$784.99](https://cheapestssd.com/4tb-nvme-ssd/) | reported (cheapestssd.com) |
 
 ##### WD Black SN850X — Amazon (third-party seller) (new)
-Low $789.99 · High $789.99 · 2 entries
+Low $789.99 · High $789.99 · 3 entries
 
 | Date | Price | Basis |
 |---|--:|---|
+| 2026-11-17 | [$789.99](https://www.amazon.com/dp/B0B7CQ2CHH) | direct |
 | 2026-11-16 | [$789.99](https://www.amazon.com/dp/B0B7CQ2CHH) | direct |
 | 2026-11-15 | [$789.99](https://www.amazon.com/dp/B0B7CQ2CHH) | direct |
 
 ##### WD Blue SN5000 — Amazon (third-party seller) (new)
-Low $519.95 · High $519.95 · 2 entries
+Low $499.99 · High $519.95 · 3 entries
 
 | Date | Price | Basis |
 |---|--:|---|
+| 2026-11-17 | [$499.99](https://www.amazon.com/dp/B0D7MLB76V) | direct |
 | 2026-11-16 | [$519.95](https://www.amazon.com/dp/B0D7MLB76V) | direct |
 | 2026-11-15 | [$519.95](https://www.amazon.com/dp/B0D7MLB76V) | direct |
 
@@ -324,16 +336,16 @@ Low $529.99 · High $599.99 · 2 entries
 
 ### RAM
 
-> No new 64GB DDR5 SO-DIMM price was found on 2026-11-17.
+> **Cheapest new 64GB DDR5 SO-DIMM on 2026-11-17:** Crucial CT64G56C46S5 (1x64GB DDR5-5600 CL46) at **$1,199.89** (Amazon (third-party seller)) — [source](https://www.amazon.com/dp/B0DSQWZ5G2)
 
 #### Cheapest new 64GB DDR5 SO-DIMM price over time
 
 ```mermaid
 xychart-beta
     title "Lowest new 64GB DDR5 SO-DIMM price per day (USD)"
-    x-axis ["11-15", "11-16"]
+    x-axis ["11-15", "11-16", "11-17"]
     y-axis "USD" 1180 --> 1210
-    line [1199.89, 1199.89]
+    line [1199.89, 1199.89, 1199.89]
 ```
 
 #### Latest price by item (new, cheapest store)
@@ -350,25 +362,27 @@ xychart-beta
 
 | Item | Spec | Store | Condition | Price | Change | As of | Basis | Link |
 |---|---|---|---|--:|--:|---|---|---|
-| Crucial CT64G56C46S5 | 1x64GB DDR5-5600 CL46 | Amazon (third-party seller) | new | **$1,199.89** | — | 2026-11-16 | direct | [link](https://www.amazon.com/dp/B0DSQWZ5G2) |
-| G.Skill F5-5600S4645A64GX1-RS | 1x64GB DDR5-5600 CL46 | Amazon (third-party seller) | new | **$1,999.99** | — | 2026-11-16 | direct | [link](https://www.amazon.com/dp/B0G7RLK95V) |
+| Crucial CT64G56C46S5 | 1x64GB DDR5-5600 CL46 | Amazon (third-party seller) | new | **$1,199.89** | — | 2026-11-17 | direct | [link](https://www.amazon.com/dp/B0DSQWZ5G2) |
+| G.Skill F5-5600S4645A64GX1-RS | 1x64GB DDR5-5600 CL46 | Amazon (third-party seller) | new | **$1,999.99** | — | 2026-11-17 | direct | [link](https://www.amazon.com/dp/B0G7RLK95V) |
 
 <details>
 <summary><b>RAM: price history</b></summary>
 
 ##### Crucial CT64G56C46S5 — Amazon (third-party seller) (new)
-Low $1,199.89 · High $1,199.89 · 2 entries
+Low $1,199.89 · High $1,199.89 · 3 entries
 
 | Date | Price | Basis |
 |---|--:|---|
+| 2026-11-17 | [$1,199.89](https://www.amazon.com/dp/B0DSQWZ5G2) | direct |
 | 2026-11-16 | [$1,199.89](https://www.amazon.com/dp/B0DSQWZ5G2) | direct |
 | 2026-11-15 | [$1,199.89](https://www.amazon.com/dp/B0DSQWZ5G2) | direct |
 
 ##### G.Skill F5-5600S4645A64GX1-RS — Amazon (third-party seller) (new)
-Low $1,999.99 · High $1,999.99 · 2 entries
+Low $1,999.99 · High $1,999.99 · 3 entries
 
 | Date | Price | Basis |
 |---|--:|---|
+| 2026-11-17 | [$1,999.99](https://www.amazon.com/dp/B0G7RLK95V) | direct |
 | 2026-11-16 | [$1,999.99](https://www.amazon.com/dp/B0G7RLK95V) | direct |
 | 2026-11-15 | [$1,999.99](https://www.amazon.com/dp/B0G7RLK95V) | direct |
 
@@ -376,16 +390,16 @@ Low $1,999.99 · High $1,999.99 · 2 entries
 
 ### NVIDIA GPUs
 
-> No new NVIDIA GPU price was found on 2026-11-17.
+> **Cheapest new NVIDIA GPU on 2026-11-17:** RTX 3090 Ti (24GB GDDR6X) at **$2,150.00** (Amazon) — [source](https://www.amazon.com/dp/B0BKH8HDWK)
 
 #### Cheapest by model
 
 | Model | Cheapest new | Cheapest used / refurbished |
 |---|---|---|
-| RTX 5090 | [$6,249.99](https://www.newegg.com/asus-rog-astral-rog-astral-rtx5090-o32g-gaming-geforce-rtx-5090-32gb-graphics-card-triple-fans/p/N82E16814126751?item=N82E16814126751) Newegg, 2026-11-15 | [$5,750.00](https://www.ebay.com/itm/407331778909) eBay, 2026-11-16 |
-| RTX 4090 | [$5,500.00](https://www.amazon.com/dp/B0BJFRT43X) Amazon, 2026-11-16 | [$1,300.00](https://www.ebay.com/itm/366745135471) eBay, 2026-11-16 |
-| RTX 3090 Ti | [$2,150.00](https://www.amazon.com/dp/B0BKH8HDWK) Amazon, 2026-11-16 | [$1,800.00](https://www.ebay.com/itm/820194234753) eBay, 2026-11-16 |
-| RTX 3090 | [$2,450.00](https://www.amazon.com/dp/B09GWB753L) Amazon, 2026-11-16 | [$1,500.00](https://www.ebay.com/itm/287671509732) eBay, 2026-11-16 |
+| RTX 5090 | [$6,249.99](https://www.newegg.com/asus-rog-astral-rog-astral-rtx5090-o32g-gaming-geforce-rtx-5090-32gb-graphics-card-triple-fans/p/N82E16814126751?item=N82E16814126751) Newegg, 2026-11-15 | [$5,750.00](https://www.ebay.com/itm/407331778909) eBay, 2026-11-17 |
+| RTX 4090 | [$4,449.00](https://www.amazon.com/dp/B0CPB3P36K) 🔥 Amazon, 2026-11-17 | [$1,300.00](https://www.ebay.com/itm/366745135471) eBay, 2026-11-17 |
+| RTX 3090 Ti | [$2,150.00](https://www.amazon.com/dp/B0BKH8HDWK) Amazon, 2026-11-17 | [$1,800.00](https://www.ebay.com/itm/820194234753) eBay, 2026-11-17 |
+| RTX 3090 | [$2,300.00](https://www.amazon.com/dp/B09GWB753L) Amazon, 2026-11-17 | [$1,490.00](https://www.ebay.com/itm/287671509732) eBay, 2026-11-17 |
 
 <sub>Uses the most recent logged price for each item, store and condition.</sub>
 
@@ -396,7 +410,7 @@ xychart-beta
     title "Most recent logged new price (USD)"
     x-axis ["RTX 5090", "RTX 4090", "RTX 3090 Ti", "RTX 3090"]
     y-axis "USD" 1530 --> 6870
-    bar [6249.99, 5500.00, 2150.00, 2450.00]
+    bar [6249.99, 4449.00, 2150.00, 2300.00]
 ```
 
 <details>
@@ -407,9 +421,9 @@ xychart-beta
 ```mermaid
 xychart-beta
     title "Lowest new RTX 5090 price per day (USD)"
-    x-axis ["11-14", "11-15", "11-16"]
+    x-axis ["11-14", "11-15", "11-16", "11-17"]
     y-axis "USD" 6060 --> 7640
-    line [7450.00, 6249.99, 6599.99]
+    line [7450.00, 6249.99, 6599.99, 6599.99]
 ```
 
 #### RTX 4090: cheapest new price over time
@@ -417,9 +431,9 @@ xychart-beta
 ```mermaid
 xychart-beta
     title "Lowest new RTX 4090 price per day (USD)"
-    x-axis ["11-15", "11-16"]
-    y-axis "USD" 5490 --> 5510
-    line [5500.00, 5500.00]
+    x-axis ["11-15", "11-16", "11-17"]
+    y-axis "USD" 4290 --> 5660
+    line [5500.00, 5500.00, 4449.00]
 ```
 
 #### RTX 3090 Ti: cheapest new price over time
@@ -427,9 +441,9 @@ xychart-beta
 ```mermaid
 xychart-beta
     title "Lowest new RTX 3090 Ti price per day (USD)"
-    x-axis ["11-15", "11-16"]
+    x-axis ["11-15", "11-16", "11-17"]
     y-axis "USD" 2140 --> 2160
-    line [2150.00, 2150.00]
+    line [2150.00, 2150.00, 2150.00]
 ```
 
 #### RTX 3090: cheapest new price over time
@@ -437,9 +451,9 @@ xychart-beta
 ```mermaid
 xychart-beta
     title "Lowest new RTX 3090 price per day (USD)"
-    x-axis ["11-15", "11-16"]
-    y-axis "USD" 2440 --> 2460
-    line [2450.00, 2450.00]
+    x-axis ["11-15", "11-16", "11-17"]
+    y-axis "USD" 2270 --> 2480
+    line [2450.00, 2450.00, 2300.00]
 ```
 
 </details>
@@ -448,35 +462,37 @@ xychart-beta
 
 | Model | Item | Spec | Store | Condition | Price | Change | As of | Basis | Link |
 |---|---|---|---|---|--:|--:|---|---|---|
-| RTX 5090 | RTX 5090 (Gigabyte Gaming OC) | 32GB GDDR7 | eBay | used | **$5,750.00** | new | 2026-11-16 | reported (videocardprices.com) | [link](https://www.ebay.com/itm/407331778909) |
+| RTX 5090 | RTX 5090 (Gigabyte Gaming OC) | 32GB GDDR7 | eBay | used | **$5,750.00** | — | 2026-11-17 | reported (videocardprices.com) | [link](https://www.ebay.com/itm/407331778909) |
 | RTX 5090 | RTX 5090 (ASUS ROG Astral OC) | 32GB GDDR7 | eBay | used | **$5,999.00** | new | 2026-11-15 | reported (videocardprices.com) | [link](https://www.ebay.com/itm/880090793238) |
 | RTX 5090 | RTX 5090 (ASUS ROG Astral OC) | 32GB GDDR7 | Newegg | new | **$6,249.99** | new | 2026-11-15 | reported (videocardprices.com) | [link](https://www.newegg.com/asus-rog-astral-rog-astral-rtx5090-o32g-gaming-geforce-rtx-5090-32gb-graphics-card-triple-fans/p/N82E16814126751?item=N82E16814126751) |
-| RTX 5090 | RTX 5090 (GIGABYTE AORUS) | 32GB GDDR7 | Newegg | new | **$6,599.99** | new | 2026-11-16 | reported (videocardprices.com) | [link](https://www.newegg.com/gigabyte-gv-n5090aorusx-w-32gd-geforce-rtx-5090-32gb-graphics-card/p/N82E16814932763?item=N82E16814932763) |
-| RTX 5090 | RTX 5090 (ASUS TUF Gaming OC) | 32GB GDDR7 | Amazon | new | **$7,450.00** | — | 2026-11-16 | reported (videocardprices.com) | [link](https://www.amazon.com/dp/B0DS2X13PH) |
-| RTX 4090 | RTX 4090 | 24GB GDDR6X | eBay | used | **$1,300.00** | — | 2026-11-16 | reported (gpudeals.net) | [link](https://www.ebay.com/itm/366745135471) |
-| RTX 4090 | RTX 4090 | 24GB GDDR6X | Amazon | new | **$5,500.00** | — | 2026-11-16 | reported (gpudeals.net) | [link](https://www.amazon.com/dp/B0BJFRT43X) |
-| RTX 3090 Ti | RTX 3090 Ti | 24GB GDDR6X | eBay | used | **$1,800.00** | 🔻 $95.00 | 2026-11-16 | reported (gpudeals.net) | [link](https://www.ebay.com/itm/820194234753) |
-| RTX 3090 Ti | RTX 3090 Ti | 24GB GDDR6X | Amazon | new | **$2,150.00** | — | 2026-11-16 | reported (gpudeals.net) | [link](https://www.amazon.com/dp/B0BKH8HDWK) |
-| RTX 3090 | RTX 3090 | 24GB GDDR6X | eBay | used | **$1,500.00** | — | 2026-11-16 | reported (gpudeals.net) | [link](https://www.ebay.com/itm/287671509732) |
+| RTX 5090 | RTX 5090 (GIGABYTE AORUS) | 32GB GDDR7 | Newegg | new | **$6,599.99** | — | 2026-11-17 | reported (videocardprices.com) | [link](https://www.newegg.com/gigabyte-gv-n5090aorusx-w-32gd-geforce-rtx-5090-32gb-graphics-card/p/N82E16814932763?item=N82E16814932763) |
+| RTX 5090 | RTX 5090 (ASUS TUF Gaming OC) | 32GB GDDR7 | Amazon | new | **$7,444.44** | 🔻 $5.56 | 2026-11-17 | reported (videocardprices.com) | [link](https://www.amazon.com/dp/B0DS2X13PH) |
+| RTX 4090 | RTX 4090 | 24GB GDDR6X | eBay | used | **$1,300.00** | — | 2026-11-17 | reported (gpudeals.net) | [link](https://www.ebay.com/itm/366745135471) |
+| RTX 4090 | RTX 4090 | 24GB GDDR6X | Amazon | new | **$4,449.00 🔥** | 🔻 $1,051.00 | 2026-11-17 | reported (gpudeals.net) | [link](https://www.amazon.com/dp/B0CPB3P36K) |
+| RTX 3090 Ti | RTX 3090 Ti | 24GB GDDR6X | eBay | used | **$1,800.00** | — | 2026-11-17 | reported (gpudeals.net) | [link](https://www.ebay.com/itm/820194234753) |
+| RTX 3090 Ti | RTX 3090 Ti | 24GB GDDR6X | Amazon | new | **$2,150.00** | — | 2026-11-17 | reported (gpudeals.net) | [link](https://www.amazon.com/dp/B0BKH8HDWK) |
+| RTX 3090 | RTX 3090 | 24GB GDDR6X | eBay | used | **$1,490.00** | 🔻 $10.00 | 2026-11-17 | reported (gpudeals.net) | [link](https://www.ebay.com/itm/287671509732) |
 | RTX 3090 | RTX 3090 (NVIDIA Founders Edition) | 24GB GDDR6X | Amazon (third-party seller) | used | **$1,799.22** | new | 2026-11-14 | reported (camelcamelcamel) | [link](https://camelcamelcamel.com/product/B08HR6ZBYJ) |
-| RTX 3090 | RTX 3090 | 24GB GDDR6X | Amazon | new | **$2,450.00** | — | 2026-11-16 | reported (gpudeals.net) | [link](https://www.amazon.com/dp/B09GWB753L) |
+| RTX 3090 | RTX 3090 | 24GB GDDR6X | Amazon | new | **$2,300.00** | 🔻 $150.00 | 2026-11-17 | reported (gpudeals.net) | [link](https://www.amazon.com/dp/B09GWB753L) |
 
 <details>
 <summary><b>NVIDIA GPUs: price history</b></summary>
 
 ##### RTX 3090 — Amazon (new)
-Low $2,450.00 · High $2,450.00 · 2 entries
+Low $2,300.00 · High $2,450.00 · 3 entries
 
 | Date | Price | Basis |
 |---|--:|---|
+| 2026-11-17 | [$2,300.00](https://www.amazon.com/dp/B09GWB753L) | reported (gpudeals.net) |
 | 2026-11-16 | [$2,450.00](https://www.amazon.com/dp/B09GWB753L) | reported (gpudeals.net) |
 | 2026-11-15 | [$2,450.00](https://www.amazon.com/dp/B09GWB753L) | reported (gpudeals.net) |
 
 ##### RTX 3090 — eBay (used)
-Low $1,500.00 · High $1,500.00 · 2 entries
+Low $1,490.00 · High $1,500.00 · 3 entries
 
 | Date | Price | Basis |
 |---|--:|---|
+| 2026-11-17 | [$1,490.00](https://www.ebay.com/itm/287671509732) | reported (gpudeals.net) |
 | 2026-11-16 | [$1,500.00](https://www.ebay.com/itm/287671509732) | reported (gpudeals.net) |
 | 2026-11-15 | [$1,500.00](https://www.ebay.com/itm/287671509732) | reported (gpudeals.net) |
 
@@ -488,34 +504,38 @@ Low $1,799.22 · High $1,799.22 · 1 entry
 | 2026-11-14 | [$1,799.22](https://camelcamelcamel.com/product/B08HR6ZBYJ) | reported (camelcamelcamel) |
 
 ##### RTX 3090 Ti — Amazon (new)
-Low $2,150.00 · High $2,150.00 · 2 entries
+Low $2,150.00 · High $2,150.00 · 3 entries
 
 | Date | Price | Basis |
 |---|--:|---|
+| 2026-11-17 | [$2,150.00](https://www.amazon.com/dp/B0BKH8HDWK) | reported (gpudeals.net) |
 | 2026-11-16 | [$2,150.00](https://www.amazon.com/dp/B0BKH8HDWK) | reported (gpudeals.net) |
 | 2026-11-15 | [$2,150.00](https://www.amazon.com/dp/B0BKH8HDWK) | reported (gpudeals.net) |
 
 ##### RTX 3090 Ti — eBay (used)
-Low $1,800.00 · High $1,895.00 · 2 entries
+Low $1,800.00 · High $1,895.00 · 3 entries
 
 | Date | Price | Basis |
 |---|--:|---|
+| 2026-11-17 | [$1,800.00](https://www.ebay.com/itm/820194234753) | reported (gpudeals.net) |
 | 2026-11-16 | [$1,800.00](https://www.ebay.com/itm/820194234753) | reported (gpudeals.net) |
 | 2026-11-15 | [$1,895.00](https://www.ebay.com/itm/366810925420) | reported (gpudeals.net) |
 
 ##### RTX 4090 — Amazon (new)
-Low $5,500.00 · High $5,500.00 · 2 entries
+Low $4,449.00 · High $5,500.00 · 3 entries
 
 | Date | Price | Basis |
 |---|--:|---|
+| 2026-11-17 | [$4,449.00](https://www.amazon.com/dp/B0CPB3P36K) | reported (gpudeals.net) |
 | 2026-11-16 | [$5,500.00](https://www.amazon.com/dp/B0BJFRT43X) | reported (gpudeals.net) |
 | 2026-11-15 | [$5,500.00](https://www.amazon.com/dp/B0BJFRT43X) | reported (gpudeals.net) |
 
 ##### RTX 4090 — eBay (used)
-Low $1,300.00 · High $1,300.00 · 2 entries
+Low $1,300.00 · High $1,300.00 · 3 entries
 
 | Date | Price | Basis |
 |---|--:|---|
+| 2026-11-17 | [$1,300.00](https://www.ebay.com/itm/366745135471) | reported (gpudeals.net) |
 | 2026-11-16 | [$1,300.00](https://www.ebay.com/itm/366745135471) | reported (gpudeals.net) |
 | 2026-11-15 | [$1,300.00](https://www.ebay.com/itm/366745135471) | reported (gpudeals.net) |
 
@@ -534,43 +554,46 @@ Low $5,999.00 · High $5,999.00 · 1 entry
 | 2026-11-15 | [$5,999.00](https://www.ebay.com/itm/880090793238) | reported (videocardprices.com) |
 
 ##### RTX 5090 (ASUS TUF Gaming OC) — Amazon (new)
-Low $7,450.00 · High $7,450.00 · 4 entries
+Low $7,444.44 · High $7,450.00 · 5 entries
 
 | Date | Price | Basis |
 |---|--:|---|
+| 2026-11-17 | [$7,444.44](https://www.amazon.com/dp/B0DS2X13PH) | reported (videocardprices.com) |
 | 2026-11-16 | [$7,450.00](https://www.amazon.com/dp/B0DS2X13PH) | reported (videocardprices.com) |
 | 2026-11-15 | [$7,450.00](https://videocardprices.com/card/nvidia-rtx-5090/) | reported (videocardprices.com) |
 | 2026-11-14 | [$7,450.00](https://videocardprices.com/card/nvidia-rtx-5090/) | reported (videocardprices.com) |
 | 2026-11-14 | [$7,450.00](https://videocardprices.com/card/nvidia-rtx-5090/) | reported (videocardprices.com) |
 
 ##### RTX 5090 (GIGABYTE AORUS) — Newegg (new)
-Low $6,599.99 · High $6,599.99 · 1 entry
+Low $6,599.99 · High $6,599.99 · 2 entries
 
 | Date | Price | Basis |
 |---|--:|---|
+| 2026-11-17 | [$6,599.99](https://www.newegg.com/gigabyte-gv-n5090aorusx-w-32gd-geforce-rtx-5090-32gb-graphics-card/p/N82E16814932763?item=N82E16814932763) | reported (videocardprices.com) |
 | 2026-11-16 | [$6,599.99](https://www.newegg.com/gigabyte-gv-n5090aorusx-w-32gd-geforce-rtx-5090-32gb-graphics-card/p/N82E16814932763?item=N82E16814932763) | reported (videocardprices.com) |
 
 ##### RTX 5090 (Gigabyte Gaming OC) — eBay (used)
-Low $5,750.00 · High $5,750.00 · 1 entry
+Low $5,750.00 · High $5,750.00 · 2 entries
 
 | Date | Price | Basis |
 |---|--:|---|
+| 2026-11-17 | [$5,750.00](https://www.ebay.com/itm/407331778909) | reported (videocardprices.com) |
 | 2026-11-16 | [$5,750.00](https://www.ebay.com/itm/407331778909) | reported (videocardprices.com) |
 
 </details>
 
 ### AMD GPUs
 
-> No new AMD GPU price was found on 2026-11-17.
+> **Cheapest new AMD GPU on 2026-11-17:** RX 9070 (XFX Swift OC Triple Fan) (16GB GDDR6) at **$879.99** (Amazon) — [source](https://www.amazon.com/dp/B0DXLBTL4B)
 
 #### Cheapest by model
 
 | Model | Cheapest new | Cheapest used / refurbished |
 |---|---|---|
 | RX 9070 XT | [$949.99](https://www.newegg.com/asrock-challenger-rx9070xt-cl-16g-radeon-rx-9070-xt-16gb-graphics-card-triple-fans/p/N82E16814930145?item=N82E16814930145) Newegg, 2026-11-16 | [$899.00](https://www.ebay.com/itm/168853292500) eBay, 2026-11-15 |
-| RX 9070 | [$879.99](https://www.amazon.com/dp/B0DXLBTL4B) Amazon, 2026-11-16 | [$830.00](https://www.ebay.com/itm/267843983228) eBay, 2026-11-16 |
-| RX 7900 XTX | [$1,099.99](https://www.amazon.com/dp/B0BTPK5J68) Amazon, 2026-11-16 | — |
-| RX 7900 XT | [$946.00](https://www.amazon.com/dp/B0BMNGT8XM) Amazon, 2026-11-16 | [$900.00](https://www.ebay.com/itm/960194484387) eBay, 2026-11-16 |
+| RX 9070 | [$879.99](https://www.amazon.com/dp/B0DXLBTL4B) Amazon, 2026-11-17 | [$830.00](https://www.ebay.com/itm/267843983228) eBay, 2026-11-17 |
+| RX 7900 XTX | [$1,099.99](https://www.amazon.com/dp/B0BTPK5J68) Amazon, 2026-11-17 | — |
+| RX 7900 XT | [$946.00](https://www.amazon.com/dp/B0BMNGT8XM) Amazon, 2026-11-17 | [$970.00](https://www.ebay.com/itm/407201083826) eBay, 2026-11-17 |
 
 <sub>Uses the most recent logged price for each item, store and condition.</sub>
 
@@ -592,9 +615,9 @@ xychart-beta
 ```mermaid
 xychart-beta
     title "Lowest new RX 9070 XT price per day (USD)"
-    x-axis ["11-15", "11-16"]
-    y-axis "USD" 930 --> 960
-    line [949.99, 949.99]
+    x-axis ["11-15", "11-16", "11-17"]
+    y-axis "USD" 930 --> 1010
+    line [949.99, 949.99, 999.99]
 ```
 
 #### RX 9070: cheapest new price over time
@@ -602,9 +625,9 @@ xychart-beta
 ```mermaid
 xychart-beta
     title "Lowest new RX 9070 price per day (USD)"
-    x-axis ["11-15", "11-16"]
+    x-axis ["11-15", "11-16", "11-17"]
     y-axis "USD" 860 --> 890
-    line [879.99, 879.99]
+    line [879.99, 879.99, 879.99]
 ```
 
 #### RX 7900 XTX: cheapest new price over time
@@ -612,9 +635,9 @@ xychart-beta
 ```mermaid
 xychart-beta
     title "Lowest new RX 7900 XTX price per day (USD)"
-    x-axis ["11-15", "11-16"]
+    x-axis ["11-15", "11-16", "11-17"]
     y-axis "USD" 1080 --> 1110
-    line [1099.99, 1099.99]
+    line [1099.99, 1099.99, 1099.99]
 ```
 
 #### RX 7900 XT: cheapest new price over time
@@ -622,9 +645,9 @@ xychart-beta
 ```mermaid
 xychart-beta
     title "Lowest new RX 7900 XT price per day (USD)"
-    x-axis ["11-15", "11-16"]
+    x-axis ["11-15", "11-16", "11-17"]
     y-axis "USD" 930 --> 960
-    line [946.00, 946.00]
+    line [946.00, 946.00, 946.00]
 ```
 
 </details>
@@ -634,41 +657,46 @@ xychart-beta
 | Model | Item | Spec | Store | Condition | Price | Change | As of | Basis | Link |
 |---|---|---|---|---|--:|--:|---|---|---|
 | RX 9070 XT | RX 9070 XT (PowerColor OC) | 16GB GDDR6 | eBay | used | **$899.00** | new | 2026-11-15 | reported (videocardprices.com) | [link](https://www.ebay.com/itm/168853292500) |
+| RX 9070 XT | RX 9070 XT (GIGABYTE Gaming OC) | 16GB GDDR6 | eBay | used | **$925.00** | new | 2026-11-17 | reported (videocardprices.com) | [link](https://www.ebay.com/itm/840132001019) |
 | RX 9070 XT | RX 9070 XT (XFX Gaming) | 16GB GDDR6 | eBay | used | **$929.97** | new | 2026-11-16 | reported (videocardprices.com) | [link](https://www.ebay.com/itm/117519818319) |
 | RX 9070 XT | RX 9070 XT (ASRock Challenger) | 16GB GDDR6 | Newegg | new | **$949.99** | — | 2026-11-16 | reported (videocardprices.com) | [link](https://www.newegg.com/asrock-challenger-rx9070xt-cl-16g-radeon-rx-9070-xt-16gb-graphics-card-triple-fans/p/N82E16814930145?item=N82E16814930145) |
-| RX 9070 XT | RX 9070 XT (GIGABYTE Gaming OC) | 16GB GDDR6 | Amazon | new | **$1,034.99** | — | 2026-11-16 | reported (videocardprices.com) | [link](https://www.amazon.com/dp/B0DS2QG2KW) |
-| RX 9070 | RX 9070 (AsRock Challenger) | 16GB GDDR6 | eBay | used | **$830.00** | new | 2026-11-16 | reported (videocardprices.com) | [link](https://www.ebay.com/itm/267843983228) |
+| RX 9070 XT | RX 9070 XT (ASRock Steel Legend) | 16GB GDDR6 | Newegg | new | **$999.99** | new | 2026-11-17 | reported (videocardprices.com) | [link](https://www.newegg.com/asrock-steel-legend-rx9070xt-sl-16g-radeon-rx-9070-xt-16gb-graphics-card-triple-fans/p/N82E16814930136?item=N82E16814930136) |
+| RX 9070 XT | RX 9070 XT (GIGABYTE Gaming OC) | 16GB GDDR6 | Amazon | new | **$1,034.99** | — | 2026-11-17 | reported (videocardprices.com) | [link](https://www.amazon.com/dp/B0DS2QG2KW) |
+| RX 9070 | RX 9070 (AsRock Challenger) | 16GB GDDR6 | eBay | used | **$830.00** | — | 2026-11-17 | reported (videocardprices.com) | [link](https://www.ebay.com/itm/267843983228) |
 | RX 9070 | RX 9070 (ASRock Steel Legend) | 16GB GDDR6 | eBay | used | **$848.99** | new | 2026-11-15 | reported (videocardprices.com) | [link](https://www.ebay.com/itm/327453479284) |
-| RX 9070 | RX 9070 (XFX Swift OC Triple Fan) | 16GB GDDR6 | Amazon | new | **$879.99** | — | 2026-11-16 | reported (videocardprices.com) | [link](https://www.amazon.com/dp/B0DXLBTL4B) |
-| RX 9070 | RX 9070 (GIGABYTE Gaming) | 16GB GDDR6 | Newegg | new | **$934.99** | — | 2026-11-16 | reported (videocardprices.com) | [link](https://www.newegg.com/gigabyte-gv-r9070gaming-oc-16gd-radeon-rx-9070-16gb-graphics-card-triple-fans/p/N82E16814932752?item=N82E16814932752) |
-| RX 7900 XTX | RX 7900 XTX (ASRock Phantom Gaming OC) | 24GB GDDR6 | Amazon | new | **$1,099.99** | — | 2026-11-16 | reported (videocardprices.com) | [link](https://www.amazon.com/dp/B0BTPK5J68) |
-| RX 7900 XT | RX 7900 XT | 20GB GDDR6 | eBay | used | **$900.00** | — | 2026-11-16 | reported (gpudeals.net) | [link](https://www.ebay.com/itm/960194484387) |
-| RX 7900 XT | RX 7900 XT | 20GB GDDR6 | Amazon | new | **$946.00** | — | 2026-11-16 | reported (gpudeals.net) | [link](https://www.amazon.com/dp/B0BMNGT8XM) |
+| RX 9070 | RX 9070 (XFX Swift OC Triple Fan) | 16GB GDDR6 | Amazon | new | **$879.99** | — | 2026-11-17 | reported (videocardprices.com) | [link](https://www.amazon.com/dp/B0DXLBTL4B) |
+| RX 9070 | RX 9070 (GIGABYTE Gaming) | 16GB GDDR6 | Newegg | new | **$934.99** | — | 2026-11-17 | reported (videocardprices.com) | [link](https://www.newegg.com/gigabyte-gv-r9070gaming-oc-16gd-radeon-rx-9070-16gb-graphics-card-triple-fans/p/N82E16814932752?item=N82E16814932752) |
+| RX 7900 XTX | RX 7900 XTX (ASRock Phantom Gaming OC) | 24GB GDDR6 | Amazon | new | **$1,099.99** | — | 2026-11-17 | reported (videocardprices.com) | [link](https://www.amazon.com/dp/B0BTPK5J68) |
+| RX 7900 XT | RX 7900 XT | 20GB GDDR6 | Amazon | new | **$946.00** | — | 2026-11-17 | reported (gpudeals.net) | [link](https://www.amazon.com/dp/B0BMNGT8XM) |
+| RX 7900 XT | RX 7900 XT | 20GB GDDR6 | eBay | used | **$970.00** | 🔺 $70.00 | 2026-11-17 | reported (gpudeals.net) | [link](https://www.ebay.com/itm/407201083826) |
 
 <details>
 <summary><b>AMD GPUs: price history</b></summary>
 
 ##### RX 7900 XT — Amazon (new)
-Low $946.00 · High $946.00 · 2 entries
+Low $946.00 · High $946.00 · 3 entries
 
 | Date | Price | Basis |
 |---|--:|---|
+| 2026-11-17 | [$946.00](https://www.amazon.com/dp/B0BMNGT8XM) | reported (gpudeals.net) |
 | 2026-11-16 | [$946.00](https://www.amazon.com/dp/B0BMNGT8XM) | reported (gpudeals.net) |
 | 2026-11-15 | [$946.00](https://www.amazon.com/dp/B0BMNGT8XM) | reported (gpudeals.net) |
 
 ##### RX 7900 XT — eBay (used)
-Low $900.00 · High $900.00 · 2 entries
+Low $900.00 · High $970.00 · 3 entries
 
 | Date | Price | Basis |
 |---|--:|---|
+| 2026-11-17 | [$970.00](https://www.ebay.com/itm/407201083826) | reported (gpudeals.net) |
 | 2026-11-16 | [$900.00](https://www.ebay.com/itm/960194484387) | reported (gpudeals.net) |
 | 2026-11-15 | [$900.00](https://www.ebay.com/itm/960194484387) | reported (gpudeals.net) |
 
 ##### RX 7900 XTX (ASRock Phantom Gaming OC) — Amazon (new)
-Low $1,099.99 · High $1,099.99 · 2 entries
+Low $1,099.99 · High $1,099.99 · 3 entries
 
 | Date | Price | Basis |
 |---|--:|---|
+| 2026-11-17 | [$1,099.99](https://www.amazon.com/dp/B0BTPK5J68) | reported (videocardprices.com) |
 | 2026-11-16 | [$1,099.99](https://www.amazon.com/dp/B0BTPK5J68) | reported (videocardprices.com) |
 | 2026-11-15 | [$1,099.99](https://www.amazon.com/dp/B0BTPK5J68) | reported (videocardprices.com) |
 
@@ -680,25 +708,28 @@ Low $848.99 · High $848.99 · 1 entry
 | 2026-11-15 | [$848.99](https://www.ebay.com/itm/327453479284) | reported (videocardprices.com) |
 
 ##### RX 9070 (AsRock Challenger) — eBay (used)
-Low $830.00 · High $830.00 · 1 entry
+Low $830.00 · High $830.00 · 2 entries
 
 | Date | Price | Basis |
 |---|--:|---|
+| 2026-11-17 | [$830.00](https://www.ebay.com/itm/267843983228) | reported (videocardprices.com) |
 | 2026-11-16 | [$830.00](https://www.ebay.com/itm/267843983228) | reported (videocardprices.com) |
 
 ##### RX 9070 (GIGABYTE Gaming) — Newegg (new)
-Low $934.99 · High $934.99 · 2 entries
+Low $934.99 · High $934.99 · 3 entries
 
 | Date | Price | Basis |
 |---|--:|---|
+| 2026-11-17 | [$934.99](https://www.newegg.com/gigabyte-gv-r9070gaming-oc-16gd-radeon-rx-9070-16gb-graphics-card-triple-fans/p/N82E16814932752?item=N82E16814932752) | reported (videocardprices.com) |
 | 2026-11-16 | [$934.99](https://www.newegg.com/gigabyte-gv-r9070gaming-oc-16gd-radeon-rx-9070-16gb-graphics-card-triple-fans/p/N82E16814932752?item=N82E16814932752) | reported (videocardprices.com) |
 | 2026-11-15 | [$934.99](https://www.newegg.com/gigabyte-gv-r9070gaming-oc-16gd-radeon-rx-9070-16gb-graphics-card-triple-fans/p/N82E16814932752?item=N82E16814932752) | reported (videocardprices.com) |
 
 ##### RX 9070 (XFX Swift OC Triple Fan) — Amazon (new)
-Low $879.99 · High $879.99 · 2 entries
+Low $879.99 · High $879.99 · 3 entries
 
 | Date | Price | Basis |
 |---|--:|---|
+| 2026-11-17 | [$879.99](https://www.amazon.com/dp/B0DXLBTL4B) | reported (videocardprices.com) |
 | 2026-11-16 | [$879.99](https://www.amazon.com/dp/B0DXLBTL4B) | reported (videocardprices.com) |
 | 2026-11-15 | [$879.99](https://www.amazon.com/dp/B0DXLBTL4B) | reported (videocardprices.com) |
 
@@ -710,13 +741,28 @@ Low $949.99 · High $949.99 · 2 entries
 | 2026-11-16 | [$949.99](https://www.newegg.com/asrock-challenger-rx9070xt-cl-16g-radeon-rx-9070-xt-16gb-graphics-card-triple-fans/p/N82E16814930145?item=N82E16814930145) | reported (videocardprices.com) |
 | 2026-11-15 | [$949.99](https://www.newegg.com/asrock-challenger-rx9070xt-cl-16g-radeon-rx-9070-xt-16gb-graphics-card-triple-fans/p/N82E16814930145?item=N82E16814930145) | reported (videocardprices.com) |
 
-##### RX 9070 XT (GIGABYTE Gaming OC) — Amazon (new)
-Low $1,034.99 · High $1,034.99 · 2 entries
+##### RX 9070 XT (ASRock Steel Legend) — Newegg (new)
+Low $999.99 · High $999.99 · 1 entry
 
 | Date | Price | Basis |
 |---|--:|---|
+| 2026-11-17 | [$999.99](https://www.newegg.com/asrock-steel-legend-rx9070xt-sl-16g-radeon-rx-9070-xt-16gb-graphics-card-triple-fans/p/N82E16814930136?item=N82E16814930136) | reported (videocardprices.com) |
+
+##### RX 9070 XT (GIGABYTE Gaming OC) — Amazon (new)
+Low $1,034.99 · High $1,034.99 · 3 entries
+
+| Date | Price | Basis |
+|---|--:|---|
+| 2026-11-17 | [$1,034.99](https://www.amazon.com/dp/B0DS2QG2KW) | reported (videocardprices.com) |
 | 2026-11-16 | [$1,034.99](https://www.amazon.com/dp/B0DS2QG2KW) | reported (videocardprices.com) |
 | 2026-11-15 | [$1,034.99](https://videocardprices.com/card/amd-rx-9070-xt/) | reported (videocardprices.com) |
+
+##### RX 9070 XT (GIGABYTE Gaming OC) — eBay (used)
+Low $925.00 · High $925.00 · 1 entry
+
+| Date | Price | Basis |
+|---|--:|---|
+| 2026-11-17 | [$925.00](https://www.ebay.com/itm/840132001019) | reported (videocardprices.com) |
 
 ##### RX 9070 XT (PowerColor OC) — eBay (used)
 Low $899.00 · High $899.00 · 1 entry
@@ -736,16 +782,16 @@ Low $929.97 · High $929.97 · 1 entry
 
 ### eGPUs
 
-> No new eGPU price was found on 2026-11-17.
+> **Cheapest new eGPU on 2026-11-17:** AOOSTAR EG02 (Enclosure, TB5, No PSU / ATX required) at **$219.00** (Amazon (third-party seller)) — [source](https://www.amazon.com/dp/B0G3TV5HKJ)
 
 #### Cheapest new eGPU price over time
 
 ```mermaid
 xychart-beta
     title "Lowest new eGPU price per day (USD)"
-    x-axis ["11-15", "11-16"]
+    x-axis ["11-15", "11-16", "11-17"]
     y-axis "USD" 200 --> 230
-    line [219.00, 219.00]
+    line [219.00, 219.00, 219.00]
 ```
 
 #### Latest price by item (new, cheapest store)
@@ -762,25 +808,27 @@ xychart-beta
 
 | Item | Spec | Store | Condition | Price | Change | As of | Basis | Link |
 |---|---|---|---|--:|--:|---|---|---|
-| AOOSTAR EG02 | Enclosure, TB5, No PSU / ATX required | Amazon (third-party seller) | new | **$219.00** | — | 2026-11-16 | direct | [link](https://www.amazon.com/dp/B0G3TV5HKJ) |
-| Razer Core X V2 | Enclosure, TB5, No PSU | Amazon | new | **$349.99** | — | 2026-11-16 | direct | [link](https://www.amazon.com/dp/B0FFQFDZWX) |
+| AOOSTAR EG02 | Enclosure, TB5, No PSU / ATX required | Amazon (third-party seller) | new | **$219.00** | — | 2026-11-17 | direct | [link](https://www.amazon.com/dp/B0G3TV5HKJ) |
+| Razer Core X V2 | Enclosure, TB5, No PSU | Amazon | new | **$349.99** | — | 2026-11-17 | direct | [link](https://www.amazon.com/dp/B0FFQFDZWX) |
 
 <details>
 <summary><b>eGPUs: price history</b></summary>
 
 ##### AOOSTAR EG02 — Amazon (third-party seller) (new)
-Low $219.00 · High $219.00 · 2 entries
+Low $219.00 · High $219.00 · 3 entries
 
 | Date | Price | Basis |
 |---|--:|---|
+| 2026-11-17 | [$219.00](https://www.amazon.com/dp/B0G3TV5HKJ) | direct |
 | 2026-11-16 | [$219.00](https://www.amazon.com/dp/B0G3TV5HKJ) | direct |
 | 2026-11-15 | [$219.00](https://www.amazon.com/dp/B0G3TV5HKJ) | direct |
 
 ##### Razer Core X V2 — Amazon (new)
-Low $349.99 · High $349.99 · 2 entries
+Low $349.99 · High $349.99 · 3 entries
 
 | Date | Price | Basis |
 |---|--:|---|
+| 2026-11-17 | [$349.99](https://www.amazon.com/dp/B0FFQFDZWX) | direct |
 | 2026-11-16 | [$349.99](https://www.amazon.com/dp/B0FFQFDZWX) | direct |
 | 2026-11-15 | [$349.99](https://www.amazon.com/dp/B0FFQFDZWX) | direct |
 
