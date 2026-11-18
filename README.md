@@ -59,22 +59,22 @@ Run the tests with `python3 -m unittest discover tests`.
 ## Dashboard
 
 <!-- PRICES:START -->
-**Last check:** 2026-11-18 &nbsp;·&nbsp; **Prices logged:** 195 &nbsp;·&nbsp; **Items tracked with prices:** 55 across 6 categories
+**Last check:** 2026-11-18 &nbsp;·&nbsp; **Prices logged:** 245 &nbsp;·&nbsp; **Items tracked with prices:** 69 across 6 categories
 
-> 🔥 **DEAL:** MacBook Pro 16 M4 Max 48GB $2,929.99 at Amazon (third-party seller) (≥10% drop); Samsung 990 EVO Plus $530.11 at Amazon (≥10% drop)
+> 🔥 **DEAL:** MacBook Pro 16 M4 Max 48GB $2,929.99 at Amazon (third-party seller) (≥10% drop); Silicon Power UD90 $449.95 at eBay (4TB TLC ≤ $450.00); Samsung 990 EVO Plus $530.11 at Amazon (≥10% drop)
 
 | Category | Latest-check rows | Cheapest new on latest check |
 |---|--:|---|
-| SSDs | 17 | TeamGroup MP44Q — $484.99 (Amazon (third-party seller)) |
-| RAM | 2 | Crucial CT64G56C46S5 — $1,199.89 (Amazon (third-party seller)) |
+| SSDs | 41 | TeamGroup MP44Q — $448.88 (eBay) |
+| RAM | 3 | Crucial CT64G56C46S5 — $1,000.00 (eBay) |
 | NVIDIA GPUs | 9 | RTX 3090 Ti — $2,150.00 (Amazon) |
 | AMD GPUs | 9 | RX 9070 (XFX Swift OC Triple Fan) — $879.99 (Amazon) |
 | eGPUs | 5 | AOOSTAR EG02 — $219.00 (Amazon (third-party seller)) |
-| MacBooks | 15 | MacBook Pro 14 M5 Pro 48GB — $3,239.10 (Amazon (third-party seller)) |
+| MacBooks | 40 | MacBook Pro 14 M5 Pro 48GB — $3,239.10 (Amazon (third-party seller)) |
 
 ### SSDs
 
-> **Cheapest new 4TB TLC SSD on 2026-11-18:** TeamGroup T-Force G50 (4TB TLC) at **$495.99** (Amazon (third-party seller)) — [source](https://www.amazon.com/dp/B0DRVN1JXP)
+> **Cheapest new 4TB TLC SSD on 2026-11-18:** Silicon Power UD90 (4TB TLC (some batches reported QLC)) at **$449.95** (eBay) — [source](https://www.ebay.com/itm/257830211610)
 
 #### Cheapest new 4TB SSD price over time
 
@@ -82,8 +82,8 @@ Run the tests with `python3 -m unittest discover tests`.
 xychart-beta
     title "Lowest new 4TB SSD price per day (USD)"
     x-axis ["11-14", "11-15", "11-16", "11-17", "11-18"]
-    y-axis "USD" 460 --> 500
-    line [474.97, 475.00, 484.99, 484.99, 484.99]
+    y-axis "USD" 430 --> 500
+    line [474.97, 475.00, 484.99, 484.99, 448.88]
 ```
 
 #### Latest price by item (new, cheapest store)
@@ -91,37 +91,61 @@ xychart-beta
 ```mermaid
 xychart-beta
     title "Most recent logged price (USD)"
-    x-axis ["Silicon Power UD90", "TeamGroup MP44Q", "TeamGroup T-Force G50", "WD Blue SN5000", "TeamGroup MP44", "Samsung 990 EVO Plus", "Crucial P310", "Lexar NQ780", "WD Blue SN5100", "WD Black SN7100", "WD Black SN850X", "Samsung 990 Pro", "Crucial T500"]
-    y-axis "USD" 410 --> 930
-    bar [475.00, 484.99, 485.99, 491.00, 505.99, 530.11, 556.99, 588.57, 599.99, 629.99, 784.99, 799.99, 869.00]
+    x-axis ["TeamGroup MP44Q", "Silicon Power UD90", "TeamGroup T-Force G50", "WD Blue SN5100", "WD Blue SN5000", "Crucial P310", "TeamGroup MP44", "Samsung 990 EVO Plus", "WD Black SN7100", "Lexar NQ780", "Lexar NM790", "Samsung 990 Pro", "WD Black SN850X", "Crucial T500", "Kingston KC3000"]
+    y-axis "USD" 400 --> 780
+    bar [448.88, 449.95, 469.95, 474.99, 491.00, 500.00, 505.99, 530.11, 560.00, 588.57, 600.00, 620.00, 680.00, 700.00, 729.00]
 ```
 
 #### Latest prices
 
 | Item | Spec | Store | Condition | Price | Change | As of | Basis | Link |
 |---|---|---|---|--:|--:|---|---|---|
+| TeamGroup T-Force G50 | 4TB TLC | eBay | used | **$379.99** | new | 2026-11-18 | direct | [link](https://www.ebay.com/itm/117491940156) |
+| WD Blue SN5000 | 4TB QLC | eBay | used | **$399.95** | new | 2026-11-18 | direct | [link](https://www.ebay.com/itm/188352075140) |
+| TeamGroup MP44Q | 4TB QLC | eBay | new | **$448.88** | new | 2026-11-18 | direct | [link](https://www.ebay.com/itm/137741171807) |
+| Silicon Power UD90 | 4TB TLC (some batches reported QLC) | eBay | new | **$449.95 🔥** | new | 2026-11-18 | direct | [link](https://www.ebay.com/itm/257830211610) |
+| TeamGroup T-Force G50 | 4TB TLC | eBay | new | **$469.95** | new | 2026-11-18 | direct | [link](https://www.ebay.com/itm/307262872935) |
+| WD Blue SN5100 | 4TB QLC | eBay | new | **$474.99** | new | 2026-11-18 | direct | [link](https://www.ebay.com/itm/307287235456) |
 | Silicon Power UD90 | 4TB TLC (some batches reported QLC) | Newegg | new | **$475.00** | — | 2026-11-15 | reported (PC Gamer) | [link](https://www.pcgamer.com/black-friday-ssd-deals/) |
+| WD Black SN850X | 4TB TLC | eBay | used | **$475.00** | new | 2026-11-18 | direct | [link](https://www.ebay.com/itm/860150970788) |
 | TeamGroup MP44Q | 4TB QLC | Walmart (third-party seller) | new | **$484.99** | — | 2026-11-18 | reported (ByteSizedDeals) | [link](https://bytesizeddeals.com/ssd/4tb-pcie-4) |
 | TeamGroup MP44Q | 4TB QLC | Amazon (third-party seller) | new | **$484.99** | new | 2026-11-18 | direct | [link](https://www.amazon.com/dp/B0CZLDKDKH) |
 | TeamGroup T-Force G50 | 4TB TLC | Walmart (third-party seller) | new | **$485.99** | new | 2026-11-15 | reported (ByteSizedDeals) | [link](https://bytesizeddeals.com/ssd/price-index) |
+| Silicon Power UD90 | 4TB TLC (some batches reported QLC) | eBay | used | **$489.98** | new | 2026-11-18 | direct | [link](https://www.ebay.com/itm/327354432282) |
 | WD Blue SN5000 | 4TB QLC | Newegg | new | **$491.00** | — | 2026-11-15 | reported (PC Gamer) | [link](https://www.pcgamer.com/black-friday-ssd-deals/) |
 | TeamGroup T-Force G50 | 4TB TLC | Amazon (third-party seller) | new | **$495.99** | — | 2026-11-18 | direct | [link](https://www.amazon.com/dp/B0DRVN1JXP) |
 | TeamGroup T-Force G50 | 4TB TLC | Newegg | new | **$495.99** | — | 2026-11-18 | reported (ByteSizedDeals) | [link](https://bytesizeddeals.com/ssd/4tb-pcie-4) |
+| Lexar NM790 | 4TB TLC | eBay | used | **$499.00** | new | 2026-11-18 | direct | [link](https://www.ebay.com/itm/900083512557) |
+| WD Black SN7100 | 4TB TLC | eBay | used | **$499.00** | new | 2026-11-18 | direct | [link](https://www.ebay.com/itm/137884465960) |
 | TeamGroup MP44Q | 4TB QLC | Amazon | new | **$499.99** | — | 2026-11-15 | reported (PC Gamer) | [link](https://www.pcgamer.com/black-friday-ssd-deals/) |
 | WD Blue SN5000 | 4TB QLC | Amazon (third-party seller) | new | **$499.99** | — | 2026-11-18 | direct | [link](https://www.amazon.com/dp/B0D7MLB76V) |
+| Crucial P310 | 4TB QLC | eBay | new | **$500.00** | new | 2026-11-18 | direct | [link](https://www.ebay.com/itm/407369790835) |
+| WD Blue SN5100 | 4TB QLC | eBay | used | **$505.00** | new | 2026-11-18 | direct | [link](https://www.ebay.com/itm/287387652450) |
 | TeamGroup MP44 | 4TB TLC | Amazon (third-party seller) | new | **$505.99** | new | 2026-11-18 | direct | [link](https://www.amazon.com/dp/B0C4KQ9N79) |
 | TeamGroup MP44 | 4TB TLC | Newegg | new | **$516.99** | — | 2026-11-15 | reported (PC Gamer) | [link](https://www.pcgamer.com/black-friday-ssd-deals/) |
+| Samsung 990 EVO Plus | 4TB TLC | eBay | used | **$519.97** | new | 2026-11-18 | direct | [link](https://www.ebay.com/itm/940093754545) |
+| WD Blue SN5000 | 4TB QLC | eBay | new | **$520.00** | new | 2026-11-18 | direct | [link](https://www.ebay.com/itm/237088774001) |
 | Silicon Power UD90 | 4TB TLC (some batches reported QLC) | Amazon (third-party seller) | new | **$523.00** | — | 2026-11-18 | direct | [link](https://www.amazon.com/dp/B0BYN8NHXS) |
 | Samsung 990 EVO Plus | 4TB TLC | Amazon (Amazon Resale) | used | **$525.36** | new | 2026-11-16 | direct | [link](https://www.amazon.com/dp/B0DHLBDSP7) |
 | Silicon Power UD90 | 4TB TLC (some batches reported QLC) | Amazon | new | **$529.97** | 🔺 $55.00 | 2026-11-15 | reported (cheapestssd.com) | [link](https://cheapestssd.com/4tb-nvme-ssd/) |
 | Samsung 990 EVO Plus | 4TB TLC | Amazon | new | **$530.11 🔥** | 🔻 $149.88 | 2026-11-18 | reported (cheapestssd.com) | [link](https://cheapestssd.com/4tb-nvme-ssd/) |
+| Samsung 990 EVO Plus | 4TB TLC | eBay | new | **$549.99** | new | 2026-11-18 | direct | [link](https://www.ebay.com/itm/366779275735) |
+| Samsung 990 Pro | 4TB TLC | eBay | used | **$549.99** | new | 2026-11-18 | direct | [link](https://www.ebay.com/itm/168863116584) |
 | Crucial P310 | 4TB QLC | Amazon (third-party seller) | new | **$556.99** | new | 2026-11-18 | direct | [link](https://www.amazon.com/dp/B0F3WLFCPL) |
+| WD Black SN7100 | 4TB TLC | eBay | new | **$560.00** | new | 2026-11-18 | direct | [link](https://www.ebay.com/itm/227617549737) |
 | Lexar NQ780 | 4TB QLC | Amazon (third-party seller) | new | **$588.57** | — | 2026-11-18 | direct | [link](https://www.amazon.com/dp/B0F25CX4LB) |
+| Crucial T500 | 4TB TLC | eBay | used | **$599.00** | new | 2026-11-18 | direct | [link](https://www.ebay.com/itm/840128291949) |
 | WD Blue SN5100 | 4TB QLC | Amazon | new | **$599.99** | — | 2026-11-18 | reported (ByteSizedDeals) | [link](https://bytesizeddeals.com/ssd/4tb-pcie-4) |
+| Lexar NM790 | 4TB TLC | eBay | new | **$600.00** | new | 2026-11-18 | direct | [link](https://www.ebay.com/itm/257825456059) |
+| Samsung 990 Pro | 4TB TLC | eBay | new | **$620.00** | new | 2026-11-18 | direct | [link](https://www.ebay.com/itm/800926093107) |
 | WD Black SN7100 | 4TB TLC | Amazon | new | **$629.99** | new | 2026-11-15 | reported (cheapestssd.com) | [link](https://cheapestssd.com/4tb-nvme-ssd/) |
 | WD Black SN7100 | 4TB TLC | Amazon (third-party seller) | new | **$629.99** | — | 2026-11-18 | direct | [link](https://www.amazon.com/dp/B0DZK9C789) |
 | Samsung 990 EVO Plus | 4TB TLC | B&H Photo | new | **$649.99** | — | 2026-11-15 | reported (9to5Toys) | [link](https://9to5toys.com/2026/11/14/this-weeks-pc-deals-and-news/) |
 | Samsung 990 EVO Plus | 4TB TLC | Amazon (third-party seller) | new | **$679.95** | 🔻 $0.04 | 2026-11-18 | direct | [link](https://www.amazon.com/dp/B0DHLBDSP7) |
+| WD Black SN850X | 4TB TLC | eBay | new | **$680.00** | new | 2026-11-18 | direct | [link](https://www.ebay.com/itm/800914427892) |
+| Crucial T500 | 4TB TLC | eBay | new | **$700.00** | new | 2026-11-18 | direct | [link](https://www.ebay.com/itm/168838955943) |
+| Kingston KC3000 | 4TB TLC | eBay | used | **$719.00** | new | 2026-11-18 | direct | [link](https://www.ebay.com/itm/287644873929) |
+| Kingston KC3000 | 4TB TLC | eBay | new | **$729.00** | new | 2026-11-18 | direct | [link](https://www.ebay.com/itm/287644897323) |
 | WD Black SN850X | 4TB TLC | Amazon | new | **$784.99** | new | 2026-11-15 | reported (cheapestssd.com) | [link](https://cheapestssd.com/4tb-nvme-ssd/) |
 | WD Black SN850X | 4TB TLC | Amazon (third-party seller) | new | **$789.99** | — | 2026-11-18 | direct | [link](https://www.amazon.com/dp/B0B7CQ2CHH) |
 | Samsung 990 Pro | 4TB TLC | Amazon | new | **$799.99** | 🔺 $2.03 | 2026-11-18 | direct | [link](https://www.amazon.com/dp/B0CHGT1KFJ) |
@@ -139,6 +163,13 @@ Low $556.99 · High $556.99 · 1 entry
 |---|--:|---|
 | 2026-11-18 | [$556.99](https://www.amazon.com/dp/B0F3WLFCPL) | direct |
 
+##### Crucial P310 — eBay (new)
+Low $500.00 · High $500.00 · 1 entry
+
+| Date | Price | Basis |
+|---|--:|---|
+| 2026-11-18 | [$500.00](https://www.ebay.com/itm/407369790835) | direct |
+
 ##### Crucial T500 — Amazon (new)
 Low $869.00 · High $869.00 · 1 entry
 
@@ -154,6 +185,48 @@ Low $869.00 · High $869.00 · 3 entries
 | 2026-11-18 | [$869.00](https://www.amazon.com/dp/B0DBBG7CG7) | direct |
 | 2026-11-17 | [$869.00](https://www.amazon.com/dp/B0DBBG7CG7) | direct |
 | 2026-11-16 | [$869.00](https://www.amazon.com/dp/B0DBBG7CG7) | direct |
+
+##### Crucial T500 — eBay (new)
+Low $700.00 · High $700.00 · 1 entry
+
+| Date | Price | Basis |
+|---|--:|---|
+| 2026-11-18 | [$700.00](https://www.ebay.com/itm/168838955943) | direct |
+
+##### Crucial T500 — eBay (used)
+Low $599.00 · High $599.00 · 1 entry
+
+| Date | Price | Basis |
+|---|--:|---|
+| 2026-11-18 | [$599.00](https://www.ebay.com/itm/840128291949) | direct |
+
+##### Kingston KC3000 — eBay (new)
+Low $729.00 · High $729.00 · 1 entry
+
+| Date | Price | Basis |
+|---|--:|---|
+| 2026-11-18 | [$729.00](https://www.ebay.com/itm/287644897323) | direct |
+
+##### Kingston KC3000 — eBay (used)
+Low $719.00 · High $719.00 · 1 entry
+
+| Date | Price | Basis |
+|---|--:|---|
+| 2026-11-18 | [$719.00](https://www.ebay.com/itm/287644873929) | direct |
+
+##### Lexar NM790 — eBay (new)
+Low $600.00 · High $600.00 · 1 entry
+
+| Date | Price | Basis |
+|---|--:|---|
+| 2026-11-18 | [$600.00](https://www.ebay.com/itm/257825456059) | direct |
+
+##### Lexar NM790 — eBay (used)
+Low $499.00 · High $499.00 · 1 entry
+
+| Date | Price | Basis |
+|---|--:|---|
+| 2026-11-18 | [$499.00](https://www.ebay.com/itm/900083512557) | direct |
 
 ##### Lexar NQ780 — Amazon (third-party seller) (new)
 Low $569.67 · High $606.77 · 4 entries
@@ -198,6 +271,20 @@ Low $649.99 · High $649.99 · 3 entries
 | 2026-11-14 | [$649.99](https://9to5toys.com/2026/11/14/this-weeks-pc-deals-and-news/) | reported (9to5Toys) |
 | 2026-11-14 | [$649.99](https://9to5toys.com/2026/11/14/this-weeks-pc-deals-and-news/) | reported (9to5Toys) |
 
+##### Samsung 990 EVO Plus — eBay (new)
+Low $549.99 · High $549.99 · 1 entry
+
+| Date | Price | Basis |
+|---|--:|---|
+| 2026-11-18 | [$549.99](https://www.ebay.com/itm/366779275735) | direct |
+
+##### Samsung 990 EVO Plus — eBay (used)
+Low $519.97 · High $519.97 · 1 entry
+
+| Date | Price | Basis |
+|---|--:|---|
+| 2026-11-18 | [$519.97](https://www.ebay.com/itm/940093754545) | direct |
+
 ##### Samsung 990 Pro — Amazon (new)
 Low $797.96 · High $799.99 · 4 entries
 
@@ -216,6 +303,20 @@ Low $799.99 · High $799.99 · 3 entries
 | 2026-11-18 | [$799.99](https://bytesizeddeals.com/ssd/4tb-pcie-4) | reported (ByteSizedDeals) |
 | 2026-11-17 | [$799.99](https://bytesizeddeals.com/ssd/4tb-pcie-4) | reported (ByteSizedDeals) |
 | 2026-11-16 | [$799.99](https://bytesizeddeals.com/ssd/4tb-pcie-4) | reported (ByteSizedDeals) |
+
+##### Samsung 990 Pro — eBay (new)
+Low $620.00 · High $620.00 · 1 entry
+
+| Date | Price | Basis |
+|---|--:|---|
+| 2026-11-18 | [$620.00](https://www.ebay.com/itm/800926093107) | direct |
+
+##### Samsung 990 Pro — eBay (used)
+Low $549.99 · High $549.99 · 1 entry
+
+| Date | Price | Basis |
+|---|--:|---|
+| 2026-11-18 | [$549.99](https://www.ebay.com/itm/168863116584) | direct |
 
 ##### Silicon Power UD90 — Amazon (new)
 Low $474.97 · High $529.97 · 3 entries
@@ -243,6 +344,20 @@ Low $475.00 · High $475.00 · 2 entries
 |---|--:|---|
 | 2026-11-15 | [$475.00](https://www.pcgamer.com/black-friday-ssd-deals/) | reported (PC Gamer) |
 | 2026-11-14 | [$475.00](https://www.pcgamer.com/black-friday-ssd-deals/) | reported (PC Gamer) |
+
+##### Silicon Power UD90 — eBay (new)
+Low $449.95 · High $449.95 · 1 entry
+
+| Date | Price | Basis |
+|---|--:|---|
+| 2026-11-18 | [$449.95](https://www.ebay.com/itm/257830211610) | direct |
+
+##### Silicon Power UD90 — eBay (used)
+Low $489.98 · High $489.98 · 1 entry
+
+| Date | Price | Basis |
+|---|--:|---|
+| 2026-11-18 | [$489.98](https://www.ebay.com/itm/327354432282) | direct |
 
 ##### TeamGroup MP44 — Amazon (third-party seller) (new)
 Low $505.99 · High $505.99 · 1 entry
@@ -284,6 +399,13 @@ Low $484.99 · High $484.99 · 3 entries
 | 2026-11-17 | [$484.99](https://bytesizeddeals.com/ssd/4tb-pcie-4) | reported (ByteSizedDeals) |
 | 2026-11-16 | [$484.99](https://bytesizeddeals.com/ssd/4tb-pcie-4) | reported (ByteSizedDeals) |
 
+##### TeamGroup MP44Q — eBay (new)
+Low $448.88 · High $448.88 · 1 entry
+
+| Date | Price | Basis |
+|---|--:|---|
+| 2026-11-18 | [$448.88](https://www.ebay.com/itm/137741171807) | direct |
+
 ##### TeamGroup T-Force G50 — Amazon (third-party seller) (new)
 Low $479.99 · High $495.99 · 4 entries
 
@@ -310,6 +432,20 @@ Low $485.99 · High $485.99 · 1 entry
 |---|--:|---|
 | 2026-11-15 | [$485.99](https://bytesizeddeals.com/ssd/price-index) | reported (ByteSizedDeals) |
 
+##### TeamGroup T-Force G50 — eBay (new)
+Low $469.95 · High $469.95 · 1 entry
+
+| Date | Price | Basis |
+|---|--:|---|
+| 2026-11-18 | [$469.95](https://www.ebay.com/itm/307262872935) | direct |
+
+##### TeamGroup T-Force G50 — eBay (used)
+Low $379.99 · High $379.99 · 1 entry
+
+| Date | Price | Basis |
+|---|--:|---|
+| 2026-11-18 | [$379.99](https://www.ebay.com/itm/117491940156) | direct |
+
 ##### WD Black SN7100 — Amazon (new)
 Low $629.99 · High $629.99 · 1 entry
 
@@ -325,6 +461,20 @@ Low $629.99 · High $629.99 · 3 entries
 | 2026-11-18 | [$629.99](https://www.amazon.com/dp/B0DZK9C789) | direct |
 | 2026-11-17 | [$629.99](https://www.amazon.com/dp/B0DZK9C789) | direct |
 | 2026-11-16 | [$629.99](https://www.amazon.com/dp/B0DZK9C789) | direct |
+
+##### WD Black SN7100 — eBay (new)
+Low $560.00 · High $560.00 · 1 entry
+
+| Date | Price | Basis |
+|---|--:|---|
+| 2026-11-18 | [$560.00](https://www.ebay.com/itm/227617549737) | direct |
+
+##### WD Black SN7100 — eBay (used)
+Low $499.00 · High $499.00 · 1 entry
+
+| Date | Price | Basis |
+|---|--:|---|
+| 2026-11-18 | [$499.00](https://www.ebay.com/itm/137884465960) | direct |
 
 ##### WD Black SN850X — Amazon (new)
 Low $784.99 · High $784.99 · 1 entry
@@ -342,6 +492,20 @@ Low $789.99 · High $789.99 · 4 entries
 | 2026-11-17 | [$789.99](https://www.amazon.com/dp/B0B7CQ2CHH) | direct |
 | 2026-11-16 | [$789.99](https://www.amazon.com/dp/B0B7CQ2CHH) | direct |
 | 2026-11-15 | [$789.99](https://www.amazon.com/dp/B0B7CQ2CHH) | direct |
+
+##### WD Black SN850X — eBay (new)
+Low $680.00 · High $680.00 · 1 entry
+
+| Date | Price | Basis |
+|---|--:|---|
+| 2026-11-18 | [$680.00](https://www.ebay.com/itm/800914427892) | direct |
+
+##### WD Black SN850X — eBay (used)
+Low $475.00 · High $475.00 · 1 entry
+
+| Date | Price | Basis |
+|---|--:|---|
+| 2026-11-18 | [$475.00](https://www.ebay.com/itm/860150970788) | direct |
 
 ##### WD Blue SN5000 — Amazon (third-party seller) (new)
 Low $499.99 · High $519.95 · 4 entries
@@ -361,6 +525,20 @@ Low $491.00 · High $491.00 · 2 entries
 | 2026-11-15 | [$491.00](https://www.pcgamer.com/black-friday-ssd-deals/) | reported (PC Gamer) |
 | 2026-11-14 | [$491.00](https://www.pcgamer.com/black-friday-ssd-deals/) | reported (PC Gamer) |
 
+##### WD Blue SN5000 — eBay (new)
+Low $520.00 · High $520.00 · 1 entry
+
+| Date | Price | Basis |
+|---|--:|---|
+| 2026-11-18 | [$520.00](https://www.ebay.com/itm/237088774001) | direct |
+
+##### WD Blue SN5000 — eBay (used)
+Low $399.95 · High $399.95 · 1 entry
+
+| Date | Price | Basis |
+|---|--:|---|
+| 2026-11-18 | [$399.95](https://www.ebay.com/itm/188352075140) | direct |
+
 ##### WD Blue SN5100 — Amazon (new)
 Low $529.99 · High $599.99 · 3 entries
 
@@ -370,11 +548,25 @@ Low $529.99 · High $599.99 · 3 entries
 | 2026-11-16 | [$599.99](https://www.amazon.com/dp/B0GJSJSDSM) | direct |
 | 2026-11-15 | [$529.99](https://cheapestssd.com/4tb-nvme-ssd/) | reported (cheapestssd.com) |
 
+##### WD Blue SN5100 — eBay (new)
+Low $474.99 · High $474.99 · 1 entry
+
+| Date | Price | Basis |
+|---|--:|---|
+| 2026-11-18 | [$474.99](https://www.ebay.com/itm/307287235456) | direct |
+
+##### WD Blue SN5100 — eBay (used)
+Low $505.00 · High $505.00 · 1 entry
+
+| Date | Price | Basis |
+|---|--:|---|
+| 2026-11-18 | [$505.00](https://www.ebay.com/itm/287387652450) | direct |
+
 </details>
 
 ### RAM
 
-> **Cheapest new 64GB DDR5 SO-DIMM on 2026-11-18:** Crucial CT64G56C46S5 (1x64GB DDR5-5600 CL46) at **$1,199.89** (Amazon (third-party seller)) — [source](https://www.amazon.com/dp/B0DSQWZ5G2)
+> **Cheapest new 64GB DDR5 SO-DIMM on 2026-11-18:** Crucial CT64G56C46S5 (1x64GB DDR5-5600 CL46) at **$1,000.00** (eBay) — [source](https://www.ebay.com/itm/800738984634)
 
 #### Cheapest new 64GB DDR5 SO-DIMM price over time
 
@@ -382,8 +574,8 @@ Low $529.99 · High $599.99 · 3 entries
 xychart-beta
     title "Lowest new 64GB DDR5 SO-DIMM price per day (USD)"
     x-axis ["11-15", "11-16", "11-17", "11-18"]
-    y-axis "USD" 1180 --> 1210
-    line [1199.89, 1199.89, 1199.89, 1199.89]
+    y-axis "USD" 970 --> 1230
+    line [1199.89, 1199.89, 1199.89, 1000.00]
 ```
 
 #### Latest price by item (new, cheapest store)
@@ -392,14 +584,15 @@ xychart-beta
 xychart-beta
     title "Most recent logged price (USD)"
     x-axis ["Crucial CT64G56C46S5", "G.Skill F5-5600S4645A64GX1-RS"]
-    y-axis "USD" 1070 --> 2130
-    bar [1199.89, 1999.99]
+    y-axis "USD" 850 --> 2150
+    bar [1000.00, 1999.99]
 ```
 
 #### Latest prices
 
 | Item | Spec | Store | Condition | Price | Change | As of | Basis | Link |
 |---|---|---|---|--:|--:|---|---|---|
+| Crucial CT64G56C46S5 | 1x64GB DDR5-5600 CL46 | eBay | new | **$1,000.00** | new | 2026-11-18 | direct | [link](https://www.ebay.com/itm/800738984634) |
 | Crucial CT64G56C46S5 | 1x64GB DDR5-5600 CL46 | Amazon (third-party seller) | new | **$1,199.89** | — | 2026-11-18 | direct | [link](https://www.amazon.com/dp/B0DSQWZ5G2) |
 | G.Skill F5-5600S4645A64GX1-RS | 1x64GB DDR5-5600 CL46 | Amazon (third-party seller) | new | **$1,999.99** | — | 2026-11-18 | direct | [link](https://www.amazon.com/dp/B0G7RLK95V) |
 
@@ -415,6 +608,13 @@ Low $1,199.89 · High $1,199.89 · 4 entries
 | 2026-11-17 | [$1,199.89](https://www.amazon.com/dp/B0DSQWZ5G2) | direct |
 | 2026-11-16 | [$1,199.89](https://www.amazon.com/dp/B0DSQWZ5G2) | direct |
 | 2026-11-15 | [$1,199.89](https://www.amazon.com/dp/B0DSQWZ5G2) | direct |
+
+##### Crucial CT64G56C46S5 — eBay (new)
+Low $1,000.00 · High $1,000.00 · 1 entry
+
+| Date | Price | Basis |
+|---|--:|---|
+| 2026-11-18 | [$1,000.00](https://www.ebay.com/itm/800738984634) | direct |
 
 ##### G.Skill F5-5600S4645A64GX1-RS — Amazon (third-party seller) (new)
 Low $1,999.99 · High $1,999.99 · 4 entries
@@ -944,9 +1144,9 @@ xychart-beta
 ```mermaid
 xychart-beta
     title "Most recent logged price (USD)"
-    x-axis ["MacBook Pro 14 M5 Pro 48GB", "MacBook Pro 14 M5 Pro 64GB", "MacBook Pro 16 M5 Max 48GB", "MacBook Pro 16 M5 Pro 64GB", "MacBook Pro 14 M5 Max 64GB", "MacBook Pro 14 M5 Max 128GB", "MacBook Pro 16 M5 Max 128GB"]
-    y-axis "USD" 2670 --> 7570
-    bar [3239.10, 3699.00, 4496.50, 4599.00, 5099.00, 6699.00, 6999.00]
+    x-axis ["MacBook Pro 14 M5 Pro 48GB", "MacBook Pro 14 M2 Max 96GB", "MacBook Pro 14 M2 Max 64GB", "MacBook Pro 14 M5 Pro 64GB", "MacBook Pro 14 M3 Max 64GB", "MacBook Pro 16 M5 Max 48GB", "MacBook Pro 14 M4 Max 64GB", "MacBook Pro 16 M5 Pro 64GB", "MacBook Pro 16 M5 Max 64GB", "MacBook Pro 14 M5 Max 64GB", "MacBook Pro 16 M5 Max 128GB", "MacBook Pro 14 M5 Max 128GB"]
+    y-axis "USD" 2720 --> 7220
+    bar [3239.10, 3299.74, 3500.00, 3699.00, 4299.99, 4496.50, 4499.99, 4599.00, 4659.00, 5099.00, 6399.00, 6699.00]
 ```
 
 #### Latest prices
@@ -954,22 +1154,47 @@ xychart-beta
 | Item | Spec | Store | Condition | Price | Change | As of | Basis | Link |
 |---|---|---|---|--:|--:|---|---|---|
 | MacBook Pro 16 M1 Max 64GB | 64GB RAM, 1TB SSD | Amazon (third-party seller) | refurbished | **$1,654.00** | new | 2026-11-17 | direct | [link](https://www.amazon.com/dp/B0CLJTSXHF) |
+| MacBook Pro 16 M2 Max 64GB | 64GB RAM, 2TB SSD | eBay | used | **$1,750.00** | new | 2026-11-18 | direct | [link](https://www.ebay.com/itm/227602714110) |
 | MacBook Pro 14 M1 Max 64GB | 64GB RAM, 2TB SSD | Amazon (third-party seller) | refurbished | **$1,779.99** | new | 2026-11-17 | direct | [link](https://www.amazon.com/dp/B0F8JNXBY4) |
+| MacBook Pro 14 M2 Max 64GB | 64GB RAM, 1TB SSD | eBay | used | **$1,834.99** | new | 2026-11-18 | direct | [link](https://www.ebay.com/itm/298656791108) |
 | MacBook Pro 16 M4 Pro 48GB | 48GB RAM, 512GB SSD | Amazon (third-party seller) | refurbished | **$2,299.00** | 🔺 $100.00 | 2026-11-18 | direct | [link](https://www.amazon.com/dp/B0DNDH1W77) |
+| MacBook Pro 16 M3 Max 64GB | 64GB RAM, 1TB SSD | eBay | used | **$2,419.99** | new | 2026-11-18 | direct | [link](https://www.ebay.com/itm/298598919121) |
 | MacBook Pro 16 M2 Max 64GB | 64GB RAM, 1TB SSD | Amazon (third-party seller) | refurbished | **$2,488.80** | — | 2026-11-18 | direct | [link](https://www.amazon.com/dp/B0FHP6C3BL) |
+| MacBook Pro 14 M3 Max 64GB | 64GB RAM, 1TB SSD | eBay | used | **$2,514.99** | new | 2026-11-18 | direct | [link](https://www.ebay.com/itm/298665135818) |
 | MacBook Pro 16 M4 Max 48GB | 48GB RAM, 1TB SSD | Amazon (third-party seller) | refurbished | **$2,929.99 🔥** | 🔻 $342.01 | 2026-11-18 | direct | [link](https://www.amazon.com/dp/B0DN25LGK8) |
+| MacBook Pro 16 M4 Max 64GB | 64GB RAM, 1TB SSD | eBay | used | **$2,950.00** | new | 2026-11-18 | direct | [link](https://www.ebay.com/itm/168860884127) |
 | MacBook Pro 16 M5 Pro 48GB | 48GB RAM, 1TB SSD, 18C CPU/20C GPU | Apple (Certified Refurbished) | refurbished | **$3,059.00** | — | 2026-11-18 | direct | [link](https://www.apple.com/shop/product/fgec4ll/a/Refurbished-16-inch-MacBook-Pro-Apple-M5-Pro-chip-with-18%E2%80%91Core-CPU-and-20%E2%80%91Core-GPU-Space-Black) |
+| MacBook Pro 14 M4 Max 64GB | 64GB RAM, 1TB SSD | eBay | used | **$3,079.99** | new | 2026-11-18 | direct | [link](https://www.ebay.com/itm/298636560028) |
 | MacBook Pro 16 M3 Max 64GB | 64GB RAM, 1TB SSD, 16C CPU/40C GPU | Amazon (third-party seller) | refurbished | **$3,199.00** | — | 2026-11-18 | direct | [link](https://www.amazon.com/dp/B0F1Z7BR77) |
 | MacBook Pro 14 M5 Pro 48GB | 48GB RAM, 2TB SSD, 18C CPU/20C GPU | Apple (Certified Refurbished) | refurbished | **$3,229.00** | new | 2026-11-18 | direct | [link](https://www.apple.com/shop/product/g1mm2ll/a/Refurbished-14-inch-MacBook-Pro-Apple-M5-Pro-chip-with-18%E2%80%91Core-CPU-and-20%E2%80%91Core-GPU-Space-Black) |
 | MacBook Pro 14 M5 Pro 48GB | 48GB RAM, 1TB SSD, 15C CPU/16C GPU | Amazon (third-party seller) | new | **$3,239.10** | 🔺 $0.01 | 2026-11-18 | direct | [link](https://www.amazon.com/dp/B0H4FDN7Y4) |
 | MacBook Pro 14 M4 Pro 48GB | 48GB RAM, 2TB SSD, 14C CPU/20C GPU | Apple (Certified Refurbished) | refurbished | **$3,269.00** | — | 2026-11-18 | direct | [link](https://www.apple.com/shop/product/g1ff9ll/a/Refurbished-14-inch-MacBook-Pro-Apple-M4-Pro-Chip-with-14%E2%80%91Core-CPU-and-20%E2%80%91Core-GPU-Nano-texture-display-Space-Black) |
+| MacBook Pro 14 M2 Max 96GB | 96GB RAM, 512GB SSD | eBay | new | **$3,299.74** | new | 2026-11-18 | direct | [link](https://www.ebay.com/itm/227398467227) |
+| MacBook Pro 14 M2 Max 96GB | 96GB RAM, 8TB SSD | eBay | used | **$3,499.99** | new | 2026-11-18 | direct | [link](https://www.ebay.com/itm/960183817160) |
+| MacBook Pro 14 M2 Max 64GB | 64GB RAM, 2TB SSD | eBay | new | **$3,500.00** | new | 2026-11-18 | direct | [link](https://www.ebay.com/itm/375011618605) |
 | MacBook Pro 14 M5 Pro 64GB | 64GB RAM, 1TB SSD, 18C CPU/20C GPU | Amazon (third-party seller) | new | **$3,699.00** | — | 2026-11-18 | direct | [link](https://www.amazon.com/dp/B0GYZKZ2WX) |
+| MacBook Pro 16 M2 Max 96GB | 96GB RAM | eBay | used | **$3,808.99** | new | 2026-11-18 | direct | [link](https://www.ebay.com/itm/900057933198) |
+| MacBook Pro 14 M3 Max 128GB | 128GB RAM, 1TB SSD | eBay | used | **$3,849.00** | new | 2026-11-18 | direct | [link](https://www.ebay.com/itm/960188540623) |
+| MacBook Pro 16 M3 Max 96GB | 96GB RAM, 1TB SSD | eBay | used | **$3,990.00** | new | 2026-11-18 | direct | [link](https://www.ebay.com/itm/277060197180) |
+| MacBook Pro 16 M5 Max 64GB | 64GB RAM, 2TB SSD | eBay | used | **$3,999.00** | new | 2026-11-18 | direct | [link](https://www.ebay.com/itm/198803468812) |
 | MacBook Pro 16 M5 Max 48GB | 48GB RAM, 2TB SSD, 18C CPU/40C GPU | Apple (Certified Refurbished) | refurbished | **$4,249.00** | — | 2026-11-18 | direct | [link](https://www.apple.com/shop/product/fge94ll/a/Refurbished-16-inch-MacBook-Pro-Apple-M5-Max-chip-with-18%E2%80%91Core-CPU-and-40%E2%80%91Core-GPU-Silver) |
+| MacBook Pro 14 M3 Max 64GB | 64GB RAM, 2TB SSD | eBay | new | **$4,299.99** | new | 2026-11-18 | direct | [link](https://www.ebay.com/itm/236127680110) |
+| MacBook Pro 14 M4 Max 128GB | 128GB RAM, 1TB SSD | eBay | used | **$4,449.00** | new | 2026-11-18 | direct | [link](https://www.ebay.com/itm/960175867500) |
 | MacBook Pro 16 M5 Max 48GB | 48GB RAM, 2TB SSD, 18C CPU/40C GPU | Amazon (third-party seller) | new | **$4,496.50** | new | 2026-11-18 | direct | [link](https://www.amazon.com/dp/B0GR1G6V6H) |
 | MacBook Pro 16 M5 Max 48GB | 48GB RAM, 2TB SSD, 18C CPU/40C GPU | Amazon | new | **$4,499.00** | new | 2026-11-17 | direct | [link](https://www.amazon.com/dp/B0GR1G6V6H) |
+| MacBook Pro 16 M3 Max 128GB | 128GB RAM, 2TB SSD, 16C CPU/40C GPU | eBay | used | **$4,499.00** | new | 2026-11-18 | direct | [link](https://www.ebay.com/itm/940099895248) |
+| MacBook Pro 14 M4 Max 64GB | 64GB RAM, 4TB SSD | eBay | new | **$4,499.99** | new | 2026-11-18 | direct | [link](https://www.ebay.com/itm/820343708882) |
 | MacBook Pro 16 M5 Pro 64GB | 64GB RAM, 1TB SSD, 18C CPU/20C GPU | Amazon (third-party seller) | new | **$4,599.00** | — | 2026-11-18 | direct | [link](https://www.amazon.com/dp/B0H7Z68CLL) |
+| MacBook Pro 16 M5 Max 64GB | 64GB RAM, 2TB SSD | eBay | new | **$4,659.00** | new | 2026-11-18 | direct | [link](https://www.ebay.com/itm/128179582089) |
+| MacBook Pro 14 M5 Max 64GB | 64GB RAM, 2TB SSD | eBay | refurbished | **$4,699.99** | new | 2026-11-18 | direct | [link](https://www.ebay.com/itm/900086415863) |
 | MacBook Pro 14 M5 Max 64GB | 64GB RAM, 2TB SSD, 18C CPU/40C GPU | Amazon (third-party seller) | new | **$5,099.00** | — | 2026-11-18 | direct | [link](https://www.amazon.com/dp/B0GWS9J8KY) |
+| MacBook Pro 16 M4 Max 128GB | 128GB RAM, 4TB SSD | eBay | used | **$5,199.00** | new | 2026-11-18 | direct | [link](https://www.ebay.com/itm/128186161157) |
+| MacBook Pro 14 M5 Max 128GB | 128GB RAM, 2TB SSD | eBay | used | **$5,899.00** | new | 2026-11-18 | direct | [link](https://www.ebay.com/itm/880023866326) |
+| MacBook Pro 16 M5 Max 128GB | 128GB RAM, 2TB SSD | eBay | used | **$5,900.00** | new | 2026-11-18 | direct | [link](https://www.ebay.com/itm/206622860547) |
+| MacBook Pro 14 M5 Max 64GB | 64GB RAM, 2TB SSD | eBay | new | **$5,999.99** | new | 2026-11-18 | direct | [link](https://www.ebay.com/itm/307212063187) |
+| MacBook Pro 16 M5 Max 128GB | 128GB RAM, 2TB SSD | eBay | new | **$6,399.00** | new | 2026-11-18 | direct | [link](https://www.ebay.com/itm/147654325715) |
 | MacBook Pro 14 M5 Max 128GB | 128GB RAM, 2TB SSD, 18C CPU/40C GPU | Amazon (third-party seller) | new | **$6,699.00** | — | 2026-11-18 | direct | [link](https://www.amazon.com/dp/B0GZ4SQXGD) |
+| MacBook Pro 14 M5 Max 128GB | 128GB RAM, 2TB SSD | eBay | new | **$6,899.00** | new | 2026-11-18 | direct | [link](https://www.ebay.com/itm/940053163792) |
 | MacBook Pro 16 M5 Max 128GB | 128GB RAM, 2TB SSD, 18C CPU/40C GPU | Amazon (third-party seller) | new | **$6,999.00** | — | 2026-11-18 | direct | [link](https://www.amazon.com/dp/B0GYZYQC19) |
 
 <details>
@@ -981,6 +1206,76 @@ Low $1,779.99 · High $1,779.99 · 1 entry
 | Date | Price | Basis |
 |---|--:|---|
 | 2026-11-17 | [$1,779.99](https://www.amazon.com/dp/B0F8JNXBY4) | direct |
+
+##### MacBook Pro 14 M2 Max 64GB — eBay (new)
+Low $3,500.00 · High $3,500.00 · 1 entry
+
+| Date | Price | Basis |
+|---|--:|---|
+| 2026-11-18 | [$3,500.00](https://www.ebay.com/itm/375011618605) | direct |
+
+##### MacBook Pro 14 M2 Max 64GB — eBay (used)
+Low $1,834.99 · High $1,834.99 · 1 entry
+
+| Date | Price | Basis |
+|---|--:|---|
+| 2026-11-18 | [$1,834.99](https://www.ebay.com/itm/298656791108) | direct |
+
+##### MacBook Pro 14 M2 Max 96GB — eBay (new)
+Low $3,299.74 · High $3,299.74 · 1 entry
+
+| Date | Price | Basis |
+|---|--:|---|
+| 2026-11-18 | [$3,299.74](https://www.ebay.com/itm/227398467227) | direct |
+
+##### MacBook Pro 14 M2 Max 96GB — eBay (used)
+Low $3,499.99 · High $3,499.99 · 1 entry
+
+| Date | Price | Basis |
+|---|--:|---|
+| 2026-11-18 | [$3,499.99](https://www.ebay.com/itm/960183817160) | direct |
+
+##### MacBook Pro 14 M3 Max 128GB — eBay (used)
+Low $3,849.00 · High $3,849.00 · 1 entry
+
+| Date | Price | Basis |
+|---|--:|---|
+| 2026-11-18 | [$3,849.00](https://www.ebay.com/itm/960188540623) | direct |
+
+##### MacBook Pro 14 M3 Max 64GB — eBay (new)
+Low $4,299.99 · High $4,299.99 · 1 entry
+
+| Date | Price | Basis |
+|---|--:|---|
+| 2026-11-18 | [$4,299.99](https://www.ebay.com/itm/236127680110) | direct |
+
+##### MacBook Pro 14 M3 Max 64GB — eBay (used)
+Low $2,514.99 · High $2,514.99 · 1 entry
+
+| Date | Price | Basis |
+|---|--:|---|
+| 2026-11-18 | [$2,514.99](https://www.ebay.com/itm/298665135818) | direct |
+
+##### MacBook Pro 14 M4 Max 128GB — eBay (used)
+Low $4,449.00 · High $4,449.00 · 1 entry
+
+| Date | Price | Basis |
+|---|--:|---|
+| 2026-11-18 | [$4,449.00](https://www.ebay.com/itm/960175867500) | direct |
+
+##### MacBook Pro 14 M4 Max 64GB — eBay (new)
+Low $4,499.99 · High $4,499.99 · 1 entry
+
+| Date | Price | Basis |
+|---|--:|---|
+| 2026-11-18 | [$4,499.99](https://www.ebay.com/itm/820343708882) | direct |
+
+##### MacBook Pro 14 M4 Max 64GB — eBay (used)
+Low $3,079.99 · High $3,079.99 · 1 entry
+
+| Date | Price | Basis |
+|---|--:|---|
+| 2026-11-18 | [$3,079.99](https://www.ebay.com/itm/298636560028) | direct |
 
 ##### MacBook Pro 14 M4 Pro 48GB — Apple (Certified Refurbished) (refurbished)
 Low $3,269.00 · High $3,269.00 · 2 entries
@@ -998,6 +1293,20 @@ Low $6,699.00 · High $6,699.00 · 2 entries
 | 2026-11-18 | [$6,699.00](https://www.amazon.com/dp/B0GZ4SQXGD) | direct |
 | 2026-11-17 | [$6,699.00](https://www.amazon.com/dp/B0GZ4SQXGD) | direct |
 
+##### MacBook Pro 14 M5 Max 128GB — eBay (new)
+Low $6,899.00 · High $6,899.00 · 1 entry
+
+| Date | Price | Basis |
+|---|--:|---|
+| 2026-11-18 | [$6,899.00](https://www.ebay.com/itm/940053163792) | direct |
+
+##### MacBook Pro 14 M5 Max 128GB — eBay (used)
+Low $5,899.00 · High $5,899.00 · 1 entry
+
+| Date | Price | Basis |
+|---|--:|---|
+| 2026-11-18 | [$5,899.00](https://www.ebay.com/itm/880023866326) | direct |
+
 ##### MacBook Pro 14 M5 Max 64GB — Amazon (third-party seller) (new)
 Low $5,099.00 · High $5,099.00 · 2 entries
 
@@ -1005,6 +1314,20 @@ Low $5,099.00 · High $5,099.00 · 2 entries
 |---|--:|---|
 | 2026-11-18 | [$5,099.00](https://www.amazon.com/dp/B0GWS9J8KY) | direct |
 | 2026-11-17 | [$5,099.00](https://www.amazon.com/dp/B0GWS9J8KY) | direct |
+
+##### MacBook Pro 14 M5 Max 64GB — eBay (new)
+Low $5,999.99 · High $5,999.99 · 1 entry
+
+| Date | Price | Basis |
+|---|--:|---|
+| 2026-11-18 | [$5,999.99](https://www.ebay.com/itm/307212063187) | direct |
+
+##### MacBook Pro 14 M5 Max 64GB — eBay (refurbished)
+Low $4,699.99 · High $4,699.99 · 1 entry
+
+| Date | Price | Basis |
+|---|--:|---|
+| 2026-11-18 | [$4,699.99](https://www.ebay.com/itm/900086415863) | direct |
 
 ##### MacBook Pro 14 M5 Pro 48GB — Amazon (third-party seller) (new)
 Low $3,239.09 · High $3,239.10 · 2 entries
@@ -1044,6 +1367,27 @@ Low $2,488.80 · High $2,488.80 · 2 entries
 | 2026-11-18 | [$2,488.80](https://www.amazon.com/dp/B0FHP6C3BL) | direct |
 | 2026-11-17 | [$2,488.80](https://www.amazon.com/dp/B0FHP6C3BL) | direct |
 
+##### MacBook Pro 16 M2 Max 64GB — eBay (used)
+Low $1,750.00 · High $1,750.00 · 1 entry
+
+| Date | Price | Basis |
+|---|--:|---|
+| 2026-11-18 | [$1,750.00](https://www.ebay.com/itm/227602714110) | direct |
+
+##### MacBook Pro 16 M2 Max 96GB — eBay (used)
+Low $3,808.99 · High $3,808.99 · 1 entry
+
+| Date | Price | Basis |
+|---|--:|---|
+| 2026-11-18 | [$3,808.99](https://www.ebay.com/itm/900057933198) | direct |
+
+##### MacBook Pro 16 M3 Max 128GB — eBay (used)
+Low $4,499.00 · High $4,499.00 · 1 entry
+
+| Date | Price | Basis |
+|---|--:|---|
+| 2026-11-18 | [$4,499.00](https://www.ebay.com/itm/940099895248) | direct |
+
 ##### MacBook Pro 16 M3 Max 64GB — Amazon (third-party seller) (refurbished)
 Low $3,199.00 · High $3,199.00 · 2 entries
 
@@ -1052,6 +1396,27 @@ Low $3,199.00 · High $3,199.00 · 2 entries
 | 2026-11-18 | [$3,199.00](https://www.amazon.com/dp/B0F1Z7BR77) | direct |
 | 2026-11-17 | [$3,199.00](https://www.amazon.com/dp/B0F1Z7BR77) | direct |
 
+##### MacBook Pro 16 M3 Max 64GB — eBay (used)
+Low $2,419.99 · High $2,419.99 · 1 entry
+
+| Date | Price | Basis |
+|---|--:|---|
+| 2026-11-18 | [$2,419.99](https://www.ebay.com/itm/298598919121) | direct |
+
+##### MacBook Pro 16 M3 Max 96GB — eBay (used)
+Low $3,990.00 · High $3,990.00 · 1 entry
+
+| Date | Price | Basis |
+|---|--:|---|
+| 2026-11-18 | [$3,990.00](https://www.ebay.com/itm/277060197180) | direct |
+
+##### MacBook Pro 16 M4 Max 128GB — eBay (used)
+Low $5,199.00 · High $5,199.00 · 1 entry
+
+| Date | Price | Basis |
+|---|--:|---|
+| 2026-11-18 | [$5,199.00](https://www.ebay.com/itm/128186161157) | direct |
+
 ##### MacBook Pro 16 M4 Max 48GB — Amazon (third-party seller) (refurbished)
 Low $2,929.99 · High $3,272.00 · 2 entries
 
@@ -1059,6 +1424,13 @@ Low $2,929.99 · High $3,272.00 · 2 entries
 |---|--:|---|
 | 2026-11-18 | [$2,929.99](https://www.amazon.com/dp/B0DN25LGK8) | direct |
 | 2026-11-17 | [$3,272.00](https://www.amazon.com/dp/B0DN25LGK8) | direct |
+
+##### MacBook Pro 16 M4 Max 64GB — eBay (used)
+Low $2,950.00 · High $2,950.00 · 1 entry
+
+| Date | Price | Basis |
+|---|--:|---|
+| 2026-11-18 | [$2,950.00](https://www.ebay.com/itm/168860884127) | direct |
 
 ##### MacBook Pro 16 M4 Pro 48GB — Amazon (third-party seller) (refurbished)
 Low $2,199.00 · High $2,299.00 · 2 entries
@@ -1075,6 +1447,20 @@ Low $6,999.00 · High $6,999.00 · 2 entries
 |---|--:|---|
 | 2026-11-18 | [$6,999.00](https://www.amazon.com/dp/B0GYZYQC19) | direct |
 | 2026-11-17 | [$6,999.00](https://www.amazon.com/dp/B0GYZYQC19) | direct |
+
+##### MacBook Pro 16 M5 Max 128GB — eBay (new)
+Low $6,399.00 · High $6,399.00 · 1 entry
+
+| Date | Price | Basis |
+|---|--:|---|
+| 2026-11-18 | [$6,399.00](https://www.ebay.com/itm/147654325715) | direct |
+
+##### MacBook Pro 16 M5 Max 128GB — eBay (used)
+Low $5,900.00 · High $5,900.00 · 1 entry
+
+| Date | Price | Basis |
+|---|--:|---|
+| 2026-11-18 | [$5,900.00](https://www.ebay.com/itm/206622860547) | direct |
 
 ##### MacBook Pro 16 M5 Max 48GB — Amazon (new)
 Low $4,499.00 · High $4,499.00 · 1 entry
@@ -1097,6 +1483,20 @@ Low $4,249.00 · High $4,249.00 · 2 entries
 |---|--:|---|
 | 2026-11-18 | [$4,249.00](https://www.apple.com/shop/product/fge94ll/a/Refurbished-16-inch-MacBook-Pro-Apple-M5-Max-chip-with-18%E2%80%91Core-CPU-and-40%E2%80%91Core-GPU-Silver) | direct |
 | 2026-11-17 | [$4,249.00](https://www.apple.com/shop/product/fge94ll/a/Refurbished-16-inch-MacBook-Pro-Apple-M5-Max-chip-with-18%E2%80%91Core-CPU-and-40%E2%80%91Core-GPU-Silver) | direct |
+
+##### MacBook Pro 16 M5 Max 64GB — eBay (new)
+Low $4,659.00 · High $4,659.00 · 1 entry
+
+| Date | Price | Basis |
+|---|--:|---|
+| 2026-11-18 | [$4,659.00](https://www.ebay.com/itm/128179582089) | direct |
+
+##### MacBook Pro 16 M5 Max 64GB — eBay (used)
+Low $3,999.00 · High $3,999.00 · 1 entry
+
+| Date | Price | Basis |
+|---|--:|---|
+| 2026-11-18 | [$3,999.00](https://www.ebay.com/itm/198803468812) | direct |
 
 ##### MacBook Pro 16 M5 Pro 48GB — Apple (Certified Refurbished) (refurbished)
 Low $3,059.00 · High $3,059.00 · 2 entries
