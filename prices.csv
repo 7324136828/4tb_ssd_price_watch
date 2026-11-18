@@ -137,3 +137,60 @@ date,category,item,spec,store,condition,price_usd,basis,source_date,url
 2026-11-17,ssd,Samsung 990 Pro,4TB TLC,Best Buy,new,799.99,reported (ByteSizedDeals),2026-11-17,https://bytesizeddeals.com/ssd/4tb-pcie-4
 2026-11-17,egpu,Razer Core X V2,"Enclosure, TB5, No PSU",Amazon,new,349.99,direct,2026-11-17,https://www.amazon.com/dp/B0FFQFDZWX
 2026-11-17,egpu,AOOSTAR EG02,"Enclosure, TB5, No PSU / ATX required",Amazon (third-party seller),new,219.00,direct,2026-11-17,https://www.amazon.com/dp/B0G3TV5HKJ
+2026-11-18,nvidia_gpu,RTX 5090 (ASUS TUF Gaming OC),32GB GDDR7,Amazon,new,7400.00,reported (videocardprices.com),2026-11-17,https://www.amazon.com/dp/B0DS2X13PH
+2026-11-18,nvidia_gpu,RTX 5090 (Gigabyte Gaming OC),32GB GDDR7,eBay,used,5750.00,reported (videocardprices.com),2026-11-17,https://www.ebay.com/itm/407331778909
+2026-11-18,nvidia_gpu,RTX 5090 (ASUS ROG Astral OC),32GB GDDR7,Newegg,new,6249.99,reported (videocardprices.com),2026-11-17,https://www.newegg.com/asus-rog-astral-rog-astral-rtx5090-o32g-gaming-geforce-rtx-5090-32gb-graphics-card-triple-fans/p/N82E16814126751?item=N82E16814126751
+2026-11-18,nvidia_gpu,RTX 4090,24GB GDDR6X,Amazon,new,4449.00,reported (gpudeals.net),2026-11-18,https://www.amazon.com/dp/B0CPB3P36K
+2026-11-18,nvidia_gpu,RTX 4090,24GB GDDR6X,eBay,used,1300.00,reported (gpudeals.net),2026-11-18,https://www.ebay.com/itm/366745135471
+2026-11-18,nvidia_gpu,RTX 3090 Ti,24GB GDDR6X,Amazon,new,2150.00,reported (gpudeals.net),2026-11-18,https://www.amazon.com/dp/B0BKH8HDWK
+2026-11-18,nvidia_gpu,RTX 3090 Ti,24GB GDDR6X,eBay,used,1800.00,reported (gpudeals.net),2026-11-18,https://www.ebay.com/itm/820194234753
+2026-11-18,nvidia_gpu,RTX 3090,24GB GDDR6X,Amazon,new,2300.00,reported (gpudeals.net),2026-11-18,https://www.amazon.com/dp/B09GWB753L
+2026-11-18,nvidia_gpu,RTX 3090,24GB GDDR6X,eBay,used,1490.00,reported (gpudeals.net),2026-11-18,https://www.ebay.com/itm/287671509732
+2026-11-18,amd_gpu,RX 9070 XT (GIGABYTE Gaming OC),16GB GDDR6,Amazon,new,1034.99,reported (videocardprices.com),2026-11-16,https://www.amazon.com/dp/B0DS2QG2KW
+2026-11-18,amd_gpu,RX 9070 XT (ASUS Prime OC),16GB GDDR6,eBay,used,820.00,reported (videocardprices.com),2026-11-17,https://www.ebay.com/itm/900098987363
+2026-11-18,amd_gpu,RX 9070 XT (ASRock Steel Legend),16GB GDDR6,Newegg,new,999.99,reported (videocardprices.com),2026-11-17,https://www.newegg.com/asrock-steel-legend-rx9070xt-sl-16g-radeon-rx-9070-xt-16gb-graphics-card-triple-fans/p/N82E16814930136?item=N82E16814930136
+2026-11-18,amd_gpu,RX 9070 (XFX Swift OC Triple Fan),16GB GDDR6,Amazon,new,879.99,reported (videocardprices.com),2026-11-11,https://www.amazon.com/dp/B0DXLBTL4B
+2026-11-18,amd_gpu,RX 9070 (AsRock Challenger),16GB GDDR6,eBay,used,800.00,reported (videocardprices.com),2026-11-17,https://www.ebay.com/itm/267843983228
+2026-11-18,amd_gpu,RX 9070 (GIGABYTE Gaming),16GB GDDR6,Newegg,new,934.99,reported (videocardprices.com),2026-11-17,https://www.newegg.com/gigabyte-gv-r9070gaming-oc-16gd-radeon-rx-9070-16gb-graphics-card-triple-fans/p/N82E16814932752?item=N82E16814932752
+2026-11-18,amd_gpu,RX 7900 XTX (ASRock Phantom Gaming OC),24GB GDDR6,Amazon,new,1099.99,reported (videocardprices.com),2026-11-12,https://www.amazon.com/dp/B0BTPK5J68
+2026-11-18,amd_gpu,RX 7900 XT,20GB GDDR6,Amazon,new,946.00,reported (gpudeals.net),2026-11-18,https://www.amazon.com/dp/B0BMNGT8XM
+2026-11-18,amd_gpu,RX 7900 XT,20GB GDDR6,eBay,used,970.00,reported (gpudeals.net),2026-11-18,https://www.ebay.com/itm/407201083826
+2026-11-18,ram,Crucial CT64G56C46S5,1x64GB DDR5-5600 CL46,Amazon (third-party seller),new,1199.89,direct,2026-11-18,https://www.amazon.com/dp/B0DSQWZ5G2
+2026-11-18,ram,G.Skill F5-5600S4645A64GX1-RS,1x64GB DDR5-5600 CL46,Amazon (third-party seller),new,1999.99,direct,2026-11-18,https://www.amazon.com/dp/B0G7RLK95V
+2026-11-18,macbook,MacBook Pro 14 M4 Pro 48GB,"48GB RAM, 2TB SSD, 14C CPU/20C GPU",Apple (Certified Refurbished),refurbished,3269.00,direct,2026-11-18,https://www.apple.com/shop/product/g1ff9ll/a/Refurbished-14-inch-MacBook-Pro-Apple-M4-Pro-Chip-with-14%E2%80%91Core-CPU-and-20%E2%80%91Core-GPU-Nano-texture-display-Space-Black
+2026-11-18,macbook,MacBook Pro 14 M5 Pro 48GB,"48GB RAM, 2TB SSD, 18C CPU/20C GPU",Apple (Certified Refurbished),refurbished,3229.00,direct,2026-11-18,https://www.apple.com/shop/product/g1mm2ll/a/Refurbished-14-inch-MacBook-Pro-Apple-M5-Pro-chip-with-18%E2%80%91Core-CPU-and-20%E2%80%91Core-GPU-Space-Black
+2026-11-18,macbook,MacBook Pro 16 M5 Max 48GB,"48GB RAM, 2TB SSD, 18C CPU/40C GPU",Apple (Certified Refurbished),refurbished,4249.00,direct,2026-11-18,https://www.apple.com/shop/product/fge94ll/a/Refurbished-16-inch-MacBook-Pro-Apple-M5-Max-chip-with-18%E2%80%91Core-CPU-and-40%E2%80%91Core-GPU-Silver
+2026-11-18,macbook,MacBook Pro 16 M5 Pro 48GB,"48GB RAM, 1TB SSD, 18C CPU/20C GPU",Apple (Certified Refurbished),refurbished,3059.00,direct,2026-11-18,https://www.apple.com/shop/product/fgec4ll/a/Refurbished-16-inch-MacBook-Pro-Apple-M5-Pro-chip-with-18%E2%80%91Core-CPU-and-20%E2%80%91Core-GPU-Space-Black
+2026-11-18,macbook,MacBook Pro 14 M5 Max 128GB,"128GB RAM, 2TB SSD, 18C CPU/40C GPU",Amazon (third-party seller),new,6699.00,direct,2026-11-18,https://www.amazon.com/dp/B0GZ4SQXGD
+2026-11-18,macbook,MacBook Pro 14 M5 Max 64GB,"64GB RAM, 2TB SSD, 18C CPU/40C GPU",Amazon (third-party seller),new,5099.00,direct,2026-11-18,https://www.amazon.com/dp/B0GWS9J8KY
+2026-11-18,macbook,MacBook Pro 14 M5 Pro 48GB,"48GB RAM, 1TB SSD, 15C CPU/16C GPU",Amazon (third-party seller),new,3239.10,direct,2026-11-18,https://www.amazon.com/dp/B0H4FDN7Y4
+2026-11-18,macbook,MacBook Pro 14 M5 Pro 64GB,"64GB RAM, 1TB SSD, 18C CPU/20C GPU",Amazon (third-party seller),new,3699.00,direct,2026-11-18,https://www.amazon.com/dp/B0GYZKZ2WX
+2026-11-18,macbook,MacBook Pro 16 M2 Max 64GB,"64GB RAM, 1TB SSD",Amazon (third-party seller),refurbished,2488.80,direct,2026-11-18,https://www.amazon.com/dp/B0FHP6C3BL
+2026-11-18,macbook,MacBook Pro 16 M3 Max 64GB,"64GB RAM, 1TB SSD, 16C CPU/40C GPU",Amazon (third-party seller),refurbished,3199.00,direct,2026-11-18,https://www.amazon.com/dp/B0F1Z7BR77
+2026-11-18,macbook,MacBook Pro 16 M4 Max 48GB,"48GB RAM, 1TB SSD",Amazon (third-party seller),refurbished,2929.99,direct,2026-11-18,https://www.amazon.com/dp/B0DN25LGK8
+2026-11-18,macbook,MacBook Pro 16 M4 Pro 48GB,"48GB RAM, 512GB SSD",Amazon (third-party seller),refurbished,2299.00,direct,2026-11-18,https://www.amazon.com/dp/B0DNDH1W77
+2026-11-18,macbook,MacBook Pro 16 M5 Max 128GB,"128GB RAM, 2TB SSD, 18C CPU/40C GPU",Amazon (third-party seller),new,6999.00,direct,2026-11-18,https://www.amazon.com/dp/B0GYZYQC19
+2026-11-18,macbook,MacBook Pro 16 M5 Max 48GB,"48GB RAM, 2TB SSD, 18C CPU/40C GPU",Amazon (third-party seller),new,4496.50,direct,2026-11-18,https://www.amazon.com/dp/B0GR1G6V6H
+2026-11-18,macbook,MacBook Pro 16 M5 Pro 64GB,"64GB RAM, 1TB SSD, 18C CPU/20C GPU",Amazon (third-party seller),new,4599.00,direct,2026-11-18,https://www.amazon.com/dp/B0H7Z68CLL
+2026-11-18,ssd,TeamGroup T-Force G50,4TB TLC,Amazon (third-party seller),new,495.99,direct,2026-11-18,https://www.amazon.com/dp/B0DRVN1JXP
+2026-11-18,ssd,WD Blue SN5000,4TB QLC,Amazon (third-party seller),new,499.99,direct,2026-11-18,https://www.amazon.com/dp/B0D7MLB76V
+2026-11-18,ssd,Silicon Power UD90,4TB TLC (some batches reported QLC),Amazon (third-party seller),new,523.00,direct,2026-11-18,https://www.amazon.com/dp/B0BYN8NHXS
+2026-11-18,ssd,Lexar NQ780,4TB QLC,Amazon (third-party seller),new,588.57,direct,2026-11-18,https://www.amazon.com/dp/B0F25CX4LB
+2026-11-18,ssd,WD Black SN850X,4TB TLC,Amazon (third-party seller),new,789.99,direct,2026-11-18,https://www.amazon.com/dp/B0B7CQ2CHH
+2026-11-18,ssd,WD Black SN7100,4TB TLC,Amazon (third-party seller),new,629.99,direct,2026-11-18,https://www.amazon.com/dp/B0DZK9C789
+2026-11-18,ssd,Crucial T500,4TB TLC,Amazon (third-party seller),new,869.00,direct,2026-11-18,https://www.amazon.com/dp/B0DBBG7CG7
+2026-11-18,ssd,Samsung 990 Pro,4TB TLC,Amazon,new,799.99,direct,2026-11-18,https://www.amazon.com/dp/B0CHGT1KFJ
+2026-11-18,ssd,Samsung 990 EVO Plus,4TB TLC,Amazon (third-party seller),new,679.95,direct,2026-11-18,https://www.amazon.com/dp/B0DHLBDSP7
+2026-11-18,ssd,TeamGroup MP44,4TB TLC,Amazon (third-party seller),new,505.99,direct,2026-11-18,https://www.amazon.com/dp/B0C4KQ9N79
+2026-11-18,ssd,TeamGroup MP44Q,4TB QLC,Amazon (third-party seller),new,484.99,direct,2026-11-18,https://www.amazon.com/dp/B0CZLDKDKH
+2026-11-18,ssd,Crucial P310,4TB QLC,Amazon (third-party seller),new,556.99,direct,2026-11-18,https://www.amazon.com/dp/B0F3WLFCPL
+2026-11-18,ssd,Samsung 990 EVO Plus,4TB TLC,Amazon,new,530.11,reported (cheapestssd.com),2026-11-17,https://cheapestssd.com/4tb-nvme-ssd/
+2026-11-18,ssd,TeamGroup MP44Q,4TB QLC,Walmart (third-party seller),new,484.99,reported (ByteSizedDeals),2026-11-17,https://bytesizeddeals.com/ssd/4tb-pcie-4
+2026-11-18,ssd,TeamGroup T-Force G50,4TB TLC,Newegg,new,495.99,reported (ByteSizedDeals),2026-11-17,https://bytesizeddeals.com/ssd/4tb-pcie-4
+2026-11-18,ssd,WD Blue SN5100,4TB QLC,Amazon,new,599.99,reported (ByteSizedDeals),2026-11-17,https://bytesizeddeals.com/ssd/4tb-pcie-4
+2026-11-18,ssd,Samsung 990 Pro,4TB TLC,Best Buy,new,799.99,reported (ByteSizedDeals),2026-11-17,https://bytesizeddeals.com/ssd/4tb-pcie-4
+2026-11-18,egpu,Razer Core X V2,"Enclosure, TB5, No PSU",Amazon,new,349.99,direct,2026-11-18,https://www.amazon.com/dp/B0FFQFDZWX
+2026-11-18,egpu,AOOSTAR EG02,"Enclosure, TB5, No PSU / ATX required",Amazon (third-party seller),new,219.00,direct,2026-11-18,https://www.amazon.com/dp/B0G3TV5HKJ
+2026-11-18,egpu,Sonnet Breakaway Box 850 T5,"Enclosure, TB5, Built-in 850W",Amazon (third-party seller),new,599.99,direct,2026-11-18,https://www.amazon.com/dp/B0FX86P6T8
+2026-11-18,egpu,GPD G2,"Enclosure, USB4, Built-in 800W",Amazon (third-party seller),new,429.99,direct,2026-11-18,https://www.amazon.com/dp/B0HGPVYS21
+2026-11-18,egpu,ONEXGPU 2 (Radeon RX 7800M),"Complete eGPU, USB4, Included",Amazon (third-party seller),new,1049.99,direct,2026-11-18,https://www.amazon.com/dp/B0DNSLBSG8
