@@ -428,6 +428,9 @@ HTML_TEMPLATE = r"""<!DOCTYPE html>
     --border: #dce3ed;
     --text: #0f172a;
     --muted: #526075;
+    --hl-1: #2a78d6; --hl-2: #eb6834; --hl-3: #1baf7a; --hl-4: #eda100;
+    --hl-5: #e87ba4; --hl-6: #008300; --hl-7: #6250d6; --hl-8: #e34948;
+    --ctx: #c3cad5;
     --accent: #2563eb;
     --accent-soft: rgba(37, 99, 235, 0.12);
     --good: #059669;
@@ -448,6 +451,9 @@ HTML_TEMPLATE = r"""<!DOCTYPE html>
     --border: #273449;
     --text: #f1f5f9;
     --muted: #94a3b8;
+    --hl-1: #3987e5; --hl-2: #d95926; --hl-3: #199e70; --hl-4: #c98500;
+    --hl-5: #d55181; --hl-6: #0ca30c; --hl-7: #9085e9; --hl-8: #e66767;
+    --ctx: #3a4860;
     --accent: #60a5fa;
     --accent-soft: rgba(96, 165, 250, 0.16);
     --good: #34d399;
@@ -702,6 +708,16 @@ HTML_TEMPLATE = r"""<!DOCTYPE html>
     cursor: pointer;
     transition: opacity 0.15s ease, border-color 0.15s ease;
   }
+  .legend-item.context { background: transparent; color: var(--muted); }
+  .legend-item.context strong { font-weight: 500; }
+  .legend-more {
+    border-style: dashed;
+    background: transparent;
+    color: var(--muted);
+    font-size: 0.79rem;
+    padding: 4px 10px;
+    border-radius: 999px;
+  }
   .legend-item.hidden {
     opacity: 0.42;
     text-decoration: line-through;
@@ -924,7 +940,15 @@ HTML_TEMPLATE = r"""<!DOCTYPE html>
 
     <label class="check-label"><input type="checkbox" id="dealLineCheck" checked> $450 SSD target</label>
     <label class="check-label"><input type="checkbox" id="maCheck"> 7-day avg</label>
-    <label class="check-label"><input type="checkbox" id="labelsCheck" checked> Point labels</label>
+    <label class="check-label"><input type="checkbox" id="labelsCheck" checked> Line labels</label>
+    <div class="ctrl-group">
+      <span class="ctrl-label">Highlight</span>
+      <select id="highlightSelect" title="Lines drawn in colour and labelled. The rest are thin grey context lines.">
+        <option value="6" selected>6 cheapest</option>
+        <option value="8">8 cheapest</option>
+        <option value="all">All series</option>
+      </select>
+    </div>
   </div>
 
   <div id="bannerSlot"></div>
@@ -1011,6 +1035,9 @@ HTML_TEMPLATE = r"""<!DOCTYPE html>
     showDealLine: true,
     showMa: false,
     showLabels: true,
+    highlightCount: "6",
+    pinnedIds: new Set(),
+    expandedLegends: new Set(),
     hiddenIds: new Set(),
     focusedId: null,
     selectedPoint: null,
@@ -1387,7 +1414,7 @@ HTML_TEMPLATE = r"""<!DOCTYPE html>
     document.getElementById("ssdFilterCtrl").style.display = hasSsd ? "inline-flex" : "none";
     document.getElementById("scaleCtrl").style.display = state.metric === "pct" ? "none" : "inline-flex";
     document.getElementById("resetFocusBtn").style.display =
-      (state.focusedId || state.hiddenIds.size > 0) ? "inline-block" : "none";
+      (state.focusedId || state.hiddenIds.size > 0 || state.pinnedIds.size > 0) ? "inline-block" : "none";
 
     document.querySelectorAll("#metricGroup button").forEach(b => {
       b.classList.toggle("active", b.dataset.metric === state.metric);
@@ -1419,6 +1446,14 @@ HTML_TEMPLATE = r"""<!DOCTYPE html>
     for (let i = 1; i < labelNodes.length; i++) {
       if (labelNodes[i].labelY - labelNodes[i - 1].labelY < minGap) {
         labelNodes[i].labelY = labelNodes[i - 1].labelY + minGap;
+      }
+    }
+    if (labelNodes.length) {
+      const drift = labelNodes.reduce((sum, n) => sum + (n.labelY - n.y), 0) / labelNodes.length;
+      for (const node of labelNodes) node.labelY -= drift;
+      if (labelNodes[0].labelY < topY + 10) {
+        const lift = topY + 10 - labelNodes[0].labelY;
+        for (const node of labelNodes) node.labelY += lift;
       }
     }
     if (labelNodes.length && labelNodes[labelNodes.length - 1].labelY > bottomY - 4) {
@@ -1514,31 +1549,68 @@ HTML_TEMPLATE = r"""<!DOCTYPE html>
     svgWrap.className = "svg-wrap";
     card.appendChild(svgWrap);
 
+    // Focus + context: only the cheapest few series are drawn in colour and
+    // labelled; the rest are thin grey lines. Pinned and selected series join
+    // the coloured set.
+    const cssVars = getComputedStyle(document.documentElement);
+    const HL_COLORS = [1, 2, 3, 4, 5, 6, 7, 8].map(i => cssVars.getPropertyValue(`--hl-${i}`).trim());
+    const CTX_COLOR = cssVars.getPropertyValue("--ctx").trim() || "#c3cad5";
+    const lastOf = s => s.viewPoints[s.viewPoints.length - 1];
+    const shown = seriesList.filter(isSeriesVisible);
+    const newestDay = Math.max(...shown.map(s => lastOf(s).dayMs));
+    // Series with a price on the newest date rank first, then by latest price.
+    const ranked = shown.slice().sort((x, y) =>
+      ((lastOf(x).dayMs === newestDay ? 0 : 1) - (lastOf(y).dayMs === newestDay ? 0 : 1)) ||
+      (lastOf(x).price - lastOf(y).price));
+    const hlLimit = state.highlightCount === "all" ? Infinity : Number(state.highlightCount);
+    const selectedId = state.selectedPoint ? state.selectedPoint.seriesId : null;
+    const highlighted = ranked.filter((s, i) => i < hlLimit || state.pinnedIds.has(s.id) || s.id === selectedId);
+    const colorById = new Map();
+    highlighted.forEach((s, i) => colorById.set(s.id, HL_COLORS[i % HL_COLORS.length]));
+    const isHl = s => colorById.has(s.id);
+    const colorOf = s => colorById.get(s.id) || CTX_COLOR;
+    const storeShort = s => s.store.replace(/\s*\(.*\)$/, "") + (s.condition !== "new" ? `, ${s.condition}` : "");
+
     const legend = document.createElement("div");
     legend.className = "legend";
-    seriesList.forEach(s => {
-      const last = s.viewPoints[s.viewPoints.length - 1];
+    const legendOrder = highlighted.concat(
+      ranked.filter(s => !isHl(s)),
+      seriesList.filter(s => !isSeriesVisible(s)));
+    const legendKey = title;
+    const expanded = state.expandedLegends.has(legendKey);
+    let collapsedCount = 0;
+    legendOrder.forEach(s => {
+      const hl = isHl(s);
+      if (!hl && !expanded) { collapsedCount++; return; }
+      const last = lastOf(s);
       const item = document.createElement("button");
       item.type = "button";
       item.className = "legend-item" +
+        (hl ? "" : " context") +
         (state.hiddenIds.has(s.id) ? " hidden" : "") +
         (state.focusedId === s.id ? " focused" : "");
-      item.title = "Click to toggle visibility · Double-click to isolate";
+      item.title = hl
+        ? "Click to hide · Double-click to isolate"
+        : "Click to highlight · Double-click to isolate";
       const pctBadge = s.viewPoints.length > 1
         ? ` (${fmtSignedPct(last.viewPctFirst)})`
         : "";
       const swatchClass = s.condition !== "new" ? "swatch dashed" : "swatch";
       const swatchStyle = s.condition !== "new"
-        ? `border-color:${s.color};`
-        : `background:${s.color};`;
+        ? `border-color:${colorOf(s)};`
+        : `background:${colorOf(s)};`;
       item.innerHTML = `<span class="${swatchClass}" style="${swatchStyle}"></span>` +
-        `<span>${escapeHtml(s.item)} · ${escapeHtml(s.store)}</span>` +
+        `<span>${escapeHtml(s.item)} · ${escapeHtml(storeShort(s))}</span>` +
         `<strong>${fmtMoney(last.price)}${escapeHtml(pctBadge)}</strong>`;
       item.addEventListener("click", () => {
         if (state.focusedId === s.id) {
           state.focusedId = null;
         } else if (state.hiddenIds.has(s.id)) {
           state.hiddenIds.delete(s.id);
+        } else if (state.pinnedIds.has(s.id)) {
+          state.pinnedIds.delete(s.id);
+        } else if (!hl) {
+          state.pinnedIds.add(s.id);
         } else {
           state.hiddenIds.add(s.id);
         }
@@ -1552,6 +1624,18 @@ HTML_TEMPLATE = r"""<!DOCTYPE html>
       });
       legend.appendChild(item);
     });
+    if (collapsedCount > 0 || (expanded && legendOrder.length > highlighted.length)) {
+      const more = document.createElement("button");
+      more.type = "button";
+      more.className = "legend-more";
+      more.textContent = expanded ? "Show fewer" : `+ ${collapsedCount} more series (grey lines)`;
+      more.addEventListener("click", () => {
+        if (expanded) state.expandedLegends.delete(legendKey);
+        else state.expandedLegends.add(legendKey);
+        render();
+      });
+      legend.appendChild(more);
+    }
     card.appendChild(legend);
     container.appendChild(card);
 
@@ -1559,7 +1643,9 @@ HTML_TEMPLATE = r"""<!DOCTYPE html>
       const visible = seriesList.filter(isSeriesVisible);
       const width = Math.max(360, Math.floor(svgWrap.clientWidth || 720));
       const height = options.compact ? 300 : 410;
-      const margin = { top: 20, right: 28, bottom: 42, left: 74 };
+      // Labels sit in a gutter to the right of the plot, never on top of the lines.
+      const gutter = state.showLabels && width >= 560 ? (width >= 900 ? 270 : (width >= 640 ? 250 : 215)) : 0;
+      const margin = { top: 20, right: 28 + gutter, bottom: 42, left: 74 };
       const plotW = width - margin.left - margin.right;
       const plotH = height - margin.top - margin.bottom;
 
@@ -1725,6 +1811,7 @@ HTML_TEMPLATE = r"""<!DOCTYPE html>
         addEl("text", {
           x: margin.left + 8, y: yd - 6,
           fill: "var(--warn)", "font-size": 11, "font-weight": 700,
+          stroke: "var(--surface)", "stroke-width": 3, "paint-order": "stroke",
         }, svg, `DEAL target ≤ ${fmtMoney(META.dealPriceSsd)} (4TB TLC SSD)`);
       }
 
@@ -1742,32 +1829,38 @@ HTML_TEMPLATE = r"""<!DOCTYPE html>
       const labelNodes = [];
       const renderedPts = [];
 
-      plotted.forEach((group, gIdx) => {
+      const pathById = new Map();
+      // Grey context lines first, coloured lines on top (cheapest drawn last).
+      const drawOrder = plotted.filter(g => !isHl(g.series)).concat(
+        plotted.filter(g => isHl(g.series)).sort((x, y) => highlighted.indexOf(y.series) - highlighted.indexOf(x.series)));
+      drawOrder.forEach((group, gIdx) => {
         const s = group.series;
         const pts = group.pts;
+        const hl = isHl(s);
+        const color = colorOf(s);
         const isUsed = s.condition !== "new";
         const isSelected = state.selectedPoint && state.selectedPoint.seriesId === s.id;
 
         if (pts.length >= 2) {
           const pathD = pts.map((p, i) => `${i === 0 ? "M" : "L"}${xToPx(p.xMs).toFixed(1)},${yToPx(p.yVal).toFixed(1)}`).join(" ");
-          addEl("path", {
+          pathById.set(s.id, addEl("path", {
             d: pathD,
             fill: "none",
-            stroke: s.color,
-            "stroke-width": isSelected ? 3.2 : 2.3,
+            stroke: color,
+            "stroke-width": hl ? (isSelected ? 3 : 2) : 1.1,
             "stroke-linecap": "round",
             "stroke-linejoin": "round",
-            ...(isUsed ? { "stroke-dasharray": "6 4" } : {}),
-          });
+            ...(isUsed ? { "stroke-dasharray": hl ? "6 4" : "4 4" } : {}),
+          }));
         }
 
-        if (state.showMa && pts.length >= 3) {
+        if (hl && state.showMa && pts.length >= 3) {
           const maPts = movingAveragePoints(pts, 7);
           const maD = maPts.map((p, i) => `${i === 0 ? "M" : "L"}${xToPx(p.xMs).toFixed(1)},${yToPx(p.yVal).toFixed(1)}`).join(" ");
           addEl("path", {
             d: maD,
             fill: "none",
-            stroke: s.color,
+            stroke: color,
             "stroke-width": 1.4,
             "stroke-dasharray": "2 3",
             opacity: 0.65,
@@ -1777,7 +1870,7 @@ HTML_TEMPLATE = r"""<!DOCTYPE html>
         // Points
         pts.forEach((p, idx) => {
           const jitter = singleDay && plotted.length > 1
-            ? (gIdx - (plotted.length - 1) / 2) * 8
+            ? (gIdx - (plotted.length - 1) / 2) * Math.min(8, (plotW * 0.5) / plotted.length)
             : 0;
           const cx = xToPx(p.xMs) + jitter;
           const cy = yToPx(p.yVal);
@@ -1785,62 +1878,81 @@ HTML_TEMPLATE = r"""<!DOCTYPE html>
           const isPtSelected = isSelected && state.selectedPoint.date === p.activeDate &&
             state.selectedPoint.sameDayIndex === p.sameDayIndex;
 
-          if (isDeal) {
+          if (isDeal && hl) {
             addEl("circle", {
               cx, cy, r: 9, fill: "none", stroke: "var(--warn)", "stroke-width": 2, opacity: 0.85,
             });
           }
 
-          let marker;
-          if (isUsed) {
+          let marker = null;
+          if (!hl) {
+            // Context series: a dot only where there is no line to carry it.
+            if (pts.length === 1) {
+              marker = addEl("circle", { cx, cy, r: 2.6, fill: color });
+            }
+          } else if (isUsed) {
             marker = addEl("rect", {
-              x: cx - 4.5, y: cy - 4.5, width: 9, height: 9, rx: 1.5,
+              x: cx - 4, y: cy - 4, width: 8, height: 8, rx: 1.5,
               transform: `rotate(45 ${cx} ${cy})`,
-              fill: "var(--surface)", stroke: s.color, "stroke-width": 2.2,
+              fill: "var(--surface)", stroke: color, "stroke-width": 2,
             });
           } else {
             marker = addEl("circle", {
-              cx, cy, r: isPtSelected ? 6.5 : (pts.length === 1 ? 6 : 4.3),
-              fill: s.color, stroke: "var(--surface)", "stroke-width": 1.8,
+              cx, cy, r: isPtSelected ? 6.5 : (pts.length === 1 ? 5.5 : 4),
+              fill: color, stroke: "var(--surface)", "stroke-width": 2,
             });
           }
-          marker.style.cursor = "pointer";
 
           renderedPts.push({ cx, cy, series: s, pt: p, marker });
 
-          if (state.showLabels && (idx === pts.length - 1 || singleDay)) {
+          if (gutter && hl && idx === pts.length - 1) {
             const valLabel = isPct ? fmtSignedPct(p.yVal) : fmtMoney(p.price);
             // "MacBook Pro 16 M5 Max 128GB": the memory level at the end must stay visible.
             const name = s.item.replace(/^MacBook (?=Pro|Air)/, "");
-            const nameShort = name.length > 22 ? name.slice(0, 20) + "…" : name;
+            const room = Math.floor((gutter - 30) / 5.8) - valLabel.length - 1;
+            const where = s.store.replace(/\s*\(.*\)$/, "");
+            const nameRoom = Math.max(6, room - where.length - 3);
+            // Shorten in the middle: the last word ("64GB", "Ti") tells models apart.
+            const tail = name.slice(name.lastIndexOf(" "));
+            const shortName = name.length <= nameRoom
+              ? name
+              : name.slice(0, Math.max(3, nameRoom - tail.length - 1)).trimEnd() + "…" + tail;
+            const detail = `${shortName} · ${where}`;
             labelNodes.push({
-              x: cx,
-              y: cy,
-              labelY: cy,
-              color: s.color,
-              text: `${nameShort} · ${valLabel}${isDeal ? " 🔥" : ""}`,
+              x: cx, y: cy, labelY: cy + 4, color,
+              value: valLabel + (isDeal ? " 🔥" : ""),
+              detail,
+              used: isUsed,
             });
           }
         });
       });
 
-      if (state.showLabels && labelNodes.length) {
+      if (labelNodes.length) {
         layoutPointLabels(labelNodes, margin.top, margin.top + plotH);
         const labelG = addEl("g", {});
+        const gx = margin.left + plotW + 14;
         for (const node of labelNodes) {
-          const placeRight = node.x < margin.left + plotW * 0.58;
-          const lx = placeRight ? node.x + 12 : node.x - 12;
-          if (Math.abs(node.labelY - node.y) > 4 || singleDay) {
-            addEl("line", {
-              x1: node.x, y1: node.y, x2: placeRight ? lx - 3 : lx + 3, y2: node.labelY - 3,
-              stroke: node.color, "stroke-width": 1, opacity: 0.55,
+          // Leader from the line's last point to its label.
+          addEl("path", {
+            d: `M${(node.x + 6).toFixed(1)},${node.y.toFixed(1)} L${gx - 4},${(node.labelY - 4).toFixed(1)}`,
+            fill: "none", stroke: node.color, "stroke-width": 1, opacity: 0.6,
+          }, labelG);
+          // Same mark as on the line: filled dot = new, hollow diamond = used/refurbished.
+          if (node.used) {
+            addEl("rect", {
+              x: gx, y: node.labelY - 7, width: 6, height: 6,
+              transform: `rotate(45 ${gx + 3} ${node.labelY - 4})`,
+              fill: "var(--surface)", stroke: node.color, "stroke-width": 1.8,
             }, labelG);
+          } else {
+            addEl("circle", { cx: gx + 3, cy: node.labelY - 4, r: 3.5, fill: node.color }, labelG);
           }
-          addEl("text", {
-            x: lx, y: node.labelY,
-            "text-anchor": placeRight ? "start" : "end",
-            fill: "var(--text)", "font-size": 11.5, "font-weight": 600,
-          }, labelG, node.text);
+          const t = addEl("text", {
+            x: gx + 11, y: node.labelY, "text-anchor": "start",
+            fill: "var(--text)", "font-size": 11.5, "font-weight": 700,
+          }, labelG, node.value);
+          addEl("tspan", { fill: "var(--muted)", "font-weight": 500, dx: 6 }, t, node.detail);
         }
       }
 
@@ -1876,8 +1988,28 @@ HTML_TEMPLATE = r"""<!DOCTYPE html>
         return bestDist <= 42 ? best : null;
       }
 
+      let liftedPath = null;
+      function lift(series) {
+        const path = series ? pathById.get(series.id) : null;
+        if (path === liftedPath) return;
+        if (liftedPath) {
+          liftedPath.setAttribute("stroke", liftedPath.dataset.stroke);
+          liftedPath.setAttribute("stroke-width", liftedPath.dataset.width);
+        }
+        liftedPath = path || null;
+        if (path && !isHl(series)) {
+          path.dataset.stroke = path.getAttribute("stroke");
+          path.dataset.width = path.getAttribute("stroke-width");
+          path.setAttribute("stroke", "var(--text)");
+          path.setAttribute("stroke-width", 2);
+        } else {
+          liftedPath = null;
+        }
+      }
+
       overlay.addEventListener("mousemove", evt => {
         const hit = findNearest(evt);
+        lift(hit ? hit.series : null);
         if (!hit) {
           crosshair.setAttribute("visibility", "hidden");
           focusRing.setAttribute("visibility", "hidden");
@@ -1894,6 +2026,7 @@ HTML_TEMPLATE = r"""<!DOCTYPE html>
       });
 
       overlay.addEventListener("mouseleave", () => {
+        lift(null);
         crosshair.setAttribute("visibility", "hidden");
         focusRing.setAttribute("visibility", "hidden");
         hideTooltip();
@@ -1908,7 +2041,9 @@ HTML_TEMPLATE = r"""<!DOCTYPE html>
           sameDayIndex: hit.pt.sameDayIndex,
         };
         updateInspector(hit.series, hit.pt);
-        drawSvg();
+        // A clicked grey line joins the coloured set, so re-rank and redraw.
+        if (!isHl(hit.series)) state.pinnedIds.add(hit.series.id);
+        render();
       });
 
       svgWrap.innerHTML = "";
@@ -2125,6 +2260,7 @@ HTML_TEMPLATE = r"""<!DOCTYPE html>
   document.getElementById("resetFocusBtn").addEventListener("click", () => {
     state.focusedId = null;
     state.hiddenIds.clear();
+    state.pinnedIds.clear();
     render();
   });
 
@@ -2185,6 +2321,7 @@ HTML_TEMPLATE = r"""<!DOCTYPE html>
   document.getElementById("dealLineCheck").addEventListener("change", e => { state.showDealLine = e.target.checked; render(); });
   document.getElementById("maCheck").addEventListener("change", e => { state.showMa = e.target.checked; render(); });
   document.getElementById("labelsCheck").addEventListener("change", e => { state.showLabels = e.target.checked; render(); });
+  document.getElementById("highlightSelect").addEventListener("change", e => { state.highlightCount = e.target.value; render(); });
 
   document.querySelectorAll("#seriesTable thead th[data-sort]").forEach(th => {
     th.addEventListener("click", () => {
