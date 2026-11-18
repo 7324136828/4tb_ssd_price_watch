@@ -194,3 +194,53 @@ date,category,item,spec,store,condition,price_usd,basis,source_date,url
 2026-11-18,egpu,Sonnet Breakaway Box 850 T5,"Enclosure, TB5, Built-in 850W",Amazon (third-party seller),new,599.99,direct,2026-11-18,https://www.amazon.com/dp/B0FX86P6T8
 2026-11-18,egpu,GPD G2,"Enclosure, USB4, Built-in 800W",Amazon (third-party seller),new,429.99,direct,2026-11-18,https://www.amazon.com/dp/B0HGPVYS21
 2026-11-18,egpu,ONEXGPU 2 (Radeon RX 7800M),"Complete eGPU, USB4, Included",Amazon (third-party seller),new,1049.99,direct,2026-11-18,https://www.amazon.com/dp/B0DNSLBSG8
+2026-11-18,ssd,Lexar NM790,4TB TLC,eBay,new,600.00,direct,2026-11-18,https://www.ebay.com/itm/257825456059
+2026-11-18,ssd,Lexar NM790,4TB TLC,eBay,used,499.00,direct,2026-11-18,https://www.ebay.com/itm/900083512557
+2026-11-18,ssd,TeamGroup MP44Q,4TB QLC,eBay,new,448.88,direct,2026-11-18,https://www.ebay.com/itm/137741171807
+2026-11-18,ssd,TeamGroup T-Force G50,4TB TLC,eBay,new,469.95,direct,2026-11-18,https://www.ebay.com/itm/307262872935
+2026-11-18,ssd,TeamGroup T-Force G50,4TB TLC,eBay,used,379.99,direct,2026-11-18,https://www.ebay.com/itm/117491940156
+2026-11-18,ssd,WD Black SN7100,4TB TLC,eBay,new,560.00,direct,2026-11-18,https://www.ebay.com/itm/227617549737
+2026-11-18,ssd,WD Black SN7100,4TB TLC,eBay,used,499.00,direct,2026-11-18,https://www.ebay.com/itm/137884465960
+2026-11-18,ssd,WD Black SN850X,4TB TLC,eBay,new,680.00,direct,2026-11-18,https://www.ebay.com/itm/800914427892
+2026-11-18,ssd,WD Black SN850X,4TB TLC,eBay,used,475.00,direct,2026-11-18,https://www.ebay.com/itm/860150970788
+2026-11-18,ssd,WD Blue SN5000,4TB QLC,eBay,new,520.00,direct,2026-11-18,https://www.ebay.com/itm/237088774001
+2026-11-18,ssd,WD Blue SN5000,4TB QLC,eBay,used,399.95,direct,2026-11-18,https://www.ebay.com/itm/188352075140
+2026-11-18,ssd,WD Blue SN5100,4TB QLC,eBay,new,474.99,direct,2026-11-18,https://www.ebay.com/itm/307287235456
+2026-11-18,ssd,WD Blue SN5100,4TB QLC,eBay,used,505.00,direct,2026-11-18,https://www.ebay.com/itm/287387652450
+2026-11-18,ssd,Samsung 990 EVO Plus,4TB TLC,eBay,new,549.99,direct,2026-11-18,https://www.ebay.com/itm/366779275735
+2026-11-18,ssd,Samsung 990 EVO Plus,4TB TLC,eBay,used,519.97,direct,2026-11-18,https://www.ebay.com/itm/940093754545
+2026-11-18,ssd,Samsung 990 Pro,4TB TLC,eBay,new,620.00,direct,2026-11-18,https://www.ebay.com/itm/800926093107
+2026-11-18,ssd,Samsung 990 Pro,4TB TLC,eBay,used,549.99,direct,2026-11-18,https://www.ebay.com/itm/168863116584
+2026-11-18,ssd,Crucial T500,4TB TLC,eBay,new,700.00,direct,2026-11-18,https://www.ebay.com/itm/168838955943
+2026-11-18,ssd,Crucial T500,4TB TLC,eBay,used,599.00,direct,2026-11-18,https://www.ebay.com/itm/840128291949
+2026-11-18,ssd,Crucial P310,4TB QLC,eBay,new,500.00,direct,2026-11-18,https://www.ebay.com/itm/407369790835
+2026-11-18,ssd,Kingston KC3000,4TB TLC,eBay,new,729.00,direct,2026-11-18,https://www.ebay.com/itm/287644897323
+2026-11-18,ssd,Kingston KC3000,4TB TLC,eBay,used,719.00,direct,2026-11-18,https://www.ebay.com/itm/287644873929
+2026-11-18,ssd,Silicon Power UD90,4TB TLC (some batches reported QLC),eBay,new,449.95,direct,2026-11-18,https://www.ebay.com/itm/257830211610
+2026-11-18,ssd,Silicon Power UD90,4TB TLC (some batches reported QLC),eBay,used,489.98,direct,2026-11-18,https://www.ebay.com/itm/327354432282
+2026-11-18,ram,Crucial CT64G56C46S5,1x64GB DDR5-5600 CL46,eBay,new,1000.00,direct,2026-11-18,https://www.ebay.com/itm/800738984634
+2026-11-18,macbook,MacBook Pro 14 M2 Max 64GB,"64GB RAM, 2TB SSD",eBay,new,3500.00,direct,2026-11-18,https://www.ebay.com/itm/375011618605
+2026-11-18,macbook,MacBook Pro 14 M2 Max 64GB,"64GB RAM, 1TB SSD",eBay,used,1834.99,direct,2026-11-18,https://www.ebay.com/itm/298656791108
+2026-11-18,macbook,MacBook Pro 14 M2 Max 96GB,"96GB RAM, 512GB SSD",eBay,new,3299.74,direct,2026-11-18,https://www.ebay.com/itm/227398467227
+2026-11-18,macbook,MacBook Pro 14 M2 Max 96GB,"96GB RAM, 8TB SSD",eBay,used,3499.99,direct,2026-11-18,https://www.ebay.com/itm/960183817160
+2026-11-18,macbook,MacBook Pro 16 M2 Max 64GB,"64GB RAM, 2TB SSD",eBay,used,1750.00,direct,2026-11-18,https://www.ebay.com/itm/227602714110
+2026-11-18,macbook,MacBook Pro 16 M2 Max 96GB,96GB RAM,eBay,used,3808.99,direct,2026-11-18,https://www.ebay.com/itm/900057933198
+2026-11-18,macbook,MacBook Pro 14 M3 Max 64GB,"64GB RAM, 2TB SSD",eBay,new,4299.99,direct,2026-11-18,https://www.ebay.com/itm/236127680110
+2026-11-18,macbook,MacBook Pro 14 M3 Max 64GB,"64GB RAM, 1TB SSD",eBay,used,2514.99,direct,2026-11-18,https://www.ebay.com/itm/298665135818
+2026-11-18,macbook,MacBook Pro 14 M3 Max 128GB,"128GB RAM, 1TB SSD",eBay,used,3849.00,direct,2026-11-18,https://www.ebay.com/itm/960188540623
+2026-11-18,macbook,MacBook Pro 16 M3 Max 64GB,"64GB RAM, 1TB SSD",eBay,used,2419.99,direct,2026-11-18,https://www.ebay.com/itm/298598919121
+2026-11-18,macbook,MacBook Pro 16 M3 Max 96GB,"96GB RAM, 1TB SSD",eBay,used,3990.00,direct,2026-11-18,https://www.ebay.com/itm/277060197180
+2026-11-18,macbook,MacBook Pro 16 M3 Max 128GB,"128GB RAM, 2TB SSD, 16C CPU/40C GPU",eBay,used,4499.00,direct,2026-11-18,https://www.ebay.com/itm/940099895248
+2026-11-18,macbook,MacBook Pro 14 M4 Max 64GB,"64GB RAM, 4TB SSD",eBay,new,4499.99,direct,2026-11-18,https://www.ebay.com/itm/820343708882
+2026-11-18,macbook,MacBook Pro 14 M4 Max 64GB,"64GB RAM, 1TB SSD",eBay,used,3079.99,direct,2026-11-18,https://www.ebay.com/itm/298636560028
+2026-11-18,macbook,MacBook Pro 14 M4 Max 128GB,"128GB RAM, 1TB SSD",eBay,used,4449.00,direct,2026-11-18,https://www.ebay.com/itm/960175867500
+2026-11-18,macbook,MacBook Pro 16 M4 Max 64GB,"64GB RAM, 1TB SSD",eBay,used,2950.00,direct,2026-11-18,https://www.ebay.com/itm/168860884127
+2026-11-18,macbook,MacBook Pro 16 M4 Max 128GB,"128GB RAM, 4TB SSD",eBay,used,5199.00,direct,2026-11-18,https://www.ebay.com/itm/128186161157
+2026-11-18,macbook,MacBook Pro 14 M5 Max 64GB,"64GB RAM, 2TB SSD",eBay,new,5999.99,direct,2026-11-18,https://www.ebay.com/itm/307212063187
+2026-11-18,macbook,MacBook Pro 14 M5 Max 64GB,"64GB RAM, 2TB SSD",eBay,refurbished,4699.99,direct,2026-11-18,https://www.ebay.com/itm/900086415863
+2026-11-18,macbook,MacBook Pro 14 M5 Max 128GB,"128GB RAM, 2TB SSD",eBay,new,6899.00,direct,2026-11-18,https://www.ebay.com/itm/940053163792
+2026-11-18,macbook,MacBook Pro 14 M5 Max 128GB,"128GB RAM, 2TB SSD",eBay,used,5899.00,direct,2026-11-18,https://www.ebay.com/itm/880023866326
+2026-11-18,macbook,MacBook Pro 16 M5 Max 64GB,"64GB RAM, 2TB SSD",eBay,new,4659.00,direct,2026-11-18,https://www.ebay.com/itm/128179582089
+2026-11-18,macbook,MacBook Pro 16 M5 Max 64GB,"64GB RAM, 2TB SSD",eBay,used,3999.00,direct,2026-11-18,https://www.ebay.com/itm/198803468812
+2026-11-18,macbook,MacBook Pro 16 M5 Max 128GB,"128GB RAM, 2TB SSD",eBay,new,6399.00,direct,2026-11-18,https://www.ebay.com/itm/147654325715
+2026-11-18,macbook,MacBook Pro 16 M5 Max 128GB,"128GB RAM, 2TB SSD",eBay,used,5900.00,direct,2026-11-18,https://www.ebay.com/itm/206622860547
