@@ -59,7 +59,7 @@ Run the tests with `python3 -m unittest discover tests`.
 ## Dashboard
 
 <!-- PRICES:START -->
-**Last check:** 2026-11-18 &nbsp;·&nbsp; **Prices logged:** 245 &nbsp;·&nbsp; **Items tracked with prices:** 69 across 6 categories
+**Last check:** 2026-11-18 &nbsp;·&nbsp; **Prices logged:** 248 &nbsp;·&nbsp; **Items tracked with prices:** 69 across 6 categories
 
 > 🔥 **DEAL:** MacBook Pro 16 M4 Max 48GB $2,929.99 at Amazon (third-party seller) (≥10% drop); Silicon Power UD90 $449.95 at eBay (4TB TLC ≤ $450.00); Samsung 990 EVO Plus $530.11 at Amazon (≥10% drop)
 
@@ -70,7 +70,7 @@ Run the tests with `python3 -m unittest discover tests`.
 | NVIDIA GPUs | 9 | RTX 3090 Ti — $2,150.00 (Amazon) |
 | AMD GPUs | 9 | RX 9070 (XFX Swift OC Triple Fan) — $879.99 (Amazon) |
 | eGPUs | 5 | AOOSTAR EG02 — $219.00 (Amazon (third-party seller)) |
-| MacBooks | 40 | MacBook Pro 14 M5 Pro 48GB — $3,239.10 (Amazon (third-party seller)) |
+| MacBooks | 43 | MacBook Pro 14 M5 Pro 48GB — $3,239.10 (Amazon (third-party seller)) |
 
 ### SSDs
 
@@ -1144,16 +1144,16 @@ xychart-beta
 ```mermaid
 xychart-beta
     title "Most recent logged price (USD)"
-    x-axis ["MacBook Pro 14 M5 Pro 48GB", "MacBook Pro 14 M2 Max 96GB", "MacBook Pro 14 M2 Max 64GB", "MacBook Pro 14 M5 Pro 64GB", "MacBook Pro 14 M3 Max 64GB", "MacBook Pro 16 M5 Max 48GB", "MacBook Pro 14 M4 Max 64GB", "MacBook Pro 16 M5 Pro 64GB", "MacBook Pro 16 M5 Max 64GB", "MacBook Pro 14 M5 Max 64GB", "MacBook Pro 16 M5 Max 128GB", "MacBook Pro 14 M5 Max 128GB"]
+    x-axis ["MacBook Pro 14 M5 Pro 48GB", "MacBook Pro 14 M2 Max 96GB", "MacBook Pro 14 M2 Max 64GB", "MacBook Pro 14 M5 Pro 64GB", "MacBook Pro 16 M5 Max 48GB", "MacBook Pro 14 M3 Max 64GB", "MacBook Pro 14 M4 Max 64GB", "MacBook Pro 16 M5 Pro 64GB", "MacBook Pro 16 M5 Max 64GB", "MacBook Pro 14 M5 Max 64GB", "MacBook Pro 16 M5 Max 128GB", "MacBook Pro 14 M5 Max 128GB"]
     y-axis "USD" 2720 --> 7220
-    bar [3239.10, 3299.74, 3500.00, 3699.00, 4299.99, 4496.50, 4499.99, 4599.00, 4659.00, 5099.00, 6399.00, 6699.00]
+    bar [3239.10, 3299.74, 3500.00, 3699.00, 4149.00, 4299.99, 4499.99, 4599.00, 4659.00, 5099.00, 6399.00, 6699.00]
 ```
 
 #### Latest prices
 
 | Item | Spec | Store | Condition | Price | Change | As of | Basis | Link |
 |---|---|---|---|--:|--:|---|---|---|
-| MacBook Pro 16 M1 Max 64GB | 64GB RAM, 1TB SSD | Amazon (third-party seller) | refurbished | **$1,654.00** | new | 2026-11-17 | direct | [link](https://www.amazon.com/dp/B0CLJTSXHF) |
+| MacBook Pro 16 M1 Max 64GB | 64GB RAM, 1TB SSD | Amazon (third-party seller) | refurbished | **$1,654.00** | — | 2026-11-18 | direct | [link](https://www.amazon.com/dp/B0CLJTSXHF) |
 | MacBook Pro 16 M2 Max 64GB | 64GB RAM, 2TB SSD | eBay | used | **$1,750.00** | new | 2026-11-18 | direct | [link](https://www.ebay.com/itm/227602714110) |
 | MacBook Pro 14 M1 Max 64GB | 64GB RAM, 2TB SSD | Amazon (third-party seller) | refurbished | **$1,779.99** | new | 2026-11-17 | direct | [link](https://www.amazon.com/dp/B0F8JNXBY4) |
 | MacBook Pro 14 M2 Max 64GB | 64GB RAM, 1TB SSD | eBay | used | **$1,834.99** | new | 2026-11-18 | direct | [link](https://www.ebay.com/itm/298656791108) |
@@ -1165,6 +1165,7 @@ xychart-beta
 | MacBook Pro 16 M4 Max 64GB | 64GB RAM, 1TB SSD | eBay | used | **$2,950.00** | new | 2026-11-18 | direct | [link](https://www.ebay.com/itm/168860884127) |
 | MacBook Pro 16 M5 Pro 48GB | 48GB RAM, 1TB SSD, 18C CPU/20C GPU | Apple (Certified Refurbished) | refurbished | **$3,059.00** | — | 2026-11-18 | direct | [link](https://www.apple.com/shop/product/fgec4ll/a/Refurbished-16-inch-MacBook-Pro-Apple-M5-Pro-chip-with-18%E2%80%91Core-CPU-and-20%E2%80%91Core-GPU-Space-Black) |
 | MacBook Pro 14 M4 Max 64GB | 64GB RAM, 1TB SSD | eBay | used | **$3,079.99** | new | 2026-11-18 | direct | [link](https://www.ebay.com/itm/298636560028) |
+| MacBook Pro 16 M4 Max 64GB | 64GB RAM, 1TB SSD | eBay | refurbished | **$3,097.00** | new | 2026-11-18 | direct | [link](https://www.ebay.com/itm/366748286165) |
 | MacBook Pro 16 M3 Max 64GB | 64GB RAM, 1TB SSD, 16C CPU/40C GPU | Amazon (third-party seller) | refurbished | **$3,199.00** | — | 2026-11-18 | direct | [link](https://www.amazon.com/dp/B0F1Z7BR77) |
 | MacBook Pro 14 M5 Pro 48GB | 48GB RAM, 2TB SSD, 18C CPU/20C GPU | Apple (Certified Refurbished) | refurbished | **$3,229.00** | new | 2026-11-18 | direct | [link](https://www.apple.com/shop/product/g1mm2ll/a/Refurbished-14-inch-MacBook-Pro-Apple-M5-Pro-chip-with-18%E2%80%91Core-CPU-and-20%E2%80%91Core-GPU-Space-Black) |
 | MacBook Pro 14 M5 Pro 48GB | 48GB RAM, 1TB SSD, 15C CPU/16C GPU | Amazon (third-party seller) | new | **$3,239.10** | 🔺 $0.01 | 2026-11-18 | direct | [link](https://www.amazon.com/dp/B0H4FDN7Y4) |
@@ -1177,11 +1178,11 @@ xychart-beta
 | MacBook Pro 14 M3 Max 128GB | 128GB RAM, 1TB SSD | eBay | used | **$3,849.00** | new | 2026-11-18 | direct | [link](https://www.ebay.com/itm/960188540623) |
 | MacBook Pro 16 M3 Max 96GB | 96GB RAM, 1TB SSD | eBay | used | **$3,990.00** | new | 2026-11-18 | direct | [link](https://www.ebay.com/itm/277060197180) |
 | MacBook Pro 16 M5 Max 64GB | 64GB RAM, 2TB SSD | eBay | used | **$3,999.00** | new | 2026-11-18 | direct | [link](https://www.ebay.com/itm/198803468812) |
+| MacBook Pro 16 M5 Max 48GB | 48GB RAM, 2TB SSD, 18C CPU/40C GPU | Amazon | new | **$4,149.00** | 🔻 $350.00 | 2026-11-18 | direct | [link](https://www.amazon.com/dp/B0GR1G6V6H) |
 | MacBook Pro 16 M5 Max 48GB | 48GB RAM, 2TB SSD, 18C CPU/40C GPU | Apple (Certified Refurbished) | refurbished | **$4,249.00** | — | 2026-11-18 | direct | [link](https://www.apple.com/shop/product/fge94ll/a/Refurbished-16-inch-MacBook-Pro-Apple-M5-Max-chip-with-18%E2%80%91Core-CPU-and-40%E2%80%91Core-GPU-Silver) |
 | MacBook Pro 14 M3 Max 64GB | 64GB RAM, 2TB SSD | eBay | new | **$4,299.99** | new | 2026-11-18 | direct | [link](https://www.ebay.com/itm/236127680110) |
 | MacBook Pro 14 M4 Max 128GB | 128GB RAM, 1TB SSD | eBay | used | **$4,449.00** | new | 2026-11-18 | direct | [link](https://www.ebay.com/itm/960175867500) |
 | MacBook Pro 16 M5 Max 48GB | 48GB RAM, 2TB SSD, 18C CPU/40C GPU | Amazon (third-party seller) | new | **$4,496.50** | new | 2026-11-18 | direct | [link](https://www.amazon.com/dp/B0GR1G6V6H) |
-| MacBook Pro 16 M5 Max 48GB | 48GB RAM, 2TB SSD, 18C CPU/40C GPU | Amazon | new | **$4,499.00** | new | 2026-11-17 | direct | [link](https://www.amazon.com/dp/B0GR1G6V6H) |
 | MacBook Pro 16 M3 Max 128GB | 128GB RAM, 2TB SSD, 16C CPU/40C GPU | eBay | used | **$4,499.00** | new | 2026-11-18 | direct | [link](https://www.ebay.com/itm/940099895248) |
 | MacBook Pro 14 M4 Max 64GB | 64GB RAM, 4TB SSD | eBay | new | **$4,499.99** | new | 2026-11-18 | direct | [link](https://www.ebay.com/itm/820343708882) |
 | MacBook Pro 16 M5 Pro 64GB | 64GB RAM, 1TB SSD, 18C CPU/20C GPU | Amazon (third-party seller) | new | **$4,599.00** | — | 2026-11-18 | direct | [link](https://www.amazon.com/dp/B0H7Z68CLL) |
@@ -1353,10 +1354,11 @@ Low $3,699.00 · High $3,699.00 · 2 entries
 | 2026-11-17 | [$3,699.00](https://www.amazon.com/dp/B0GYZKZ2WX) | direct |
 
 ##### MacBook Pro 16 M1 Max 64GB — Amazon (third-party seller) (refurbished)
-Low $1,654.00 · High $1,654.00 · 1 entry
+Low $1,654.00 · High $1,654.00 · 2 entries
 
 | Date | Price | Basis |
 |---|--:|---|
+| 2026-11-18 | [$1,654.00](https://www.amazon.com/dp/B0CLJTSXHF) | direct |
 | 2026-11-17 | [$1,654.00](https://www.amazon.com/dp/B0CLJTSXHF) | direct |
 
 ##### MacBook Pro 16 M2 Max 64GB — Amazon (third-party seller) (refurbished)
@@ -1425,6 +1427,13 @@ Low $2,929.99 · High $3,272.00 · 2 entries
 | 2026-11-18 | [$2,929.99](https://www.amazon.com/dp/B0DN25LGK8) | direct |
 | 2026-11-17 | [$3,272.00](https://www.amazon.com/dp/B0DN25LGK8) | direct |
 
+##### MacBook Pro 16 M4 Max 64GB — eBay (refurbished)
+Low $3,097.00 · High $3,097.00 · 1 entry
+
+| Date | Price | Basis |
+|---|--:|---|
+| 2026-11-18 | [$3,097.00](https://www.ebay.com/itm/366748286165) | direct |
+
 ##### MacBook Pro 16 M4 Max 64GB — eBay (used)
 Low $2,950.00 · High $2,950.00 · 1 entry
 
@@ -1463,10 +1472,11 @@ Low $5,900.00 · High $5,900.00 · 1 entry
 | 2026-11-18 | [$5,900.00](https://www.ebay.com/itm/206622860547) | direct |
 
 ##### MacBook Pro 16 M5 Max 48GB — Amazon (new)
-Low $4,499.00 · High $4,499.00 · 1 entry
+Low $4,149.00 · High $4,499.00 · 2 entries
 
 | Date | Price | Basis |
 |---|--:|---|
+| 2026-11-18 | [$4,149.00](https://www.amazon.com/dp/B0GR1G6V6H) | direct |
 | 2026-11-17 | [$4,499.00](https://www.amazon.com/dp/B0GR1G6V6H) | direct |
 
 ##### MacBook Pro 16 M5 Max 48GB — Amazon (third-party seller) (new)
