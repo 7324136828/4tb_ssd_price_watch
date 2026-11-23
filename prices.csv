@@ -707,3 +707,4 @@ date,category,item,spec,store,condition,price_usd,basis,source_date,url
 2026-11-23,macbook,MacBook Pro 16 M4 Pro 48GB,"48GB RAM, 512GB SSD",Amazon (third-party seller),refurbished,2299.00,direct,2026-11-23,https://www.amazon.com/dp/B0DNDH1W77
 2026-11-23,macbook,MacBook Pro 16 M5 Max 128GB,"128GB RAM, 2TB SSD, 18C CPU/40C GPU",Amazon (third-party seller),new,7699.99,direct,2026-11-23,https://www.amazon.com/dp/B0H4HYD6PX
 2026-11-23,macbook,MacBook Pro 16 M5 Pro 64GB,"64GB RAM, 1TB SSD, 18C CPU/20C GPU",Amazon (third-party seller),new,4599.00,direct,2026-11-23,https://www.amazon.com/dp/B0H7Z68CLL
+2026-11-23,ssd,Samsung 990 EVO Plus,4TB TLC,Newegg,new,229.00,reported (Tom's Hardware),2026-11-23,https://www.tomshardware.com/pc-components/ssds/samsungs-roomy-and-speedy-4tb-990-evo-plus-ssd-returns-to-its-lowest-ever-price-of-usd229-at-newegg
