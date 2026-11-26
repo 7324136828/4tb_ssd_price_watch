@@ -891,3 +891,93 @@ date,category,item,spec,store,condition,price_usd,basis,source_date,url
 2026-11-25,macbook,MacBook Pro 16 M5 Max 128GB,"128GB RAM, 2TB SSD, 18C CPU/40C GPU",Amazon (third-party seller),new,7699.99,direct,2026-11-25,https://www.amazon.com/dp/B0H4HYD6PX
 2026-11-25,macbook,MacBook Pro 16 M5 Pro 48GB,"48GB RAM, 2TB SSD, 18C CPU/20C GPU",Amazon (third-party seller),new,4099.00,direct,2026-11-25,https://www.amazon.com/dp/B0GV5ZCZ44
 2026-11-25,macbook,MacBook Pro 16 M5 Pro 64GB,"64GB RAM, 1TB SSD, 18C CPU/20C GPU",Amazon (third-party seller),new,4599.00,direct,2026-11-25,https://www.amazon.com/dp/B0H7Z68CLL
+2026-11-26,ssd,Lexar NM790,4TB TLC,eBay,new,570.00,direct,2026-11-26,https://www.ebay.com/itm/327468600876
+2026-11-26,ssd,Lexar NM790,4TB TLC,eBay,used,479.99,direct,2026-11-26,https://www.ebay.com/itm/880149263781
+2026-11-26,ssd,TeamGroup MP44,4TB TLC,eBay,new,425.00,direct,2026-11-26,https://www.ebay.com/itm/237202463223
+2026-11-26,ssd,TeamGroup MP44Q,4TB QLC,eBay,new,448.88,direct,2026-11-26,https://www.ebay.com/itm/137741171807
+2026-11-26,ssd,TeamGroup T-Force G50,4TB TLC,eBay,new,469.95,direct,2026-11-26,https://www.ebay.com/itm/307262872935
+2026-11-26,ssd,WD Black SN7100,4TB TLC,eBay,new,560.00,direct,2026-11-26,https://www.ebay.com/itm/227617549737
+2026-11-26,ssd,WD Black SN7100,4TB TLC,eBay,used,480.00,direct,2026-11-26,https://www.ebay.com/itm/137884465960
+2026-11-26,ssd,WD Black SN850X,4TB TLC,eBay,new,725.00,direct,2026-11-26,https://www.ebay.com/itm/840159772170
+2026-11-26,ssd,WD Black SN850X,4TB TLC,eBay,used,499.99,direct,2026-11-26,https://www.ebay.com/itm/840163198596
+2026-11-26,ssd,WD Blue SN5000,4TB QLC,eBay,new,499.00,direct,2026-11-26,https://www.ebay.com/itm/257861302439
+2026-11-26,ssd,WD Blue SN5000,4TB QLC,eBay,used,284.95,direct,2026-11-26,https://www.ebay.com/itm/257864369244
+2026-11-26,ssd,WD Blue SN5100,4TB QLC,eBay,new,515.00,direct,2026-11-26,https://www.ebay.com/itm/287387667817
+2026-11-26,ssd,WD Blue SN5100,4TB QLC,eBay,used,505.00,direct,2026-11-26,https://www.ebay.com/itm/287387652450
+2026-11-26,ssd,Samsung 990 EVO Plus,4TB TLC,eBay,new,570.00,direct,2026-11-26,https://www.ebay.com/itm/128011153496
+2026-11-26,ssd,Samsung 990 EVO Plus,4TB TLC,eBay,used,498.00,direct,2026-11-26,https://www.ebay.com/itm/198370969906
+2026-11-26,ssd,Samsung 990 Pro,4TB TLC,eBay,new,639.99,direct,2026-11-26,https://www.ebay.com/itm/880099796675
+2026-11-26,ssd,Samsung 990 Pro,4TB TLC,eBay,used,514.99,direct,2026-11-26,https://www.ebay.com/itm/820389603190
+2026-11-26,ssd,Crucial T500,4TB TLC,eBay,new,700.00,direct,2026-11-26,https://www.ebay.com/itm/168838955943
+2026-11-26,ssd,Crucial T500,4TB TLC,eBay,used,599.00,direct,2026-11-26,https://www.ebay.com/itm/840128291949
+2026-11-26,ssd,Crucial P310,4TB QLC,eBay,new,499.00,direct,2026-11-26,https://www.ebay.com/itm/307293223453
+2026-11-26,ssd,Crucial P310,4TB QLC,eBay,used,470.00,direct,2026-11-26,https://www.ebay.com/itm/117529942006
+2026-11-26,ssd,Kingston KC3000,4TB TLC,eBay,new,729.00,direct,2026-11-26,https://www.ebay.com/itm/287644897323
+2026-11-26,ssd,Kingston KC3000,4TB TLC,eBay,used,719.00,direct,2026-11-26,https://www.ebay.com/itm/287644873929
+2026-11-26,ssd,Silicon Power UD90,4TB TLC (some batches reported QLC),eBay,new,449.95,direct,2026-11-26,https://www.ebay.com/itm/257830211610
+2026-11-26,ssd,Silicon Power UD90,4TB TLC (some batches reported QLC),eBay,used,399.99,direct,2026-11-26,https://www.ebay.com/itm/117329205111
+2026-11-26,ram,Crucial CT64G56C46S5,1x64GB DDR5-5600 CL46,eBay,new,1149.99,direct,2026-11-26,https://www.ebay.com/itm/327101326046
+2026-11-26,ram,Crucial CT64G56C46S5,1x64GB DDR5-5600 CL46,eBay,used,1649.99,direct,2026-11-26,https://www.ebay.com/itm/128216515517
+2026-11-26,macbook,MacBook Pro 14 M2 Max 64GB,"64GB RAM, 2TB SSD",eBay,new,3500.00,direct,2026-11-26,https://www.ebay.com/itm/375011618605
+2026-11-26,macbook,MacBook Pro 14 M2 Max 64GB,"64GB RAM, 512GB SSD, 12C CPU/30C GPU",eBay,used,1700.00,direct,2026-11-26,https://www.ebay.com/itm/920148309552
+2026-11-26,macbook,MacBook Pro 14 M2 Max 96GB,"96GB RAM, 512GB SSD",eBay,new,3299.74,direct,2026-11-26,https://www.ebay.com/itm/227398467227
+2026-11-26,macbook,MacBook Pro 14 M2 Max 96GB,"96GB RAM, 8TB SSD",eBay,used,3324.99,direct,2026-11-26,https://www.ebay.com/itm/960183817160
+2026-11-26,macbook,MacBook Pro 16 M2 Max 64GB,"64GB RAM, 1TB SSD",eBay,used,1649.00,direct,2026-11-26,https://www.ebay.com/itm/880130334959
+2026-11-26,macbook,MacBook Pro 16 M2 Max 96GB,"96GB RAM, 2TB SSD, 12C CPU/38C GPU",eBay,refurbished,2999.99,direct,2026-11-26,https://www.ebay.com/itm/285745402948
+2026-11-26,macbook,MacBook Pro 14 M3 Max 64GB,"64GB RAM, 2TB SSD, 16C CPU/40C GPU",eBay,new,3999.99,direct,2026-11-26,https://www.ebay.com/itm/236127680110
+2026-11-26,macbook,MacBook Pro 14 M3 Max 64GB,"64GB RAM, 1TB SSD",eBay,used,2514.99,direct,2026-11-26,https://www.ebay.com/itm/298665135818
+2026-11-26,macbook,MacBook Pro 14 M3 Max 128GB,"128GB RAM, 1TB SSD",eBay,used,3849.00,direct,2026-11-26,https://www.ebay.com/itm/960188540623
+2026-11-26,macbook,MacBook Pro 16 M3 Max 64GB,"64GB RAM, 1TB SSD",eBay,used,2419.99,direct,2026-11-26,https://www.ebay.com/itm/298598919121
+2026-11-26,macbook,MacBook Pro 16 M3 Max 96GB,"96GB RAM, 1TB SSD",eBay,used,3990.00,direct,2026-11-26,https://www.ebay.com/itm/277060197180
+2026-11-26,macbook,MacBook Pro 16 M3 Max 128GB,"128GB RAM, 8TB SSD, 16C CPU/40C GPU",eBay,refurbished,5279.99,direct,2026-11-26,https://www.ebay.com/itm/287021044469
+2026-11-26,macbook,MacBook Pro 14 M4 Max 64GB,"64GB RAM, 4TB SSD",eBay,new,4499.99,direct,2026-11-26,https://www.ebay.com/itm/820343708882
+2026-11-26,macbook,MacBook Pro 14 M4 Max 64GB,"64GB RAM, 1TB SSD",eBay,refurbished,3050.10,direct,2026-11-26,https://www.ebay.com/itm/237082123940
+2026-11-26,macbook,MacBook Pro 14 M4 Max 128GB,"128GB RAM, 2TB SSD",eBay,used,4699.00,direct,2026-11-26,https://www.ebay.com/itm/407205046476
+2026-11-26,macbook,MacBook Pro 16 M4 Max 64GB,"64GB RAM, 1TB SSD",eBay,refurbished,3199.00,direct,2026-11-26,https://www.ebay.com/itm/307255647271
+2026-11-26,macbook,MacBook Pro 16 M4 Max 128GB,"128GB RAM, 8TB SSD",eBay,new,6749.00,direct,2026-11-26,https://www.ebay.com/itm/237207082090
+2026-11-26,macbook,MacBook Pro 16 M4 Max 128GB,"128GB RAM, 4TB SSD",eBay,used,5599.99,direct,2026-11-26,https://www.ebay.com/itm/227631932522
+2026-11-26,macbook,MacBook Pro 14 M5 Max 64GB,"64GB RAM, 2TB SSD",eBay,new,5999.99,direct,2026-11-26,https://www.ebay.com/itm/307212063187
+2026-11-26,macbook,MacBook Pro 14 M5 Max 64GB,"64GB RAM, 2TB SSD",eBay,refurbished,4370.99,direct,2026-11-26,https://www.ebay.com/itm/900086415863
+2026-11-26,macbook,MacBook Pro 14 M5 Max 128GB,"128GB RAM, 2TB SSD",eBay,new,6899.00,direct,2026-11-26,https://www.ebay.com/itm/940053163792
+2026-11-26,macbook,MacBook Pro 14 M5 Max 128GB,"128GB RAM, 2TB SSD",eBay,used,5499.99,direct,2026-11-26,https://www.ebay.com/itm/366826119274
+2026-11-26,macbook,MacBook Pro 16 M5 Max 64GB,"64GB RAM, 2TB SSD",eBay,new,4759.50,direct,2026-11-26,https://www.ebay.com/itm/127952390214
+2026-11-26,macbook,MacBook Pro 16 M5 Max 64GB,"64GB RAM, 2TB SSD",eBay,used,4699.00,direct,2026-11-26,https://www.ebay.com/itm/880031864692
+2026-11-26,macbook,MacBook Pro 16 M5 Max 128GB,"128GB RAM, 2TB SSD",eBay,new,6499.99,direct,2026-11-26,https://www.ebay.com/itm/840162183282
+2026-11-26,macbook,MacBook Pro 16 M5 Max 128GB,"128GB RAM, 2TB SSD",eBay,used,6000.00,direct,2026-11-26,https://www.ebay.com/itm/920163542544
+2026-11-26,ram,Crucial CT64G56C46S5,1x64GB DDR5-5600 CL46,Amazon (third-party seller),new,1199.37,direct,2026-11-26,https://www.amazon.com/dp/B0DSQWZ5G2
+2026-11-26,ram,G.Skill F5-5600S4645A64GX1-RS,1x64GB DDR5-5600 CL46,Amazon (third-party seller),new,1999.99,direct,2026-11-26,https://www.amazon.com/dp/B0G7RLK95V
+2026-11-26,nvidia_gpu,RTX 5090 (ASUS TUF Gaming OC),32GB GDDR7,Amazon,new,7280.00,reported (videocardprices.com),2026-11-25,https://www.amazon.com/dp/B0DS2X13PH
+2026-11-26,nvidia_gpu,RTX 5090 (GIGABYTE Gaming),32GB GDDR7,Newegg,new,6599.99,reported (videocardprices.com),2026-11-25,https://www.newegg.com/gigabyte-gv-n5090gaming-oc-32gd-geforce-rtx-5090-32gb-graphics-card-triple-fans/p/N82E16814932761?item=N82E16814932761
+2026-11-26,nvidia_gpu,RTX 5090 (MSI),32GB GDDR7,eBay,used,6000.00,reported (videocardprices.com),2026-11-25,https://www.ebay.com/itm/860138968144
+2026-11-26,nvidia_gpu,RTX 4090,24GB GDDR6X,Amazon,new,4449.00,reported (gpudeals.net),2026-11-26,https://www.amazon.com/dp/B0CPB3P36K
+2026-11-26,nvidia_gpu,RTX 4090,24GB GDDR6X,eBay,used,1300.00,reported (gpudeals.net),2026-11-26,https://www.ebay.com/itm/366745135471
+2026-11-26,nvidia_gpu,RTX 3090 Ti,24GB GDDR6X,Amazon,new,2150.00,reported (gpudeals.net),2026-11-26,https://www.amazon.com/dp/B0BKH8HDWK
+2026-11-26,nvidia_gpu,RTX 3090 Ti,24GB GDDR6X,eBay,used,1950.00,reported (gpudeals.net),2026-11-26,https://www.ebay.com/itm/880137935699
+2026-11-26,nvidia_gpu,RTX 3090,24GB GDDR6X,Amazon,new,2200.00,reported (gpudeals.net),2026-11-26,https://www.amazon.com/dp/B09GWB753L
+2026-11-26,nvidia_gpu,RTX 3090,24GB GDDR6X,eBay,used,1675.00,reported (gpudeals.net),2026-11-26,https://www.ebay.com/itm/128214375733
+2026-11-26,amd_gpu,RX 9070 XT (GIGABYTE Gaming OC),16GB GDDR6,Amazon,new,1025.99,reported (videocardprices.com),2026-11-25,https://www.amazon.com/dp/B0DS2QG2KW
+2026-11-26,amd_gpu,RX 9070 XT (ASRock Steel Legend),16GB GDDR6,Newegg,new,999.99,reported (videocardprices.com),2026-11-25,https://www.newegg.com/asrock-steel-legend-rx9070xt-sl-16g-radeon-rx-9070-xt-16gb-graphics-card-triple-fans/p/N82E16814930136?item=N82E16814930136
+2026-11-26,amd_gpu,RX 9070 XT (XFX Gaming),16GB GDDR6,eBay,used,929.97,reported (videocardprices.com),2026-11-25,https://www.ebay.com/itm/117519818319
+2026-11-26,amd_gpu,RX 9070 (XFX Swift OC Triple Fan),16GB GDDR6,Amazon,new,859.99,reported (videocardprices.com),2026-11-25,https://www.amazon.com/dp/B0F1GFKD47
+2026-11-26,amd_gpu,RX 9070 (ASRock Challenger),16GB GDDR6,eBay,used,850.00,reported (videocardprices.com),2026-11-25,https://www.ebay.com/itm/920173064953
+2026-11-26,amd_gpu,RX 7900 XTX (ASRock Phantom Gaming OC),24GB GDDR6,Amazon,new,2330.00,reported (videocardprices.com),2026-11-25,https://www.amazon.com/dp/B0F6YRGX5Z
+2026-11-26,amd_gpu,RX 7900 XTX (PowerColor Gaming),24GB GDDR6,eBay,used,1299.97,reported (videocardprices.com),2026-11-25,https://www.ebay.com/itm/117538929102
+2026-11-26,amd_gpu,RX 7900 XT,20GB GDDR6,Amazon,new,946.00,reported (gpudeals.net),2026-11-26,https://www.amazon.com/dp/B0BMNGT8XM
+2026-11-26,amd_gpu,RX 7900 XT,20GB GDDR6,eBay,used,885.00,reported (gpudeals.net),2026-11-26,https://www.ebay.com/itm/198821080561
+2026-11-26,macbook,MacBook Pro 14 M4 Pro 48GB,"48GB RAM, 2TB SSD, 14C CPU/20C GPU",Apple (Certified Refurbished),refurbished,3269.00,direct,2026-11-26,https://www.apple.com/shop/product/g1ff9ll/a/Refurbished-14-inch-MacBook-Pro-Apple-M4-Pro-Chip-with-14%E2%80%91Core-CPU-and-20%E2%80%91Core-GPU-Nano-texture-display-Space-Black
+2026-11-26,macbook,MacBook Pro 14 M5 Max 48GB,"48GB RAM, 2TB SSD, 18C CPU/40C GPU",Apple (Certified Refurbished),refurbished,3989.00,direct,2026-11-26,https://www.apple.com/shop/product/g1mnell/a/Refurbished-14-inch-MacBook-Pro-Apple-M5-Max-chip-with-18%E2%80%91Core-CPU-and-40%E2%80%91Core-GPU-Space-Black
+2026-11-26,macbook,MacBook Pro 14 M5 Pro 48GB,"48GB RAM, 2TB SSD, 18C CPU/20C GPU",Apple (Certified Refurbished),refurbished,3359.00,direct,2026-11-26,https://www.apple.com/shop/product/g1mj3ll/a/Refurbished-14-inch-MacBook-Pro-Apple-M5-Pro-chip-with-18%E2%80%91Core-CPU-and-20%E2%80%91Core-GPU-Nano-texture-display-Silver
+2026-11-26,macbook,MacBook Pro 16 M4 Max 48GB,"48GB RAM, 1TB SSD, 16C CPU/40C GPU",Apple (Certified Refurbished),refurbished,3739.00,direct,2026-11-26,https://www.apple.com/shop/product/fx313ll/a/Refurbished-16-inch-MacBook-Pro-Apple-M4-Max-Chip-with-16%E2%80%91Core-CPU-and-40%E2%80%91Core-GPU-Space-Black
+2026-11-26,macbook,MacBook Pro 16 M4 Pro 48GB,"48GB RAM, 512GB SSD, 14C CPU/20C GPU",Apple (Certified Refurbished),refurbished,2719.00,direct,2026-11-26,https://www.apple.com/shop/product/fx2u3ll/a/Refurbished-16-inch-MacBook-Pro-Apple-M4-Pro-Chip-with-14%E2%80%91Core-CPU-and-20%E2%80%91Core-GPU-Silver
+2026-11-26,macbook,MacBook Pro 16 M5 Max 48GB,"48GB RAM, 2TB SSD, 18C CPU/40C GPU",Apple (Certified Refurbished),refurbished,4249.00,direct,2026-11-26,https://www.apple.com/shop/product/fge94ll/a/Refurbished-16-inch-MacBook-Pro-Apple-M5-Max-chip-with-18%E2%80%91Core-CPU-and-40%E2%80%91Core-GPU-Silver
+2026-11-26,macbook,MacBook Pro 16 M5 Max 64GB,"64GB RAM, 4TB SSD, 18C CPU/40C GPU",Apple (Certified Refurbished),refurbished,5569.00,direct,2026-11-26,https://www.apple.com/shop/product/g1my5ll/a/Refurbished-16-inch-MacBook-Pro-Apple-M5-Max-chip-with-18%E2%80%91Core-CPU-and-40%E2%80%91Core-GPU-Nano-texture-display-Silver
+2026-11-26,macbook,MacBook Pro 16 M5 Pro 48GB,"48GB RAM, 1TB SSD, 18C CPU/20C GPU",Apple (Certified Refurbished),refurbished,3059.00,direct,2026-11-26,https://www.apple.com/shop/product/fgec4ll/a/Refurbished-16-inch-MacBook-Pro-Apple-M5-Pro-chip-with-18%E2%80%91Core-CPU-and-20%E2%80%91Core-GPU-Space-Black
+2026-11-26,macbook,MacBook Pro 14 M5 Max 64GB,"64GB RAM, 18C CPU/40C GPU",Amazon (third-party seller),new,5249.00,direct,2026-11-26,https://www.amazon.com/dp/B0H5JNFY5W
+2026-11-26,macbook,MacBook Pro 14 M5 Pro 48GB,"48GB RAM, 1TB SSD, 15C CPU/16C GPU",Amazon (third-party seller),new,3599.00,direct,2026-11-26,https://www.amazon.com/dp/B0H46QQ5KM
+2026-11-26,macbook,MacBook Pro 14 M5 Pro 64GB,"64GB RAM, 1TB SSD, 18C CPU/20C GPU",Amazon (third-party seller),new,3699.00,direct,2026-11-26,https://www.amazon.com/dp/B0GYZKZ2WX
+2026-11-26,macbook,MacBook Pro 16 M1 Max 64GB,"64GB RAM, 1TB SSD",Amazon (third-party seller),refurbished,1653.00,direct,2026-11-26,https://www.amazon.com/dp/B0CLJTSXHF
+2026-11-26,macbook,MacBook Pro 16 M2 Max 64GB,"64GB RAM, 1TB SSD",Amazon (third-party seller),refurbished,2394.00,direct,2026-11-26,https://www.amazon.com/dp/B0FHP6C3BL
+2026-11-26,macbook,MacBook Pro 16 M4 Pro 48GB,"48GB RAM, 512GB SSD",Amazon (third-party seller),refurbished,2099.00,direct,2026-11-26,https://www.amazon.com/dp/B0DSFNC8GQ
+2026-11-26,macbook,MacBook Pro 16 M5 Max 128GB,"128GB RAM, 2TB SSD, 18C CPU/40C GPU",Amazon (third-party seller),new,7699.99,direct,2026-11-26,https://www.amazon.com/dp/B0H4HYD6PX
+2026-11-26,macbook,MacBook Pro 16 M5 Pro 48GB,"48GB RAM, 2TB SSD, 18C CPU/20C GPU",Amazon (third-party seller),new,4099.00,direct,2026-11-26,https://www.amazon.com/dp/B0GV5ZCZ44
+2026-11-26,macbook,MacBook Pro 16 M5 Pro 64GB,"64GB RAM, 1TB SSD, 18C CPU/20C GPU",Amazon (third-party seller),new,4599.00,direct,2026-11-26,https://www.amazon.com/dp/B0H7Z68CLL
